@@ -57,9 +57,6 @@ extern "C"{
 /**
 * @file          SysDal_Cfg.h
 */
-
-#define AUTOSAR_OS_NOT_USED
-
 /* Check if source file and SYSDAL header file are of the same vendor */
 #if (SYSDAL_CFG_VENDOR_ID != STD_VENDOR_ID)
     #error "SysDal_Cfg.h and Std_Types.h have different vendor ids"
@@ -89,12 +86,11 @@ extern "C"{
 #define INTAPP_TASK_2_ACTIVATION_TIME        10
 #define INTAPP_TASK_3_ACTIVATION_TIME        20
 #define INTAPP_PREHOOK_TASK_ACTIVATION_TIME        0
-#define INTAPP_TASK_1_ACTIVATION_TIME        10000
 
 #define    INTAPP_TASK_2_ENABLE    STD_ON
 #define    INTAPP_TASK_3_ENABLE    STD_ON
 #define    INTAPP_PREHOOK_TASK_ENABLE    STD_ON
-#define    INTAPP_TASK_1_ENABLE    STD_ON
+#define    INTAPP_TASK_1_ENABLE    STD_OFF
 #define    INTAPP_TASK_4_ENABLE    STD_OFF
 #define    INTAPP_TASK_5_ENABLE    STD_OFF
 #define    INTAPP_TASK_6_ENABLE    STD_OFF
@@ -104,7 +100,6 @@ extern "C"{
 extern void INTAPP_TASK_2(void);
 extern void INTAPP_TASK_3(void);
 extern void INTAPP_PREHOOK_TASK(void);
-extern void INTAPP_TASK_1(void);
 #endif
 
 FUNC (void, SAMPLE_APP_CODE)SysDal_AllDriverInit(void);

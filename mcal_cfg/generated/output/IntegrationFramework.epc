@@ -1079,36 +1079,6 @@
                                   </SUB-CONTAINERS>
                                 </ECUC-CONTAINER-VALUE>
                                 <ECUC-CONTAINER-VALUE>
-                                  <SHORT-NAME>SysDal</SHORT-NAME>
-                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList</DEFINITION-REF>
-                                  <PARAMETER-VALUES>
-                                    <ECUC-TEXTUAL-PARAM-VALUE>
-                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/SampleaAppTask</DEFINITION-REF>
-                                      <VALUE>INTAPP_TASK_1</VALUE>
-                                    </ECUC-TEXTUAL-PARAM-VALUE>
-                                    <ECUC-NUMERICAL-PARAM-VALUE>
-                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskSchedulerTime</DEFINITION-REF>
-                                      <VALUE>10000</VALUE>
-                                    </ECUC-NUMERICAL-PARAM-VALUE>
-                                  </PARAMETER-VALUES>
-                                  <SUB-CONTAINERS>
-                                    <ECUC-CONTAINER-VALUE>
-                                      <SHORT-NAME>TaskFunctionList_0</SHORT-NAME>
-                                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList</DEFINITION-REF>
-                                      <PARAMETER-VALUES>
-                                        <ECUC-TEXTUAL-PARAM-VALUE>
-                                          <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList/FunctionHeader</DEFINITION-REF>
-                                          <VALUE>SysDal.h</VALUE>
-                                        </ECUC-TEXTUAL-PARAM-VALUE>
-                                        <ECUC-TEXTUAL-PARAM-VALUE>
-                                          <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList/UserFunction</DEFINITION-REF>
-                                          <VALUE>SysDal_MainFunction()</VALUE>
-                                        </ECUC-TEXTUAL-PARAM-VALUE>
-                                      </PARAMETER-VALUES>
-                                    </ECUC-CONTAINER-VALUE>
-                                  </SUB-CONTAINERS>
-                                </ECUC-CONTAINER-VALUE>
-                                <ECUC-CONTAINER-VALUE>
                                   <SHORT-NAME>Adc_Adc12bsarv2_EndGroupConvUnit0</SHORT-NAME>
                                   <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList</DEFINITION-REF>
                                   <PARAMETER-VALUES>

@@ -124,12 +124,6 @@ void INTAPP_PREHOOK_TASK(void)
 SwcRte_Init(&SwcRte_AppInstanceMapPB[0]);
 
 }
-void INTAPP_TASK_1(void)
-{
-
-SysDal_MainFunction();
-
-}
 #endif
 const SysDal_ConfigType SysDal_Config=
 {
