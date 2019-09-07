@@ -94,32 +94,6 @@
                               </REFERENCE-VALUES>
                             </ECUC-CONTAINER-VALUE>
                             <ECUC-CONTAINER-VALUE>
-                              <SHORT-NAME>LightingChannels_0</SHORT-NAME>
-                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels</DEFINITION-REF>
-                              <PARAMETER-VALUES>
-                                <ECUC-NUMERICAL-PARAM-VALUE>
-                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/ChannelHasFeedback</DEFINITION-REF>
-                                  <VALUE>1</VALUE>
-                                </ECUC-NUMERICAL-PARAM-VALUE>
-                              </PARAMETER-VALUES>
-                              <REFERENCE-VALUES>
-                                <ECUC-REFERENCE-VALUE>
-                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoChannelFeedbackChannel</DEFINITION-REF>
-                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_AN_FBK_PWM0</VALUE-REF>
-                                </ECUC-REFERENCE-VALUE>
-                                <ECUC-REFERENCE-VALUE>
-                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoDioOutput</DEFINITION-REF>
-                                </ECUC-REFERENCE-VALUE>
-                                <ECUC-REFERENCE-VALUE>
-                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoOcuOutput</DEFINITION-REF>
-                                </ECUC-REFERENCE-VALUE>
-                                <ECUC-REFERENCE-VALUE>
-                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoPwmOutput</DEFINITION-REF>
-                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_PWM0</VALUE-REF>
-                                </ECUC-REFERENCE-VALUE>
-                              </REFERENCE-VALUES>
-                            </ECUC-CONTAINER-VALUE>
-                            <ECUC-CONTAINER-VALUE>
                               <SHORT-NAME>LightingChannels_1</SHORT-NAME>
                               <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels</DEFINITION-REF>
                               <PARAMETER-VALUES>
@@ -284,7 +258,7 @@
                                 </ECUC-REFERENCE-VALUE>
                                 <ECUC-REFERENCE-VALUE>
                                   <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoPwmOutput</DEFINITION-REF>
-                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_PMW2</VALUE-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_PWM0</VALUE-REF>
                                 </ECUC-REFERENCE-VALUE>
                               </REFERENCE-VALUES>
                             </ECUC-CONTAINER-VALUE>

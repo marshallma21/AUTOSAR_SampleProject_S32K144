@@ -131,7 +131,7 @@ extern "C"{
 ==================================================================================================*/
 
 /*array of configuration data containing the configuration for each input channel (sensors and feedback channels) for instance 0*/
-const SwcRte_InputChannelConfigType SwcRte_LightingInputChannelMap_0_PB[3] = 
+const SwcRte_InputChannelConfigType SwcRte_LightingInputChannelMap_0_PB[2] = 
 {
     /*Sensor channel*/
     {
@@ -140,12 +140,6 @@ const SwcRte_InputChannelConfigType SwcRte_LightingInputChannelMap_0_PB[3] =
     },
     
     /*feedback channel for channel 0*/
-    {
-        IoDAL_AN_FBK_PWM0,        /*IO Channel ID*/
-        SWCRTE_ANALOG_FDBK_SENS        /*IO Channel Type*/
-    },
-    
-    /*feedback channel for channel 1*/
     {
         IoDAL_AN_FBK_PWM1,        /*IO Channel ID*/
         SWCRTE_ANALOG_FDBK_SENS        /*IO Channel Type*/
@@ -191,15 +185,10 @@ const SwcRte_InputChannelConfigType SwcRte_LightingInputChannelMap_2_PB[2] =
 };
             
 
-const SwcRte_OutputChannelConfigType SwcRte_LightingOutputChannelMap_0_PB[2] = 
+const SwcRte_OutputChannelConfigType SwcRte_LightingOutputChannelMap_0_PB[1] = 
 {    
     
     /*Output Channel 0*/
-    {
-        IoDAL_PWM0    /*IO Channel ID*/
-    },    
-    
-    /*Output Channel 1*/
     {
         IoDAL_PMW1    /*IO Channel ID*/
     }
@@ -224,7 +213,7 @@ const SwcRte_OutputChannelConfigType SwcRte_LightingOutputChannelMap_2_PB[1] =
     
     /*Output Channel 0*/
     {
-        IoDAL_PMW2    /*IO Channel ID*/
+        IoDAL_PWM0    /*IO Channel ID*/
     }
 };
 
@@ -235,7 +224,7 @@ const SwcRte_GlobalConfigType SwcRte_AppInstanceMapPB[SWCRTE_MAX_APP_INSTANCES] 
         SWCRTE_LIGHTING,        /*Application type*/
         SWCRTE_PWM_OUT,             /*Output signal type*/
         1,        /*Number of input channels*/
-        2,    /*Number of output channels*/
+        1,    /*Number of output channels*/
         SwcRte_LightingInputChannelMap_0_PB,    /*Input channel map configuration structure*/
         SwcRte_LightingOutputChannelMap_0_PB    /*Output channel map configuration structure*/
     },    
