@@ -1,0 +1,1044 @@
+<?xml version='1.0'?>
+<datamodel version="3.0" 
+        xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+        xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+        xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+        xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+        
+    <!--
+*   @file    Mcem.xdm
+*   @version 1.0.1
+*
+*   @brief   AUTOSAR Mcem - Tresos Studio plugin schema file
+*   @details This file contains the schema configuration for and Mcem Tresos Studio plugin.
+-->
+    <!--
+====================================================================================================
+*   Project              : AUTOSAR 4.2 MCAL
+*   Platform             : ARM
+*   Peripheral           : Eim Erm
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.2.2
+*   Autosar Revision     : ASR_REL_4_2_REV_0002
+*   Autosar Conf.Variant :
+*   SW Version           : 1.0.1
+*   Build Version        : S32K14x_MCAL_1_0_1_RTM_ASR_REL_4_2_REV_0002_20180713
+
+*   (c) Copyright 2006-2016 Freescale Semiconductor, Inc. 
+*       Copyright 2017-2018 NXP
+*   All Rights Reserved.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+-->    
+    <d:ctr type="AUTOSAR" factory="autosar" 
+            xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+            xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+            xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+        <d:lst type="TOP-LEVEL-PACKAGES">
+            <d:ctr name="TS_T40D2M10I1R0" type="AR-PACKAGE">
+                <a:a name="UUID" value="ECUC:4af873de-a8cf-41ad-a857-11cca7dcd97a"/>
+                <d:lst type="ELEMENTS">
+                    <d:chc name="Mcem" type="AR-ELEMENT" value="MODULE-DEF">
+                        <v:ctr type="MODULE-DEF">
+                            <a:a name="RELEASE" value="asc:4.2"/>
+                            <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                                <ad:ADMIN-DATA>
+                                    <ad:DOC-REVISIONS>
+                                        <ad:DOC-REVISION>
+                                            <ad:REVISION-LABEL>4.6.0</ad:REVISION-LABEL>
+                                            <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                                            <ad:DATE>2014-10-31</ad:DATE>
+                                        </ad:DOC-REVISION>
+                                    </ad:DOC-REVISIONS>
+                                </ad:ADMIN-DATA>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+                            <a:a name="DESC">
+                                <a:v><![CDATA[EN: <html>
+                                 <h1>Mcem</h1><p>
+                                 Configuration of the Mcem (Microcontroller error manager) module
+                                 </p></html>]]>
+                                </a:v>
+                            </a:a>    
+                            <a:a name="LOWER-MULTIPLICITY" value="1"/>
+                            <a:a name="UPPER-MULTIPLICITY" value="1"/>
+                            <a:a name="UUID" value="ECUC:a8a495cc-11e9-459b-807f-0179efa09e77"/>
+                            
+                            <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                                <a:a name="LABEL" value="Config Variant"/>
+                                <a:a name="UUID" value="ECUC:8816958c-2892-40bf-8678-a95ffacab8eb"/>
+                                <a:da name="DEFAULT" value="VariantPreCompile"/>
+                                <a:da name="EDITABLE" value="true"/>
+                                <a:da name="RANGE">
+                                 <a:v>VariantPreCompile</a:v>                                 
+                                 <a:v>VariantPostBuild</a:v> 
+                                </a:da>
+                            </v:var>
+
+                            <!--/** @implements  MCEMGeneralConfiguration_Object */ -->
+                            <v:ctr name="McemGeneral" type="IDENTIFIABLE">
+                                <a:a name="DESC">
+                                    <a:v> <![CDATA[EN: <html>
+                                    <h1>McemGeneral</h1><p>
+                                    All general parameters of the MCEM driver are collected here.
+                                    </p></html>]]>
+                                    </a:v> 
+                                </a:a>
+
+                                <a:a name="UUID" value="ECUC:17517e42-6da8-437e-b057-35cc7f943c0e"/>
+                                
+                                <!-- /** @implements   McemDevErrorDetect_Object */ -->
+                                <v:var name="McemDevErrorDetect" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Development Error Detection"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN: <html>
+                                            <h1>Mcem Development Error Detect</h1><p>
+                                            Compile switch to enable / disable development error detection for this module.
+                                            <ul>
+                                            <li>Unchecked: Development error detection disabled</li>
+                                            <li>Checked  : Development error detection enabled </li>
+                                            </ul>
+                                            </p></html>
+                                            ]]> 
+                                        </a:v> 
+                                    </a:a> 
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:9e744655-7df7-4a93-b826-65e7bf3760ad"/>
+                                    <a:da name="DEFAULT" value="true"/> 
+                                </v:var>
+
+                                <!-- /** @implements   McemVersionInfoApi_Object */ -->
+                                <v:var name="McemVersionInfoApi" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Provide Version Info API"/>                
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>MCEM VersionInfo Api</h1><p>
+                                            Compile switch to enable / disable the version information API.
+                                            <ul>
+                                            <li>Checked  : API enabled </li>
+                                            <li>Unchecked:API disabled </li>
+                                            </ul>
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>                                                                                                                 
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:22b5db0e-c172-4efb-a08b-8ffe218aa92a"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>  
+
+
+                                <!--/** @implements  McemAlarmNotificationApi_Object */ -->
+                                <v:var name="McemAlarmNotificationApi" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Provide Alarm Notification"/>                
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>MCEM Alarm Notification</h1><p>
+                                            Compile switch to enable / disable the alarm notification .
+                                            <ul>
+                                            <li>Checked  : Notification  enabled </li>
+                                            <li>Unchecked: Notification disabled </li>
+                                            </ul>
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:0e089a82-6516-4e09-a6b5-859781abc8d8"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:da name="READONLY" value="true"/>
+                                </v:var>
+
+                                <!-- /** @implements McemEnableUserModeSupport_Object */ -->
+                                <v:var name="McemEnableUserModeSupport" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Mcem Enable User Mode Support"/>
+                                    <a:a name="DESC">
+                                    <a:v>
+                                    <![CDATA[EN:
+                                        <html>
+                                            <p>When this parameter is enabled, the MCEM module will adapt to run from User Mode, with the following measures:</p>
+                                            <p>(if applicable) a) configuring REG_PROT for the MCEM registers so that the registers under protection can be accessed from user mode by setting UAA bit in REG_PROT_GCR to 1</p>
+                                            <p>(if applicable) b) using 'call trusted function' stubs for all internal function calls that access registers requiring supervisor mode.</p>
+                                            <p>(if applicable) c) other module specific measures for more information, please see chapter 5.7 User Mode Support in IM</p>
+                                        </html>
+                                    ]]>
+                                    </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="EDITABLE" type="XPath" expr="ecu:get('Mcem.McemEnableUserModeSupport')='true'"/>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:faa4800a-3714-4ef4-9a8b-457befc658cd"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                <v:var name="McemEnableIsrSingleErrorBit" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Mcem Enable Interrupt for Signle bit ECC"/>
+                                    <a:a name="DESC">
+                                    <a:v>
+                                    <![CDATA[EN:
+                                        <html>
+                                            <p>When this parameter is enabled, the MCEM module will provide ISR handler to process Interrupt signal when single bit ECC is detected.</p>
+                                            <p>Note: The processing of handler depend on configure reaction of each fault (enable/disable ISR processing of this fault).</p>
+                                        </html>
+                                    ]]>
+                                    </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:faa4800a-3714-4fe4-9a8b-457befc658cd"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                <v:var name="McemEnableIsrDoubleErrorBit" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Mcem Enable Interrupt for Double bits ECC"/>
+                                    <a:a name="DESC">
+                                    <a:v>
+                                    <![CDATA[EN:
+                                        <html>
+                                            <p>When this parameter is enabled, the MCEM module will provide ISR handler to process Interrupt signal when single bit ECC is detected.</p>
+                                            <p>Note: The processing of handler depend on configure reaction of each fault (enable/disable ISR processing of this fault).</p>
+                                        </html>
+                                    ]]>
+                                    </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:faa4800a-3714-4ee4-9a8b-457befc658cd"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                            </v:ctr> 
+                            
+                            <!--/** @implements  McemModuleConfiguration_Object */ -->
+                            <v:ctr name="McemConfigSet" type="IDENTIFIABLE"> 
+                                <a:a name="DESC">
+                                    <a:v><![CDATA[EN: <html>
+                                    <p></p>This container is the base for a multiple configuration set.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>                                
+                                <a:a name="UUID" value="ECUC:3fda88af-5143-4276-b8b8-a58cf5b7d256"/>    
+                                <!--/** @implements FaultTimeout_Object */ -->  
+                                <v:var name="FaultTimeout" type="INTEGER">
+                                    <a:a name="LABEL" value="Fault Recovery Timeout"/>
+                                    <a:a name="UUID" value="ECUC:1f40c244-6e74-494e-877e-9a7288eaecdc"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:da name="DEFAULT" value="65535"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN: <html>
+                                          <p>Non-critical fault timeout. If the fault with enabled recovery timeout is not recovered 
+                                          within the timeout period the FCCU moves from the ALARM state to the FAULT state.</p>
+                                          <p>NCF timeout can be computed using the following equations:</p>
+                                          <p style="margin-left: 5em;">Timeout&nbsp;=&nbsp;T<sub>RC16MHz</sub>&nbsp;&times;&nbsp;FaultTimeout</p>
+                                          <p style="margin-left: 5em;">Timeout&nbsp;=&nbsp;0.0625&nbsp;&times;&nbsp;FaultTimeout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&mu;s]</p>
+                                          </html>]]> 
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/> 
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0"/>
+                                        <a:tst expr="&lt;4294967296"/>
+                                    </a:da>
+                                    <a:da name="READONLY" value="true"/>
+                                 </v:var> 
+                                <!--/** @implements EOUT_FaultOutputMode_Object */ -->
+                                <v:var name="EOUT_FaultOutputMode" type="ENUMERATION">
+                                    <a:a name="LABEL" value="Fault Output Mode Selection"/>
+                                    <a:a name="UUID" value="ECUC:9779877e-7535-411c-875d-f66f6df20e29"/>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/> 
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                    </a:a>
+                                        <a:da name="DEFAULT" value="EOUT_DualRail"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN: <html>
+                                        Fault Output Mode Selection
+                                        <ul>
+                                        <li> Dual-Rail (default state) [fccu_eout[1:0]= outputs] </li>
+                                        <li> Time Switching [fccu_eout[1:0]= output to be used] </li>
+                                        <li> Bi-Stable </li>
+                                        </ul>
+                                        <p></p> Note: In the Test mode, a simple double-stage resynchronization stage is used to resynchronize the EOUT input/outputs on the system/safe clock. 
+                                        </html>]]> 
+                                        </a:v>
+                                    </a:a>
+                                    <a:da name="RANGE">
+                                       <a:v>EOUT_DualRail</a:v>                                 
+                                       <a:v>EOUT_TimeSwitching</a:v> 
+                                       <a:v>EOUT_BiStable</a:v>                                 
+                                    </a:da>
+                                    <a:da name="READONLY" value="true"/>
+                                </v:var>
+                                <!--/** @implements  McemHardlockedConfiguration_Object */ -->
+                                <v:var name="McemHardlockedConfiguration" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Hard-Locked Configuration Set"/>
+                                    <a:a name="UUID" value="ECUC:bbe1e60f-0e7c-402d-8068-e89799970f43"/>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/> 
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:a name="DESC">    
+                                        <a:v><![CDATA[EN: <html>
+                                        Hard-lock this configuration set: 
+                                        <ul>
+                                            <li>Unchecked: After Mcem_Init, the configuration is not locked. </li>
+                                            <li>Checked: After Mcem_Init, the configuration is hardlocked. </li>
+                                        </ul>
+                                        </html>]]> 
+                                        </a:v>
+                                    </a:a>
+                                    <a:da name="READONLY" value="true"/>
+                                </v:var>
+                                <!--/** @implements  McemSoftLockedConfiguration_Object */ -->
+                                <v:var name="McemSoftLockedConfiguration" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Soft-Locked Configuration Set"/>
+                                    <a:a name="UUID" value="ECUC:bbe1e60f-0e7c-402d-8086-e89799970f43"/>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/> 
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:a name="DESC">    
+                                        <a:v><![CDATA[EN: <html>
+                                        Soft-lock this configuration set: 
+                                        <ul>
+                                            <li>Unchecked: After Mcem_Init, the configuration is not locked. </li>
+                                            <li>Checked: After Mcem_Init, the configuration is soft-locked. </li>
+                                        </ul>
+                                        </html>]]> 
+                                        </a:v>
+                                    </a:a>
+                                </v:var>
+                                <!--/** @implements EOUT_SwitchingMode_Object */ -->                                 
+                                <v:var name="EOUT_SwitchingMode" type="BOOLEAN">
+                                    <a:a name="LABEL" value="EOUT Switching Mode"/>
+                                    <a:a name="UUID" value="ECUC:f8c348ee-b9ff-41c6-87ee-c182e9b87e25"/>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/> 
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:da name="EDITABLE" type="XPath">
+                                        <a:tst expr="not(contains(node:value(../EOUT_FaultOutputMode),'BiStable'))"/>
+                                    </a:da>
+                                    <a:a name="DESC">    
+                                        <a:v><![CDATA[EN: <html>
+                                        EOUT Switching mode
+                                        <ul>
+                                        <li>Unchecked: EOUT protocol (dual-rail, time-switching) slow switching mode. </li>
+                                        <li>Checked  : EOUT protocol (dual-rail, time-switching) fast switching mode. </li>
+                                        </ul>
+                                        Switching Mode has no effect on the bi-stable protocol.
+                                        </html>]]> 
+                                        </a:v>
+                                    </a:a>
+                                    <a:da name="READONLY" value="true"/>
+                                </v:var>
+                                <!--/** @implements EOUT_PolaritySelection_Object */ -->
+                                <v:var name="EOUT_PolaritySelection" type="BOOLEAN">
+                                    <a:a name="LABEL" value="EOUT Polarity Selection"/>
+                                    <a:a name="UUID" value="ECUC:50970b86-6dfc-44d2-a0d8-3b533828790c"/>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/> 
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:da name="EDITABLE" type="XPath">
+                                        <a:tst expr="(contains(node:value(../EOUT_FaultOutputMode),'BiStable'))"/>
+                                    </a:da>
+                                    <a:a name="DESC">    
+                                        <a:v><![CDATA[EN: <html>
+                                        EOUT Polarity Selection
+                                        <ul>
+                                        <li>Unchecked: fcc_eout[1] active high, fcc_eout[0] active low. </li>
+                                        <li>Checked: fcc_eout[1] active low, fcc_eout[0] active high. </li>
+                                        </ul>
+                                        This bit can be read and written by the software. Active state means a state indicating FAULT and 
+                                        is applicable for non-toggling protocols only.
+                                        </html>]]> 
+                                        </a:v>
+                                    </a:a>
+                                    <a:da name="READONLY" value="true"/>
+                                </v:var>
+
+                                <v:var name="McemErrorNotificationWithAddressAPI" type="FUNCTION-NAME">
+                                    <a:a name="LABEL" value="Mcem Error Notification with Error Address API"/>
+                                    <a:a name="UUID" value="ECUC:58b5e6c6-4207-499b-9b26-f473d37fdff6"/>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/> 
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:da name="DEFAULT" value="NULL_PTR"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN: <html>
+                                          <p>In case of a failure event, if interrupt is enabled, the fault shall notify error address to 
+                                            application using this callback. The prototype of the notification function is</p>
+                                          <p style="margin-left: 5em;">void Mcem_NotificationCallbackFunction(Mcem_FaultType FaultID, uint32 u32ErrorAddr );</p>
+                                        </html>]]> 
+                                        </a:v>
+                                    </a:a>
+                                    <a:da name="INVALID" type="XPath">
+                                        <a:tst expr="(text:toupper(.)='NULL') or (text:toupper(.)='FALSE') or ((text:toupper(.)='NULL_PTR') and (. != 'NULL_PTR'))" true="Invalid name of the McemAlarmNotification. Must be valid C function name or NULL_PTR."/>
+                                        <a:tst expr="normalize-space(.) = 'NULL_PTR' or text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" false="Invalid name of the McemAlarmNotification. Must be valid C function name or NULL_PTR."/>
+                                    </a:da>
+                                </v:var>
+                                <v:var name="McemTcmLowerAddr" type="INTEGER">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                The address use to inject error in lower TCM space
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Mcem Lower TCM address (for Injected)"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:ef669bd3-5ecb-4d8a-a5db-9e04ce58cd11"/>
+                                    <a:da name="DEFAULT" value="536870656"/>
+                                    <a:a name="DEFAULT_RADIX" value="HEX" />
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0x1C000000"/>
+                                        <a:tst expr="&lt;=0x1FFFFFFF"/>
+                                    </a:da>
+                                    <a:a name="OPTIONAL" value="true"/>
+                                </v:var>
+                                
+                                <v:var name="McemTcmUpperAddr" type="INTEGER">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                The address use to inject error in Upper TCM space
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Mcem Upper TCM address (for Injected)"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:ef66cbd3-5ecb-4d8a-a5db-9e04ce58cd11"/>
+                                    <a:da name="DEFAULT" value="536870912"/>
+                                    <a:a name="DEFAULT_RADIX" value="HEX" />
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0x20000000"/>
+                                        <a:tst expr="&lt;=0x200FFFFF"/>
+                                    </a:da>
+                                    <a:a name="OPTIONAL" value="true"/>
+                                </v:var>
+                                
+                                <v:var name="McemInjectBit1" type="ENUMERATION">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                The bit which is invert when do inject fault of single error bit and double error bits.
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Mcem Inject Bit 1"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:ef66cbd3-5ecd-4d8a-a5db-9e04ce58cd11"/>
+                                    <a:da name="DEFAULT" value="DATA_BIT_0"/>
+                                    <a:da name="RANGE">
+                                       <a:v>CHECK_BIT_0</a:v>                                 
+                                       <a:v>CHECK_BIT_1</a:v>                                 
+                                       <a:v>CHECK_BIT_2</a:v>                                 
+                                       <a:v>CHECK_BIT_3</a:v>                                 
+                                       <a:v>CHECK_BIT_4</a:v>                                 
+                                       <a:v>CHECK_BIT_5</a:v>                                 
+                                       <a:v>CHECK_BIT_6</a:v>                                 
+                                       <a:v>DATA_BIT_0</a:v> 
+                                       <a:v>DATA_BIT_1</a:v> 
+                                       <a:v>DATA_BIT_2</a:v> 
+                                       <a:v>DATA_BIT_3</a:v> 
+                                       <a:v>DATA_BIT_4</a:v> 
+                                       <a:v>DATA_BIT_5</a:v> 
+                                       <a:v>DATA_BIT_6</a:v> 
+                                       <a:v>DATA_BIT_7</a:v> 
+                                       <a:v>DATA_BIT_8</a:v> 
+                                       <a:v>DATA_BIT_9</a:v> 
+                                       <a:v>DATA_BIT_10</a:v> 
+                                       <a:v>DATA_BIT_11</a:v> 
+                                       <a:v>DATA_BIT_12</a:v> 
+                                       <a:v>DATA_BIT_13</a:v> 
+                                       <a:v>DATA_BIT_14</a:v> 
+                                       <a:v>DATA_BIT_15</a:v> 
+                                       <a:v>DATA_BIT_16</a:v> 
+                                       <a:v>DATA_BIT_17</a:v> 
+                                       <a:v>DATA_BIT_18</a:v> 
+                                       <a:v>DATA_BIT_19</a:v> 
+                                       <a:v>DATA_BIT_20</a:v> 
+                                       <a:v>DATA_BIT_21</a:v> 
+                                       <a:v>DATA_BIT_22</a:v> 
+                                       <a:v>DATA_BIT_23</a:v> 
+                                       <a:v>DATA_BIT_24</a:v> 
+                                       <a:v>DATA_BIT_25</a:v> 
+                                       <a:v>DATA_BIT_26</a:v> 
+                                       <a:v>DATA_BIT_27</a:v> 
+                                       <a:v>DATA_BIT_28</a:v> 
+                                       <a:v>DATA_BIT_29</a:v> 
+                                       <a:v>DATA_BIT_30</a:v> 
+                                       <a:v>DATA_BIT_31</a:v>
+                                    </a:da>
+                                </v:var>
+                                <v:var name="McemInjectBit2" type="ENUMERATION">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                The bit which is invert when do inject fault of double error bits.
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Mcem Inject Bit 2"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:ef66cbd3-5ecc-4d8a-a5db-9e04ce58cd11"/>
+                                    <a:da name="DEFAULT" value="DATA_BIT_1"/>
+                                    <a:da name="RANGE">
+                                       <a:v>CHECK_BIT_0</a:v>                                 
+                                       <a:v>CHECK_BIT_1</a:v>                                 
+                                       <a:v>CHECK_BIT_2</a:v>                                 
+                                       <a:v>CHECK_BIT_3</a:v>                                 
+                                       <a:v>CHECK_BIT_4</a:v>                                 
+                                       <a:v>CHECK_BIT_5</a:v>                                 
+                                       <a:v>CHECK_BIT_6</a:v>                                 
+                                       <a:v>DATA_BIT_0</a:v> 
+                                       <a:v>DATA_BIT_1</a:v> 
+                                       <a:v>DATA_BIT_2</a:v> 
+                                       <a:v>DATA_BIT_3</a:v> 
+                                       <a:v>DATA_BIT_4</a:v> 
+                                       <a:v>DATA_BIT_5</a:v> 
+                                       <a:v>DATA_BIT_6</a:v> 
+                                       <a:v>DATA_BIT_7</a:v> 
+                                       <a:v>DATA_BIT_8</a:v> 
+                                       <a:v>DATA_BIT_9</a:v> 
+                                       <a:v>DATA_BIT_10</a:v> 
+                                       <a:v>DATA_BIT_11</a:v> 
+                                       <a:v>DATA_BIT_12</a:v> 
+                                       <a:v>DATA_BIT_13</a:v> 
+                                       <a:v>DATA_BIT_14</a:v> 
+                                       <a:v>DATA_BIT_15</a:v> 
+                                       <a:v>DATA_BIT_16</a:v> 
+                                       <a:v>DATA_BIT_17</a:v> 
+                                       <a:v>DATA_BIT_18</a:v> 
+                                       <a:v>DATA_BIT_19</a:v> 
+                                       <a:v>DATA_BIT_20</a:v> 
+                                       <a:v>DATA_BIT_21</a:v> 
+                                       <a:v>DATA_BIT_22</a:v> 
+                                       <a:v>DATA_BIT_23</a:v> 
+                                       <a:v>DATA_BIT_24</a:v> 
+                                       <a:v>DATA_BIT_25</a:v> 
+                                       <a:v>DATA_BIT_26</a:v> 
+                                       <a:v>DATA_BIT_27</a:v> 
+                                       <a:v>DATA_BIT_28</a:v> 
+                                       <a:v>DATA_BIT_29</a:v> 
+                                       <a:v>DATA_BIT_30</a:v> 
+                                       <a:v>DATA_BIT_31</a:v>
+                                    </a:da>
+                                    <a:da name="INVALID" type="XPath">
+                                        <a:tst expr="(node:value(.)=node:value(../McemInjectBit1))" true="Mcem Inject bit 1 must be used; Mcem Inject bit 1 and Mcem Inject Bit 2 must be different"/>
+                                    </a:da>
+                                </v:var>
+
+                                <!--/** @implements  DefaultFaultConfig_Object */ -->
+                                <v:ctr name="DefaultFaultConfig" type="IDENTIFIABLE">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN: <html>
+                                            <p>This subcontainer specifies default configuration of all non-critical fault sources.
+                                               All sources are enabled by default.</p>
+                                            <p>Possible deviations must to be explicitly specified at  the <b>Fault</b> tab.</p>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="UUID" value="ECUC:ac16f412-b19d-48a6-ab7b-6c7a806afd6a" />
+                                    <!--/** @implements  FaultIrqEnabled_Object */ -->
+                                    <v:var name="FaultIrqEnabled" type="BOOLEAN">
+                                        <a:a name="LABEL" value="Fault State Interrupt Enable"/>
+                                        <a:a name="UUID" value="ECUC:9a901a2f-eec4-4366-9720-ed4596ca730a"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/> 
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:da name="DEFAULT" value="true"/>
+                                        <a:a name="DESC">    
+                                            <a:v><![CDATA[EN: <html>
+                                            Interrupt enable
+                                            <ul>
+                                            <li>Unchecked: Interrupt is disabled for error (NCF/) source x.</li>
+                                            <li>Checked: Interrupt is enabled for error (NCF/) source x. </li>
+                                            </ul>
+                                            </html>]]> 
+                                            </a:v> 
+                                        </a:a>
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="(node:value(.)='false') or ((node:value(.)='true') and ((../../../McemGeneral/McemEnableIsrSingleErrorBit='true') or (../../../McemGeneral/McemEnableIsrDoubleErrorBit='true')))" false="ISR handler is not supported, please configure atleast ISR for single bit ECC or double bits"/>
+                                        </a:da>
+                                    </v:var>
+                                </v:ctr>
+
+                                <v:lst name="Fault" type="MAP">
+                                
+                                 <!--   <a:da name="MIN" value="1"/> -->
+                                  
+                                    <v:ctr name="Fault" type="IDENTIFIABLE">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN: <html>
+                                            Reference to faults with non-default handlings.
+                                            <p></p>By default, all non-reserved faults are enabled and handled according to the default configurations. The explicitly created fault is enabled, and the default values for recovery and reaction
+type are selected. It can be disabled or configured differently.
+                                            </html>]]> 
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="UUID" value="ECUC:e2d99ec4-d1ad-4aab-8bbf-b262974338d8"/>
+                                    
+                                        <v:var name="SignalDesc" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN: <html>
+                                                Non-critical fault enable
+                                                <ul>
+                                                <li> No actions following the respective non-critical fault assertion </li>
+                                                <li> FCCU moves to ALARM or FAULT state </li>
+                                                </ul>
+                                                <p></p>If fault is selected, it is automatically enabled, and the default values for recovery and reaction type are selected.
+                                                Also Alarm and Fault interrupts (IRQ and NMI), Timeout and EOUT signaling are selected.
+                                                </html>]]> 
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/> 
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:0f02227e-6eae-4546-b144-245da2ecfcf5"/>
+                                            <a:da name="DEFAULT" type="XPath" expr="ecu:list('Mcem.McemConfigSet.Fault.SignalDesc')[position()-1=node:fallback(node:current()/../@index, num:i(0))]"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="text:uniq(../../*/SignalDesc, .)" false="Fault already configured!"/>
+                                            </a:da>
+                                            <a:da name="RANGE" type="XPath" expr="ecu:list('Mcem.McemConfigSet.Fault.SignalDesc') "/>
+                                        </v:var>
+                                        
+                                        <v:var name="FaultDisabled" type="BOOLEAN">
+                                            <a:a name="LABEL" value="Fault Disabled"/>
+                                            <a:a name="UUID" value="ECUC:1e7fb351-a25a-4169-a1f1-c30a391777f8"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/> 
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:da name="DEFAULT" value="false"/>
+                                            <a:a name="DESC">    
+                                                <a:v><![CDATA[EN: <html>
+                                                Fault source disabled
+                                                <ul>
+                                                <li>Unchecked: Specified non-critical fault source is enabled (default).</li>
+                                                <li>Checked: Specified non-critical fault source is disabled.</li>
+                                                </ul>
+                                                </html>]]> 
+                                                </a:v>
+                                            </a:a>    
+                                        </v:var>
+                                        <!--/** @implements  FaultIrqEnabled_Object */ -->
+                                        <v:var name="FaultIrqEnabled" type="BOOLEAN">
+                                            <a:a name="LABEL" value="Fault State Interrupt Enable"/>
+                                            <a:a name="UUID" value="ECUC:9a901a2f-aabc-4366-9720-ed4596ca730a"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/> 
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:da name="DEFAULT" value="true"/>
+                                            <a:a name="DESC">    
+                                                <a:v><![CDATA[EN: <html>
+                                                Interrupt enable
+                                                <ul>
+                                                <li>Unchecked: Interrupt is disabled for error (NCF/) source x.</li>
+                                                <li>Checked: Interrupt is enabled for error (NCF/) source x. </li>
+                                                </ul>
+                                                </html>]]> 
+                                                </a:v> 
+                                            </a:a>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="(node:value(./../FaultDisabled)='true') or (node:value(.)='false') or ((node:value(.)='true') and ((../../../../McemGeneral/McemEnableIsrSingleErrorBit='true') or not(contains(node:value(../SignalDesc),'_SINGLE_CORRECTION'))))" false="ISR handler for single bit ECC is not available, can not enable ISR for SINGLE_CORRECTION fault"/>
+                                                <a:tst expr="(node:value(./../FaultDisabled)='true') or (node:value(.)='false') or ((node:value(.)='true') and ((../../../../McemGeneral/McemEnableIsrDoubleErrorBit='true') or not(contains(node:value(../SignalDesc),'_NON_CORRECTABLE'))))" false="ISR handler for double bit uncorrectable is not available, can not enable ISR for NON_CORRECTABLE fault"/>
+                                            </a:da>
+                                            <a:da name="EDITABLE" type="XPath">
+                                                <a:tst expr="(node:exists(../FaultDisabled)=false()) or (node:when(node:value(../FaultDisabled), false(), true()))"/>
+                                            </a:da>
+                                        </v:var>
+                                    </v:ctr>
+                                    
+                                </v:lst>
+                                
+                            </v:ctr>
+                                
+                            <!-- /** @implements   McemCommonPublishedInformation_Object */ -->   
+                            <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">              
+                                <a:a name="DESC">
+                                    <a:v> <![CDATA[EN: <html>
+                                        <h1>CommonPublishedInformation</h1><p>
+                                        Common container, aggregated by all modules. It contains published information about vendor and versions.
+                                        </p></html> ]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="UUID" value="ECUC:524f6901-17f0-4d12-a8c6-521b65ab2a85"/>  
+                                <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="AUTOSAR Release Major Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>AUTOSAR Release Major Version</h1><p>
+                                            Major version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>              
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:0eb7f210-dc10-42c4-882d-108232f4190e"/>
+                                    <a:da name="DEFAULT" value="4"/>                       
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=4"/>
+                                        <a:tst expr="&lt;=4"/>
+                                    </a:da>                    
+                                </v:var>
+                                
+                                <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="AUTOSAR Release Minor Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>AUTOSAR Release Minor Version</h1><p>
+                                            Minor version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>              
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:1b0559ac-f026-40a5-be94-d47aba94caf7"/>
+                                    <a:da name="DEFAULT" value="2"/>                       
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=2"/>
+                                        <a:tst expr="&lt;=2"/>
+                                    </a:da>                    
+                                </v:var>
+                                
+                                <v:var name="ArReleaseRevisionVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="AUTOSAR Release Revision Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>AUTOSAR Patch Version</h1><p>
+                                            Revision version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>                                                                                     
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:f244de86-186b-4c28-aef3-8990a2302432"/>
+                                    <a:da name="DEFAULT" value="2"/>                       
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=2"/>
+                                        <a:tst expr="&lt;=2"/>
+                                    </a:da>                    
+                                </v:var>
+                                
+                                <v:var name="ModuleId" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Numeric Module ID"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>Module ID</h1><p>
+                                            Module ID of this module from Module List.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>                                 
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:bd007180-4e46-4f30-8e4e-f76a83e2b700"/>
+                                    <a:da name="DEFAULT" value="0"/>                                         
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0"/>
+                                        <a:tst expr="&lt;=0"/>
+                                    </a:da>                    
+                                </v:var>
+                                
+                                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Software Major Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>Software Major Version</h1><p>
+                                            Major version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>              
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:5d32253a-accb-4c10-b20c-315433021383"/>
+                                    <a:da name="DEFAULT" value="1"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=1"/>
+                                        <a:tst expr="&lt;=1"/>
+                                    </a:da>                    
+                                </v:var>
+                                
+                                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Software Minor Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>Software Minor Version</h1><p>
+                                            Minor version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>              
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:9a91dd84-07ab-4047-af02-2966dc1dc344"/>
+                                    <a:da name="DEFAULT" value="0"/>                     
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0"/>
+                                        <a:tst expr="&lt;=0"/>
+                                    </a:da>                    
+                                </v:var>
+                                
+                                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Software Patch Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>Software Patch Version</h1><p>
+                                            Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>             
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:e987bc51-a6e3-47e6-8387-c463f5dead01"/>
+                                    <a:da name="DEFAULT" value="1"/>                                         
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=1"/>
+                                        <a:tst expr="&lt;=1"/>
+                                    </a:da>                    
+                                </v:var>
+                                
+                                <v:var name="VendorApiInfix" type="STRING_LABEL">
+                                    <a:a name="LABEL" value="Vendor Api Infix"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>
+                                            <h1>Vendor Api Infix</h1><p>
+                                            In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name. 
+                                            This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+                                            &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+
+                                            E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write. 
+
+                                            This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>                                      
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="OPTIONAL" value="true"/>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:9a99c43a-5c29-4ee3-803a-3a1e8b5a852e"/>
+                                    <a:da name="DEFAULT" value=""/>                
+                                    <a:da name="EDITABLE" value="false"/>
+                                </v:var>
+                                
+                                <v:var name="VendorId" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Vendor ID"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>
+                                            <h1>Vendor ID</h1><p>
+                                            Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>              
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:0e3963bf-453b-43a2-865b-204cc3b387f1"/>
+                                    <a:da name="DEFAULT" value="43"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=43"/>
+                                        <a:tst expr="&lt;=43"/>
+                                    </a:da>                    
+                                </v:var>
+                        
+                            </v:ctr>
+                            
+                        </v:ctr>
+                        
+                    </d:chc>
+                    <!--    <d:ctr name="McemSettingsConfig" 
+                                type="MODULE-DEF">                                                               
+                            <a:a name="TAB" value="Stuff"/>
+                        </d:ctr>  -->
+                    <d:chc name="Mcem_EcuParameterDefinition" 
+                            type="AR-ELEMENT" value="ECU_PARAMETER_DEFINITION">
+                        <d:ctr type="AR-ELEMENT">
+                            <a:a name="UUID" value="ECUC:86c29246-beb5-4384-b5dd-4cc6baac161a"/>
+                            <a:a name="DEF" 
+                                    value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+                            <d:lst name="MODULE_REF">
+                                <d:ref type="MODULE_REF" value="ASPath:/TS_T40D2M10I1R0/Mcem"/>
+                            </d:lst>
+                        </d:ctr>
+                    </d:chc>
+                    <d:chc name="Mcem_ModuleDescription" 
+                            type="AR-ELEMENT" value="BSW_MODULE_DESCRIPTION">
+                        <d:ctr type="AR-ELEMENT">
+                            <a:a name="DEF" 
+                                    value="ASPath:/AR_PACKAGE_SCHEMA/BSW_MODULE_DESCRIPTION"/>
+                            
+                            <d:var name="MODULE_ID" type="INTEGER" >
+                                <a:a name="EDITABLE" value="false"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            
+                            <d:ref type="RECOMMENDED_CONFIGURATION" >
+                                <a:a name="EDITABLE" value="false"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:ref>
+                            
+                            <d:ref type="PRE_CONFIGURED_CONF" >
+                                <a:a name="EDITABLE" value="false"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:ref>
+                            
+                            <d:ref type="VENDOR_SPECIFIC_MODULE_DEF" 
+                                    value="ASPath:/TS_T40D2M10I1R0/Mcem"/>
+                        </d:ctr>
+                    </d:chc>
+                    
+                </d:lst>
+            
+            </d:ctr>
+        
+        </d:lst>
+    </d:ctr>
+
+</datamodel>

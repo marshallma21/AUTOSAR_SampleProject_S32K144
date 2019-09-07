@@ -1,0 +1,822 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3_STRICT_COMPACT.xsd">
+  
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR_Mcu</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-MODULE-DESCRIPTION>
+              <SHORT-NAME>Mcu</SHORT-NAME>
+              <MODULE-ID>101</MODULE-ID>
+              <PROVIDED-ENTRYS>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_DisableCmu</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_DistributePllClock</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_EmiosConfigureGpren</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetMidrStructure</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetPeripheralState</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetPllStatus</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetPowerDomainState</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetPowerModeState</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetRamState</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetResetRawValue</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetResetReason</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetSystemState</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetVersionInfo</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_Init</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_InitClock</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_InitRamSection</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_PerformReset</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_SetMode</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_SscmGetMemConfig</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_SscmGetStatus</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_SscmGetUops</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                    <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_Cmu_ClockFailIsr</BSW-MODULE-ENTRY-REF>
+                  </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                    <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_PMC_LowVoltage_ISR</BSW-MODULE-ENTRY-REF>
+                  </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                    <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_PMC_SCG_CMU_Isr</BSW-MODULE-ENTRY-REF>
+                  </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                    <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_PMC_TemperatureError_ISR</BSW-MODULE-ENTRY-REF>
+                  </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+              </PROVIDED-ENTRYS>
+              <INTERNAL-BEHAVIORS>
+                <BSW-INTERNAL-BEHAVIOR>
+                  <SHORT-NAME>InternalBehavior_0</SHORT-NAME>
+                  <EXCLUSIVE-AREAS>
+                  </EXCLUSIVE-AREAS>
+                  <ENTITYS>
+                    <BSW-CALLED-ENTITY> 
+                      <SHORT-NAME>Mcu_DisableCmu</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_DisableCmu</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Mcu_DistributePllClock</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_DistributePllClock</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY> 
+                      <SHORT-NAME>Mcu_EmiosConfigureGpren</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_EmiosConfigureGpren</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY> 
+                      <SHORT-NAME>Mcu_GetMidrStructure</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetMidrStructure</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY> 
+                      <SHORT-NAME>Mcu_GetPeripheralState</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetPeripheralState</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Mcu_GetPllStatus</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetPllStatus</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY> 
+                      <SHORT-NAME>Mcu_GetPowerDomainState</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetPowerDomainState</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY> 
+                      <SHORT-NAME>Mcu_GetPowerModeState</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetPowerModeState</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Mcu_GetRamState</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetRamState</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Mcu_GetResetRawValue</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetResetRawValue</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Mcu_GetResetReason</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetResetReason</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY> 
+                      <SHORT-NAME>Mcu_GetSystemState</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetSystemState</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Mcu_GetVersionInfo</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_GetVersionInfo</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Mcu_Init</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_Init</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Mcu_InitClock</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_InitClock</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Mcu_InitRamSection</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_InitRamSection</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Mcu_PerformReset</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_PerformReset</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY>
+                      <SHORT-NAME>Mcu_SetMode</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_SetMode</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY> 
+                      <SHORT-NAME>Mcu_SscmGetMemConfig</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_SscmGetMemConfig</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY> 
+                      <SHORT-NAME>Mcu_SscmGetStatus</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_SscmGetStatus</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-CALLED-ENTITY> 
+                      <SHORT-NAME>Mcu_SscmGetUops</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_SscmGetUops</IMPLEMENTED-ENTRY-REF>
+                    </BSW-CALLED-ENTITY>
+                    <BSW-INTERRUPT-ENTITY>
+                      <SHORT-NAME>Mcu_Cmu_ClockFailIsr</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_Cmu_ClockFailIsr</IMPLEMENTED-ENTRY-REF>
+                      <INTERRUPT-CATEGORY>CAT-2</INTERRUPT-CATEGORY>
+                      <INTERRUPT-SOURCE>Hardware</INTERRUPT-SOURCE>
+                    </BSW-INTERRUPT-ENTITY>
+                    <BSW-INTERRUPT-ENTITY>
+                      <SHORT-NAME>Mcu_PMC_LowVoltage_ISR</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_PMC_LowVoltage_ISR</IMPLEMENTED-ENTRY-REF>
+                      <INTERRUPT-CATEGORY>CAT-2</INTERRUPT-CATEGORY>
+                      <INTERRUPT-SOURCE>Hardware</INTERRUPT-SOURCE>
+                    </BSW-INTERRUPT-ENTITY>
+                    <BSW-INTERRUPT-ENTITY>
+                      <SHORT-NAME>Mcu_PMC_SCG_CMU_Isr</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_PMC_SCG_CMU_Isr</IMPLEMENTED-ENTRY-REF>
+                      <INTERRUPT-CATEGORY>CAT-2</INTERRUPT-CATEGORY>
+                      <INTERRUPT-SOURCE>Hardware</INTERRUPT-SOURCE>
+                    </BSW-INTERRUPT-ENTITY>
+                    <BSW-INTERRUPT-ENTITY>
+                      <SHORT-NAME>Mcu_PMC_TemperatureError_ISR</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_PMC_TemperatureError_ISR</IMPLEMENTED-ENTRY-REF>
+                      <INTERRUPT-CATEGORY>CAT-2</INTERRUPT-CATEGORY>
+                      <INTERRUPT-SOURCE>Hardware</INTERRUPT-SOURCE>
+                    </BSW-INTERRUPT-ENTITY>
+                  </ENTITYS>
+                </BSW-INTERNAL-BEHAVIOR>
+              </INTERNAL-BEHAVIORS>
+            </BSW-MODULE-DESCRIPTION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+                      
+        <AR-PACKAGE>
+          <SHORT-NAME>BswModuleEntrys</SHORT-NAME>
+          <ELEMENTS>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_DisableCmu</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_DistributePllClock</SHORT-NAME>
+                <SERVICE-ID>0x03</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_EmiosConfigureGpren</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_GetMidrStructure</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_GetPeripheralState</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_GetPllStatus</SHORT-NAME>
+                <SERVICE-ID>0x04</SERVICE-ID>
+                <IS-REENTRANT>true</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_GetPowerDomainState</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_GetPowerModeState</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_GetRamState</SHORT-NAME>
+                <SERVICE-ID>0x04</SERVICE-ID>
+                <IS-REENTRANT>true</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_GetResetRawValue</SHORT-NAME>
+                <SERVICE-ID>0x06</SERVICE-ID>
+                <IS-REENTRANT>true</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_GetResetReason</SHORT-NAME>
+                <SERVICE-ID>0x05</SERVICE-ID>
+                <IS-REENTRANT>true</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_GetSystemState</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_GetVersionInfo</SHORT-NAME>
+                <SERVICE-ID>0x09</SERVICE-ID>
+                <IS-REENTRANT>true</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_Init</SHORT-NAME>
+                <SERVICE-ID>0x00</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_InitClock</SHORT-NAME>
+                <SERVICE-ID>0x02</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_InitRamSection</SHORT-NAME>
+                <SERVICE-ID>0x01</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_PerformReset</SHORT-NAME>
+                <SERVICE-ID>0x07</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_SetMode</SHORT-NAME>
+                <SERVICE-ID>0x08</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_SscmGetMemConfig</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_SscmGetStatus</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_SscmGetUops</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>REGULAR</CALL-TYPE>
+                <EXECUTION-CONTEXT>UNSPECIFIED</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_Cmu_ClockFailIsr</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>INTERRUPT</CALL-TYPE>
+                <EXECUTION-CONTEXT>INTERRUPT-CAT-2</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_PMC_LowVoltage_ISR</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>INTERRUPT</CALL-TYPE>
+                <EXECUTION-CONTEXT>INTERRUPT-CAT-2</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_PMC_SCG_CMU_Isr</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>INTERRUPT</CALL-TYPE>
+                <EXECUTION-CONTEXT>INTERRUPT-CAT-2</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+              <BSW-MODULE-ENTRY>
+                <SHORT-NAME>Mcu_PMC_TemperatureError_ISR</SHORT-NAME>
+                <SERVICE-ID>0</SERVICE-ID>
+                <IS-REENTRANT>false</IS-REENTRANT>
+                <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                <CALL-TYPE>INTERRUPT</CALL-TYPE>
+                <EXECUTION-CONTEXT>INTERRUPT-CAT-2</EXECUTION-CONTEXT>
+                <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+              </BSW-MODULE-ENTRY>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Mcu_T40D2M10I1R0</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+        <SHORT-NAME>Implementations</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-IMPLEMENTATION>
+              <SHORT-NAME>BswImplementation_0</SHORT-NAME>
+
+              <CODE-DESCRIPTORS>
+                <CODE>
+                <SHORT-NAME>Files</SHORT-NAME>
+                <ARTIFACT-DESCRIPTORS>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>config::Mcu.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>config_ext::McuPreConfiguration.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>doc::AUTOSAR_MCAL_MCU_IM.pdf</SHORT-LABEL>
+                    <CATEGORY>SWDOC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>doc::AUTOSAR_MCAL_MCU_UM.pdf</SHORT-LABEL>
+                    <CATEGORY>SWDOC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_CMU.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_CMU_IPVersion.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_CMU_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_CortexM4.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_EnvCfg.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_IPW.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_IPW_Irq.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_IPW_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_PCC.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_PCC_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_PMC.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_PMC_IPVersion.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_PMC_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_RCM.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_RCM_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_SCG.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_SCG_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_SIM.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_SIM_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_SMC.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_SMC_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Reg_eSys_CMU.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Reg_eSys_CortexM4.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Reg_eSys_PCC.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Reg_eSys_PMC.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Reg_eSys_RCM.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Reg_eSys_SCG.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Reg_eSys_SIM.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Reg_eSys_SMC.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_CMU.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_CMU_Irq.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_CortexM4.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_IPW.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_IPW_Irq.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_PCC.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_PMC.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_PMC_Irq.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_RCM.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_SCG.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_SIM.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>src::Mcu_SMC.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                </ARTIFACT-DESCRIPTORS>
+                </CODE>
+              </CODE-DESCRIPTORS>
+
+              <COMPILERS>
+                <COMPILER>
+                  <SHORT-NAME>IAR_Compiler</SHORT-NAME>
+                  <NAME>IAR Compiler</NAME>
+                  <OPTIONS>--cpu=Cortex-M4 --cpu=Cortex-M0+ --cpu_mode=thumb --endian=little -Ohz -c --no_clustering --no_mem_idioms --no_explicit_zero_opt --debug --diag_suppress=Pa050 -DAUTOSAR_OS_NOT_USED -DIAR --require_prototypes --no_wrap_diagnostics --no_system_include -e</OPTIONS>
+                  <VENDOR>IAR Systems</VENDOR>
+                  <VERSION>IAR: V8.11.2</VERSION>
+                </COMPILER>
+                <COMPILER>
+                  <SHORT-NAME>GHS_Compiler</SHORT-NAME>
+                  <NAME>Green Hills</NAME>
+                  <OPTIONS>-cpu=cortexm4 -cpu=cortexm0plus -ansi -Osize -dual_debug -G --no_exceptions -Wundef -Wimplicit-int -Wshadow -Wtrigraphs -Wall --prototype_errors --incorrect_pragma_warnings -noslashcomment -preprocess_assembly_files -nostartfile --short_enum -c --no_commons -keeptempfiles -list -DAUTOSAR_OS_NOT_USED -DDISABLE_MCAL_INTERMODULE_ASR_CHECK -DGHS</OPTIONS>
+                  <VENDOR>Green Hills</VENDOR>
+                  <VERSION>Green Hills Multi 7.1.4 / Compiler 2017.1.4</VERSION>
+                </COMPILER>
+                <COMPILER>
+                  <SHORT-NAME>LINARO_Compiler</SHORT-NAME>
+                  <NAME>Linaro Compiler</NAME>
+                  <OPTIONS>-c -O1 -ggdb3 -mcpu=cortex-m4 -mthumb -mlittle-endian -fomit-frame-pointer -mhard-float -fno-common -Wall -Wextra -Wstrict-prototypes -Wno-sign-compare -DAUTOSAR_OS_NOT_USED -DLINARO -fstack-usage -fdump-ipa-all -Werror=implicit-function-declaration</OPTIONS>
+                  <VENDOR>Linaro</VENDOR>
+                  <VERSION>(Linaro GCC 6.3-2017.06~dev) 6.3.1 20170509 (Thu Dec 7 13:28:42 CST 2017         build.sh rev=g7fea41d s=L631 Earmv7 -V release_g7fea41d_build_Fed_Earmv7) (from S32-DS-ARM_v2018)</VERSION>
+                </COMPILER>
+              </COMPILERS>
+              <GENERATED-ARTIFACTS>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Mcu_PBcfg_c</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate_PB::src::Mcu_PBcfg.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Mcu_Cfg_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate_PC::include::Mcu_Cfg.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Mcu_Cfg_c</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate_PC::src::Mcu_Cfg.c</SHORT-LABEL>
+                    <CATEGORY>SWSRC</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+              </GENERATED-ARTIFACTS>
+
+              <LINKERS>
+                <LINKER>
+                  <SHORT-NAME>IAR_Linker</SHORT-NAME>
+                  <NAME>IAR Compiler</NAME>
+                  <OPTIONS>--map filename --no_library_search --entry _start --enable_stack_usage --skip_dynamic_initialization --no_wrap_diagnostics --config</OPTIONS>
+                  <VENDOR>IAR Systems</VENDOR>
+                  <VERSION>IAR: V8.11.2</VERSION>
+                </LINKER>
+                <LINKER>
+                  <SHORT-NAME>GHS_Linker</SHORT-NAME>
+                  <NAME>Green Hills</NAME>
+                  <OPTIONS>-Mn -delete -v -ignore_debug_references -map -keepmap -lstartup -lsys -larch -lansi -L(/lib/thumb2) -lutf8_s32</OPTIONS>
+                  <VENDOR>Green Hills</VENDOR>
+                  <VERSION>Green Hills Multi 7.1.4 / Compiler 2017.1.4</VERSION>
+                </LINKER>
+                <LINKER>
+                  <SHORT-NAME>LINARO_Linker</SHORT-NAME>
+                  <NAME>Linaro Compiler</NAME>
+                  <OPTIONS>-Map=filename -T scriptfile</OPTIONS>
+                  <VENDOR>Linaro</VENDOR>
+                  <VERSION>(Linaro GCC 6.3-2017.06~dev) 6.3.1 20170509 (Thu Dec 7 13:28:42 CST 2017         build.sh rev=g7fea41d s=L631 Earmv7 -V release_g7fea41d_build_Fed_Earmv7) (from S32-DS-ARM_v2018)</VERSION>
+                </LINKER>
+              </LINKERS> 
+              <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+              <RESOURCE-CONSUMPTION>
+                <SHORT-NAME>ResourceConsumption</SHORT-NAME>
+                <MEMORY-SECTIONS>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MCU_CODE</SHORT-NAME>
+                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR/MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                    <SYMBOL>CODE</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MCU_CONFIG_DATA_UNSPECIFIED</SHORT-NAME>
+                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR/MemMap/SwAddrMethods/CONFIG_DATA_UNSPECIFIED</SW-ADDRMETHOD-REF>
+                    <SYMBOL>CONFIG_DATA_UNSPECIFIED</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MCU_CONST_32</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR/MemMap/SwAddrMethods/CONST_32</SW-ADDRMETHOD-REF>
+                    <SYMBOL>CONST_32</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MCU_CONST_UNSPECIFIED</SHORT-NAME>
+                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR/MemMap/SwAddrMethods/CONST_UNSPECIFIED</SW-ADDRMETHOD-REF>
+                    <SYMBOL>CONST_UNSPECIFIED</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MCU_VAR_INIT_32</SHORT-NAME>
+                    <ALIGNMENT>32</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR/MemMap/SwAddrMethods/VAR_INIT_32</SW-ADDRMETHOD-REF>
+                    <SYMBOL>VAR_INIT_32</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MCU_VAR_INIT_UNSPECIFIED</SHORT-NAME>
+                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR/MemMap/SwAddrMethods/VAR_INIT_UNSPECIFIED</SW-ADDRMETHOD-REF>
+                    <SYMBOL>VAR_INIT_UNSPECIFIED</SYMBOL>
+                  </MEMORY-SECTION>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>MCU_VAR_NO_INIT_8</SHORT-NAME>
+                    <ALIGNMENT>8</ALIGNMENT>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR/MemMap/SwAddrMethods/VAR_NO_INIT_8</SW-ADDRMETHOD-REF>
+                    <SYMBOL>VAR_NO_INIT_8</SYMBOL>
+                  </MEMORY-SECTION>
+                </MEMORY-SECTIONS>
+              </RESOURCE-CONSUMPTION>
+              <SW-VERSION>4.2.2</SW-VERSION>
+              <VENDOR-ID>43</VENDOR-ID>
+              <AR-RELEASE-VERSION>4.2.2</AR-RELEASE-VERSION>
+              
+              <BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/AUTOSAR_Mcu/BswModuleDescriptions/Mcu/InternalBehavior_0</BEHAVIOR-REF>
+              <PRECONFIGURED-CONFIGURATION-REFS>
+                <PRECONFIGURED-CONFIGURATION-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/TS_T40D2M10I1R0/McuPreConfiguration</PRECONFIGURED-CONFIGURATION-REF>
+              </PRECONFIGURED-CONFIGURATION-REFS>
+              <RECOMMENDED-CONFIGURATION-REFS>
+              </RECOMMENDED-CONFIGURATION-REFS>
+              <VENDOR-SPECIFIC-MODULE-DEF-REFS>
+                <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/TS_T40D2M10I1R0/Mcu</VENDOR-SPECIFIC-MODULE-DEF-REF>
+              </VENDOR-SPECIFIC-MODULE-DEF-REFS>
+            </BSW-IMPLEMENTATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

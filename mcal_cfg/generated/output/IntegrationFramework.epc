@@ -1,0 +1,1594 @@
+<?xml version='1.0'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>IntegrationFramework</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES>
+          <SHORT-NAME>IntegrationFramework</SHORT-NAME>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/TS_T40D2M10I1R0/IntegrationFramework</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-POST-BUILD</IMPLEMENTATION-CONFIG-VARIANT>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>CommonPublishedInformation</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/CommonPublishedInformation</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/CommonPublishedInformation/ArReleaseMajorVersion</DEFINITION-REF>
+                  <VALUE>4</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/CommonPublishedInformation/ArReleaseMinorVersion</DEFINITION-REF>
+                  <VALUE>2</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/CommonPublishedInformation/ArReleaseRevisionVersion</DEFINITION-REF>
+                  <VALUE>2</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/CommonPublishedInformation/ModuleId</DEFINITION-REF>
+                  <VALUE>10</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/CommonPublishedInformation/SwMajorVersion</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/CommonPublishedInformation/SwMinorVersion</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/CommonPublishedInformation/SwPatchVersion</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/CommonPublishedInformation/VendorId</DEFINITION-REF>
+                  <VALUE>43</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>IntegrationAppFeaturesConfig</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE>
+                  <SHORT-NAME>IntegrationAppDataConfig_0</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>AppConfig_0</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                          <SHORT-NAME>LightingControlApp_0</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlOutputSignalType</DEFINITION-REF>
+                              <VALUE>PWM</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>LightCtrlUserInterface</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightCtrlInputSignalType</DEFINITION-REF>
+                                  <VALUE>ANALOG_INPUT</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightControlButton</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightControlCanMsg</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightControlPot</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_AN_POT</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>LightingChannels_0</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/ChannelHasFeedback</DEFINITION-REF>
+                                  <VALUE>1</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoChannelFeedbackChannel</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_AN_FBK_PWM0</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoDioOutput</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoOcuOutput</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoPwmOutput</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_PWM0</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>LightingChannels_1</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/ChannelHasFeedback</DEFINITION-REF>
+                                  <VALUE>1</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoChannelFeedbackChannel</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_AN_FBK_PWM1</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoDioOutput</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoOcuOutput</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoPwmOutput</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_PMW1</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                          <SHORT-NAME>LightingControlApp_1</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlOutputSignalType</DEFINITION-REF>
+                              <VALUE>DIGITAL_OUTPUT</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>LightCtrlUserInterface</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightCtrlInputSignalType</DEFINITION-REF>
+                                  <VALUE>DIGITAL_INPUT</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightControlButton</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_DIGITAL_KEY</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightControlCanMsg</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightControlPot</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>LightingChannels_0</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/ChannelHasFeedback</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoChannelFeedbackChannel</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoDioOutput</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_DOUT0</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoOcuOutput</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoPwmOutput</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>LightingChannels_1</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/ChannelHasFeedback</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoChannelFeedbackChannel</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoDioOutput</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_DOUT1</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoOcuOutput</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoPwmOutput</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                          <SHORT-NAME>LightingControlApp_2</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlOutputSignalType</DEFINITION-REF>
+                              <VALUE>PWM</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>LightCtrlUserInterface</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightCtrlInputSignalType</DEFINITION-REF>
+                                  <VALUE>DIGITAL_INPUT</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightControlButton</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_DIGITAL_KEY</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightControlCanMsg</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightCtrlUserInterface/LightControlPot</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>LightingChannels_0</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/ChannelHasFeedback</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoChannelFeedbackChannel</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoDioOutput</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoOcuOutput</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/AppConfig/LightingControlApp/LightingChannels/IoPwmOutput</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/GeneralConfig_0/IoDAL_PMW2</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>BswConfig_0</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                          <SHORT-NAME>GeneralConfig_0</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig</DEFINITION-REF>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>IoDAL_ADCTRIGGER</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ConvTime</DEFINITION-REF>
+                                  <VALUE>5</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DigitalSignalLevel</DEFINITION-REF>
+                                  <VALUE>STD_LOW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmMask</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmType</DEFINITION-REF>
+                                  <VALUE>NORMAL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceDirection</DEFINITION-REF>
+                                  <VALUE>Trigger</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceType</DEFINITION-REF>
+                                  <VALUE>Ocu</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/TriggerType</DEFINITION-REF>
+                                  <VALUE>SW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/UseExternalDevice</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogChRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DioRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ExtDevRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/IcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/TimeTriggerTable_0</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuScheduling</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>IoDAL_AN_FBK_PWM0</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ConvTime</DEFINITION-REF>
+                                  <VALUE>50</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DigitalSignalLevel</DEFINITION-REF>
+                                  <VALUE>STD_HIGH</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmMask</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmType</DEFINITION-REF>
+                                  <VALUE>NORMAL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceDirection</DEFINITION-REF>
+                                  <VALUE>Input</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceType</DEFINITION-REF>
+                                  <VALUE>Analog</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/TriggerType</DEFINITION-REF>
+                                  <VALUE>SW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/UseExternalDevice</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogChRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Adc/Adc/AdcConfigSet/AdcHwUnit_0/AdcLedFdbkChannel0</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Adc/Adc/AdcConfigSet/AdcHwUnit_0/AdcLedFdbkGroup0</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DioRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ExtDevRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/IcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuScheduling</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/TimeTriggerTable_0/SchedulePoints_1</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>IoDAL_AN_FBK_PWM1</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ConvTime</DEFINITION-REF>
+                                  <VALUE>50</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DigitalSignalLevel</DEFINITION-REF>
+                                  <VALUE>STD_LOW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmMask</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmType</DEFINITION-REF>
+                                  <VALUE>NORMAL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceDirection</DEFINITION-REF>
+                                  <VALUE>Input</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceType</DEFINITION-REF>
+                                  <VALUE>Analog</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/TriggerType</DEFINITION-REF>
+                                  <VALUE>SW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/UseExternalDevice</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogChRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Adc/Adc/AdcConfigSet/AdcHwUnit_0/AdcLedFdbkChannel1</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Adc/Adc/AdcConfigSet/AdcHwUnit_0/AdcLedFdbkGroup1</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DioRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ExtDevRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/IcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuScheduling</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/TimeTriggerTable_0/SchedulePoints_2</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>IoDAL_AN_POT</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ConvTime</DEFINITION-REF>
+                                  <VALUE>50</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DigitalSignalLevel</DEFINITION-REF>
+                                  <VALUE>STD_LOW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmMask</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmType</DEFINITION-REF>
+                                  <VALUE>NORMAL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceDirection</DEFINITION-REF>
+                                  <VALUE>Input</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceType</DEFINITION-REF>
+                                  <VALUE>Analog</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/TriggerType</DEFINITION-REF>
+                                  <VALUE>SW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/UseExternalDevice</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogChRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Adc/Adc/AdcConfigSet/AdcHwUnit_0/AdcPotChannel</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Adc/Adc/AdcConfigSet/AdcHwUnit_0/AdcPotGroup</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DioRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ExtDevRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/IcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuScheduling</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/IntegrationFramework/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig_0/BswConfig_0/TimeTriggerTable_0/SchedulePoints_0</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>IoDAL_DIGITAL_KEY</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ConvTime</DEFINITION-REF>
+                                  <VALUE>5</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DigitalSignalLevel</DEFINITION-REF>
+                                  <VALUE>STD_LOW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmMask</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmType</DEFINITION-REF>
+                                  <VALUE>NORMAL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceDirection</DEFINITION-REF>
+                                  <VALUE>Input</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceType</DEFINITION-REF>
+                                  <VALUE>Digital</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/TriggerType</DEFINITION-REF>
+                                  <VALUE>SW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/UseExternalDevice</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogChRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DioRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dio/Dio/DioConfig/DioPort_0/Dio_Key1</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ExtDevRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/IcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuScheduling</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>IoDAL_DOUT0</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ConvTime</DEFINITION-REF>
+                                  <VALUE>5</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DigitalSignalLevel</DEFINITION-REF>
+                                  <VALUE>STD_LOW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmMask</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmType</DEFINITION-REF>
+                                  <VALUE>NORMAL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceDirection</DEFINITION-REF>
+                                  <VALUE>Output</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceType</DEFINITION-REF>
+                                  <VALUE>Digital</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/TriggerType</DEFINITION-REF>
+                                  <VALUE>SW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/UseExternalDevice</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogChRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DioRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dio/Dio/DioConfig/DioPort_LEDs/DioChannel_1</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ExtDevRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/IcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuScheduling</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>IoDAL_DOUT1</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ConvTime</DEFINITION-REF>
+                                  <VALUE>5</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DigitalSignalLevel</DEFINITION-REF>
+                                  <VALUE>STD_LOW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmMask</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmType</DEFINITION-REF>
+                                  <VALUE>NORMAL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceDirection</DEFINITION-REF>
+                                  <VALUE>Output</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceType</DEFINITION-REF>
+                                  <VALUE>Digital</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/TriggerType</DEFINITION-REF>
+                                  <VALUE>SW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/UseExternalDevice</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogChRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DioRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Dio/Dio/DioConfig/DioPort_LEDs/DioChannel_2</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ExtDevRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/IcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuScheduling</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>IoDAL_PMW1</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ConvTime</DEFINITION-REF>
+                                  <VALUE>5</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DigitalSignalLevel</DEFINITION-REF>
+                                  <VALUE>STD_LOW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmMask</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmType</DEFINITION-REF>
+                                  <VALUE>NORMAL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceDirection</DEFINITION-REF>
+                                  <VALUE>Output</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceType</DEFINITION-REF>
+                                  <VALUE>Pwm</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/TriggerType</DEFINITION-REF>
+                                  <VALUE>SW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/UseExternalDevice</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogChRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DioRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ExtDevRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/IcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuScheduling</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Pwm/Pwm/PwmChannelConfigSet/PwmChannel_1</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>IoDAL_PMW2</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ConvTime</DEFINITION-REF>
+                                  <VALUE>5</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DigitalSignalLevel</DEFINITION-REF>
+                                  <VALUE>STD_LOW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmMask</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmType</DEFINITION-REF>
+                                  <VALUE>NORMAL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceDirection</DEFINITION-REF>
+                                  <VALUE>Output</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceType</DEFINITION-REF>
+                                  <VALUE>Pwm</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/TriggerType</DEFINITION-REF>
+                                  <VALUE>SW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/UseExternalDevice</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogChRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DioRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ExtDevRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/IcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuScheduling</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Pwm/Pwm/PwmChannelConfigSet/PwmChannel_2</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>IoDAL_PWM0</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ConvTime</DEFINITION-REF>
+                                  <VALUE>5</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DigitalSignalLevel</DEFINITION-REF>
+                                  <VALUE>STD_LOW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmMask</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmType</DEFINITION-REF>
+                                  <VALUE>NORMAL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceDirection</DEFINITION-REF>
+                                  <VALUE>Output</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ReferenceType</DEFINITION-REF>
+                                  <VALUE>Pwm</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/TriggerType</DEFINITION-REF>
+                                  <VALUE>SW</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/UseExternalDevice</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                              <REFERENCE-VALUES>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogChRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/AnalogRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/DioRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/ExtDevRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/IcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuRef</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/OcuScheduling</DEFINITION-REF>
+                                </ECUC-REFERENCE-VALUE>
+                                <ECUC-REFERENCE-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/IoDAL/PwmRef</DEFINITION-REF>
+                                  <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Pwm/Pwm/PwmChannelConfigSet/PwmChannel_0</VALUE-REF>
+                                </ECUC-REFERENCE-VALUE>
+                              </REFERENCE-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>SysDAL_0</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL</DEFINITION-REF>
+                              <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>IntegrationAppOSConfig</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppOSConfig</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppOSConfig/IntegrationAppMainFunctionCallTime</DEFINITION-REF>
+                                      <VALUE>50000</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppOSConfig/IntegrationAppSchedulingTime</DEFINITION-REF>
+                                      <VALUE>1000</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppOSConfig/SingleTaskAppl</DEFINITION-REF>
+                                      <VALUE>0</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppOSConfig/SysDalEnableLowPowerMode</DEFINITION-REF>
+                                      <VALUE>0</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                  <REFERENCE-VALUES>
+                                    <ECUC-REFERENCE-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppOSConfig/GptTimer</DEFINITION-REF>
+                                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Gpt/Gpt/GptChannelConfigSet/GptChannelConfiguration_INTOS</VALUE-REF>
+                                    </ECUC-REFERENCE-VALUE>
+                                  </REFERENCE-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>IoDal</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/SampleaAppTask</DEFINITION-REF>
+                                      <VALUE>INTAPP_TASK_2</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskSchedulerTime</DEFINITION-REF>
+                                      <VALUE>10</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                  <SUB-CONTAINERS>
+                                    <ECUC-CONTAINER-VALUE>
+                                      <SHORT-NAME>TaskFunctionList_0</SHORT-NAME>
+                                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList</DEFINITION-REF>
+                                      <PARAMETER-VALUES>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList/FunctionHeader</DEFINITION-REF>
+                                          <VALUE>IoDal.h</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList/UserFunction</DEFINITION-REF>
+                                          <VALUE>IoDal_MainFunction()</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                      </PARAMETER-VALUES>
+                                    </ECUC-CONTAINER-VALUE>
+                                  </SUB-CONTAINERS>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Rte</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/SampleaAppTask</DEFINITION-REF>
+                                      <VALUE>INTAPP_TASK_3</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskSchedulerTime</DEFINITION-REF>
+                                      <VALUE>20</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                  <SUB-CONTAINERS>
+                                    <ECUC-CONTAINER-VALUE>
+                                      <SHORT-NAME>TaskFunctionList_0</SHORT-NAME>
+                                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList</DEFINITION-REF>
+                                      <PARAMETER-VALUES>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList/FunctionHeader</DEFINITION-REF>
+                                          <VALUE>SwcRte.h</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList/UserFunction</DEFINITION-REF>
+                                          <VALUE>SwcRte_MainRunnable()</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                      </PARAMETER-VALUES>
+                                    </ECUC-CONTAINER-VALUE>
+                                  </SUB-CONTAINERS>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Rte_Init</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/SampleaAppTask</DEFINITION-REF>
+                                      <VALUE>INTAPP_PREHOOK_TASK</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskSchedulerTime</DEFINITION-REF>
+                                      <VALUE>0</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                  <SUB-CONTAINERS>
+                                    <ECUC-CONTAINER-VALUE>
+                                      <SHORT-NAME>TaskFunctionList_0</SHORT-NAME>
+                                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList</DEFINITION-REF>
+                                      <PARAMETER-VALUES>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList/FunctionHeader</DEFINITION-REF>
+                                          <VALUE>SwcRte.h</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList/UserFunction</DEFINITION-REF>
+                                          <VALUE>SwcRte_Init(&amp;SwcRte_AppInstanceMapPB[0])</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                      </PARAMETER-VALUES>
+                                    </ECUC-CONTAINER-VALUE>
+                                  </SUB-CONTAINERS>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>SysDal</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/SampleaAppTask</DEFINITION-REF>
+                                      <VALUE>INTAPP_TASK_1</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskSchedulerTime</DEFINITION-REF>
+                                      <VALUE>10000</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                  <SUB-CONTAINERS>
+                                    <ECUC-CONTAINER-VALUE>
+                                      <SHORT-NAME>TaskFunctionList_0</SHORT-NAME>
+                                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList</DEFINITION-REF>
+                                      <PARAMETER-VALUES>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList/FunctionHeader</DEFINITION-REF>
+                                          <VALUE>SysDal.h</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/IntegrationAppTaskList/TaskFunctionList/UserFunction</DEFINITION-REF>
+                                          <VALUE>SysDal_MainFunction()</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                      </PARAMETER-VALUES>
+                                    </ECUC-CONTAINER-VALUE>
+                                  </SUB-CONTAINERS>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Adc_Adc12bsarv2_EndGroupConvUnit0</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/ISR_HandlerHeader</DEFINITION-REF>
+                                      <VALUE>Adc.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/InterruptNumber</DEFINITION-REF>
+                                      <VALUE>39</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/InterruptPriority</DEFINITION-REF>
+                                      <VALUE>5</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>FTM_1_CH_0_CH_1_ISR</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/ISR_HandlerHeader</DEFINITION-REF>
+                                      <VALUE>Ocu.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/InterruptNumber</DEFINITION-REF>
+                                      <VALUE>105</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/InterruptPriority</DEFINITION-REF>
+                                      <VALUE>6</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>LPIT_0_CH_0_ISR</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/ISR_HandlerHeader</DEFINITION-REF>
+                                      <VALUE>Gpt.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/InterruptNumber</DEFINITION-REF>
+                                      <VALUE>48</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/InterruptPriority</DEFINITION-REF>
+                                      <VALUE>7</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>LPIT_0_CH_1_ISR</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/ISR_HandlerHeader</DEFINITION-REF>
+                                      <VALUE>Gpt.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/InterruptNumber</DEFINITION-REF>
+                                      <VALUE>49</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/InterruptList/InterruptPriority</DEFINITION-REF>
+                                      <VALUE>2</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>ModeUsersRequest_0</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/ModeUsersRequest</DEFINITION-REF>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Adc_Init</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutApplicability</DEFINITION-REF>
+                                      <VALUE>AllDriverInit</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutHeader</DEFINITION-REF>
+                                      <VALUE>Adc.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/Parameters</DEFINITION-REF>
+                                      <VALUE>&amp;AdcConfigSet</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Det_Init</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutApplicability</DEFINITION-REF>
+                                      <VALUE>AllDriverInit</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutHeader</DEFINITION-REF>
+                                      <VALUE>Det.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/Parameters</DEFINITION-REF>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Det_Start</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutApplicability</DEFINITION-REF>
+                                      <VALUE>AllDriverInit</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutHeader</DEFINITION-REF>
+                                      <VALUE>Det.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/Parameters</DEFINITION-REF>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Gpt_EnableNotification</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutApplicability</DEFINITION-REF>
+                                      <VALUE>AllDriverInit</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutHeader</DEFINITION-REF>
+                                      <VALUE>Gpt.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/Parameters</DEFINITION-REF>
+                                      <VALUE>1</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Gpt_Init</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutApplicability</DEFINITION-REF>
+                                      <VALUE>AllDriverInit</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutHeader</DEFINITION-REF>
+                                      <VALUE>Gpt.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/Parameters</DEFINITION-REF>
+                                      <VALUE>&amp;GptChannelConfigSet</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>IoDal_Init</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutApplicability</DEFINITION-REF>
+                                      <VALUE>AllDriverInit</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutHeader</DEFINITION-REF>
+                                      <VALUE>IoDal.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/Parameters</DEFINITION-REF>
+                                      <VALUE>&amp;IoDal_Config[0]</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Ocu_Init</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutApplicability</DEFINITION-REF>
+                                      <VALUE>AllDriverInit</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutHeader</DEFINITION-REF>
+                                      <VALUE>Ocu.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/Parameters</DEFINITION-REF>
+                                      <VALUE>&amp;OcuConfigSet</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Port_Init</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutApplicability</DEFINITION-REF>
+                                      <VALUE>AllDriverInit</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutHeader</DEFINITION-REF>
+                                      <VALUE>Port.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/Parameters</DEFINITION-REF>
+                                      <VALUE>&amp;PortConfigSet</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Pwm_Init</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutApplicability</DEFINITION-REF>
+                                      <VALUE>AllDriverInit</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutHeader</DEFINITION-REF>
+                                      <VALUE>Pwm.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/Parameters</DEFINITION-REF>
+                                      <VALUE>&amp;PwmChannelConfigSet</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>Pwm_SelectCommonTimebase</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutApplicability</DEFINITION-REF>
+                                      <VALUE>AllDriverInit</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/CalloutHeader</DEFINITION-REF>
+                                      <VALUE>Pwm.h</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/GeneralConfig/SysDAL/User_Callouts/Parameters</DEFINITION-REF>
+                                      <VALUE>0, 3</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                              </SUB-CONTAINERS>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                          <SHORT-NAME>TimeTriggerTable_0</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/TimeTriggerTable</DEFINITION-REF>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/TimeTriggerTable/OcuRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Ocu/Ocu/OcuConfigSet/OcuChannel_0</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>SchedulePoints_0</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/TimeTriggerTable/SchedulePoints</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/TimeTriggerTable/SchedulePoints/ValueInTicks</DEFINITION-REF>
+                                  <VALUE>3000</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>SchedulePoints_1</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/TimeTriggerTable/SchedulePoints</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/TimeTriggerTable/SchedulePoints/ValueInTicks</DEFINITION-REF>
+                                  <VALUE>6250</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>SchedulePoints_2</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/TimeTriggerTable/SchedulePoints</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppFeaturesConfig/IntegrationAppDataConfig/BswConfig/TimeTriggerTable/SchedulePoints/ValueInTicks</DEFINITION-REF>
+                                  <VALUE>12500</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>IntegrationAppGeneral</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/EnableAdvancedFeatures</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/EnableUserCode</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseAdc</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseAutosarOS</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseCan</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseDio</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseEth</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseFee</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseFls</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseFr</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseGpt</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseIcu</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseLin</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseMcl</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseMcu</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseOcu</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UsePort</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UsePwm</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseRTM</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseSpi</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UseWdg</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE>
+                  <SHORT-NAME>RunTimeMeasurementConfig</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/RunTimeMeasurementConfig</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/RunTimeMeasurementConfig/RtmEnableFixedPeriodMeasurements</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/RunTimeMeasurementConfig/RtmEnableMovingAverage</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/RunTimeMeasurementConfig/RtmMaxCountValue</DEFINITION-REF>
+                      <VALUE>4294967295</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/RunTimeMeasurementConfig/RtmMaxMeasurementsNumber</DEFINITION-REF>
+                      <VALUE>1</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/RunTimeMeasurementConfig/RtmNonTrustedInterval</DEFINITION-REF>
+                      <VALUE>2</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/RunTimeMeasurementConfig/RtmNumberOfMeasurements</DEFINITION-REF>
+                      <VALUE>2</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/RunTimeMeasurementConfig/RtmUsedHardwareChannel</DEFINITION-REF>
+                      <VALUE>2</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/RunTimeMeasurementConfig/RtmUsedHardwareUnit</DEFINITION-REF>
+                      <VALUE>0</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <REFERENCE-VALUES>
+                    <ECUC-REFERENCE-VALUE>
+                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/RunTimeMeasurementConfig/RtmClockReference</DEFINITION-REF>
+                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/McuClockReferencePoint_LPIT</VALUE-REF>
+                    </ECUC-REFERENCE-VALUE>
+                  </REFERENCE-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE>
+                  <SHORT-NAME>UserStartupHeader</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UserStartupHeader</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationAppGeneral/UserStartupHeader/UserEntryFunctionName</DEFINITION-REF>
+                      <VALUE>NULL</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE>
+              <SHORT-NAME>IntegrationApp_FeatureList</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationApp_FeatureList</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationApp_FeatureList/EnableLightingApp</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationApp_FeatureList/EnableMotorControlApp</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationApp_FeatureList/EnableRteBuffers</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationApp_FeatureList/EnableSingleTaskAppRunnable</DEFINITION-REF>
+                  <VALUE>1</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D2M10I1R0/IntegrationFramework/IntegrationApp_FeatureList/EnableVdrApp</DEFINITION-REF>
+                  <VALUE>0</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

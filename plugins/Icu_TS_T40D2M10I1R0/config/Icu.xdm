@@ -1,0 +1,2281 @@
+<?xml version='1.0'?>
+<datamodel version="3.0"
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd"
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd"
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd"
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+<!--
+*   @file    Icu.xdm
+*   @version 1.0.1
+*
+*   @brief   AUTOSAR Icu - Tresos Studio plugin schema file
+*   @details This file contains the schema configuration for and Icu Tresos Studio plugin.
+-->
+<!--
+====================================================================================================
+*   Project              : AUTOSAR 4.2 MCAL
+*   Platform             : ARM
+*   Peripheral           : FTM PORT_CI LPIT LPTMR
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.2.2
+*   Autosar Revision     : ASR_REL_4_2_REV_0002
+*   Autosar Conf.Variant :
+*   SW Version           : 1.0.1
+*   Build Version        : S32K14x_MCAL_1_0_1_RTM_ASR_REL_4_2_REV_0002_20180713
+*
+*   (c) Copyright 2006-2016 Freescale Semiconductor, Inc. 
+*       Copyright 2017-2018 NXP
+*   All Rights Reserved.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+-->
+<d:ctr type="AUTOSAR" factory="autosar"
+    xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd"
+    xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+    xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+        <d:ctr name="TS_T40D2M10I1R0" type="AR-PACKAGE">
+            <a:a name="UUID" value="ECUC:eda8bf5e-1cf8-43ef-8244-a62dad176cc1"/>
+            <d:lst type="ELEMENTS">
+                <d:chc name="Icu" type="AR-ELEMENT" value="MODULE-DEF">
+                    <v:ctr type="MODULE-DEF">
+                        <a:a name="RELEASE" value="asc:4.2"/>
+                        <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                            <ad:ADMIN-DATA>
+                                <ad:DOC-REVISIONS>
+                                    <ad:DOC-REVISION>
+                                        <ad:REVISION-LABEL>4.2.0</ad:REVISION-LABEL>
+                                        <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                                        <ad:DATE>2011-11-02</ad:DATE>
+                                    </ad:DOC-REVISION>
+                                </ad:DOC-REVISIONS>
+                            </ad:ADMIN-DATA>
+                        </a:a>
+                        <a:a name="DESC"
+                             value="EN: Configuration of the Icu (Input Capture Unit) module."/>
+                        <a:a name="UUID" value="ECUC:c6f698ea-86b1-4f5e-b3a1-9d77ee51563e"/>
+                        <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+
+                        <!-- /** @implements IMPLEMENTATION_CONFIG_VARIANT_Object */ -->
+                        <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="LABEL" value="Config Variant"/>
+                            <a:a name="UUID" value="ECUC:e591e02b-0bd4-425a-b3d5-789eeef95252"/>
+                            <a:da name="DEFAULT" value="VariantPostBuild"/>
+                            <a:da name="RANGE">
+                                <a:v>VariantPostBuild</a:v>
+                                <a:v>VariantPreCompile</a:v>
+                            </a:da>
+                        </v:var>
+
+                        <!-- @implements IcuConfigSet_Object -->
+                        <v:ctr name="IcuConfigSet" type="IDENTIFIABLE">
+                            <a:a name="DESC">
+                                <a:v><![CDATA[EN: <html>This container is the base for a multiple configuration set
+                                    </html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="UUID" value="ECUC:7540fb6e-3bcb-4add-8a8e-51a01efc9249"/>
+
+                            <!-- @implements IcuMaxChannel_Object -->
+                            <v:var name="IcuMaxChannel" type="INTEGER">
+                                <a:a name="CALCULATION-FORMULA" value="number of configured icu channels"/>
+                                <a:a name="CALCULATION-LANGUAGE" value="INFORMAL"/>
+                                <a:a name="DERIVED" value="TRUE"/>
+                                <a:a name="DESC">
+                                    <a:v><![CDATA[EN: <html>
+                                        <p>The value for the IcuMaxChannel must match with the number of IcuChannel configured
+                                        For calculating the correct value use the CALC button. </p>
+                                        <b>Note</b>: Total number of configured channels should be same across all IcuConfigSets.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                </a:a>
+                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:6aa337dc-7191-403e-ada1-e857c0a7c087"/>
+                                <a:da name="DEFAULT" type="XPath">
+                                    <a:tst expr="num:i(num:i(count(node:fallback(../IcuChannel/*,text:split('1 2 3')))))"/>
+                                </a:da>
+                                <a:da name="RANGE" type="XPath">
+                                    <a:tst expr="node:fallback(.,1) =num:i(num:i(count(node:fallback(../IcuChannel/*,text:split('1 2 3')))))" false="The value for the IcuMaxChannel must match with the number of IcuChannel configured. For calculating the correct value use the CALC button"/>
+                                </a:da>
+                                <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&gt;0"/>
+                                    <a:tst expr="&lt;=126"/>
+                                </a:da>
+                            </v:var>
+
+                            <v:lst name="IcuChannel" type="MAP">
+                                <a:da name="MIN" value="1"/>
+
+                                <!-- @implements IcuChannel_Object -->
+                                <v:ctr name="IcuChannel" type="IDENTIFIABLE">
+                                    <a:a name="DESC" value="EN: Configuration of an individual ICU channel."/>
+                                    <a:a name="UUID" value="ECUC:51cf0cff-36e4-4ab3-9561-9737e7113566"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+
+                                    <!-- @implements IcuChannelId_Object -->
+                                    <v:var name="IcuChannelId" type="INTEGER">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN: <html>
+                                                    <p>Channel Id of the ICU channel.
+                                                    This value will be assigned to the symbolic name derived of the IcuChannel container short name.</p>
+                                                    </html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                        <a:a name="SCOPE" value="ECU"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                        <a:a name="UUID" value="ECUC:32e318ee-f58e-4592-abfc-aef66e7a78e4"/>
+                                        <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, num:i(1))"/>
+                                        <a:da name="RANGE" type="XPath">
+                                            <a:tst expr="(node:fallback(.,1) &gt;= 0) and (node:fallback(.,1) &lt; num:i(count(node:fallback(node:current()/../../*, num:i(180)))) )" false="Value out of range: must be in range 0 to N-1 (N is number of configured channels). Use the Calc button to calculate correct default value."/>
+                                            <a:tst expr="text:uniq(node:fallback(../../*/IcuChannelId, text:split('1 2 3')), node:fallback(.,1))" false="Duplicated value, IcuChannelId must be unique across all channels. Use the Calc button to calculate correct default value."/>
+                                        </a:da>
+                                        <a:da name="INVALID" type="Range">
+                                            <a:tst expr="&gt;=0"/>
+                                            <a:tst expr="&lt;126"/>
+                                        </a:da>
+                                    </v:var>
+
+                                    <v:var name="IcuHwIP" type="ENUMERATION">
+                                        <a:a name="DESC">
+                                            <a:v>
+                                                <![CDATA[EN: <html>Selects the physical HwChannelId Channel.</html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:944a8e08-0503-444f-bca8-a9e7cfeed904"/>
+                                        <a:da name="DEFAULT" value="FTM"/>
+                                        <a:da name="RANGE">
+                                            <a:v>FTM</a:v>
+                                            <a:v>PORT</a:v>
+                                            <a:v>LPIT</a:v>
+                                            <a:v>LPTMR</a:v>
+                                        </a:da>
+                                        <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="((node:value(.) = 'FTM') and not(node:exists(../IcuFtmChannelRef)))" true="please enable IcuFtmChannelRef"/>
+                                                <a:tst expr="((node:value(.) = 'PORT') and not(node:exists(../IcuPortChannelRef)))" true="please enable IcuPortChannelRef"/>
+                                                <a:tst expr="((node:value(.) = 'LPIT') and not(node:exists(../IcuLpitChannelRef)))" true="please enable IcuLpitChannelRef"/>
+                                                <a:tst expr="((node:value(.) = 'LPTMR') and not(node:exists(../IcuLptmrChannelRef)))" true="please enable IcuLptmrChannelRef"/>
+                                        </a:da>
+                                    </v:var>
+
+                                    <v:ref name="IcuFtmChannelRef" type="REFERENCE">
+                                        <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                            <html>
+                                            Select the FTM channel on which the functionality of the current ICU channel will be implemented
+                                            </html> ]]>
+                                        </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="UUID" value="ECUC:9420eca1-7b64-4e68-bf47-933564b3440c"/>
+                                        <a:a name="OPTIONAL" value="true" />
+                                        <a:da name="EDITABLE" type="XPath" expr="contains(../IcuHwIP,'FTM') " />
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="
+                                                node:value(../IcuHwIP) = 'FTM' and not(node:refvalid(.))"
+                                                true="Invalid value of the FTM channel. Please select a valid FTM channel from list of already configured FTM channels. If list is empty,
+                                                please configure an FTM channel first by browsing in the tabs IcuConfigSet/IcuFtm/IcuFtmChannels"
+                                            />
+                                                <a:tst expr="node:value(../IcuHwIP) = 'FTM' and not(text:uniq(../../*/IcuFtmChannelRef, .)) and (string(node:value(.)) != '')" true="Duplicate physical channel"/>
+                                        </a:da>
+                                        <a:da name="REF"
+                                        value="ASPathDataOfSchema:/TS_T40D2M10I1R0/Icu/IcuConfigSet/IcuFtm/IcuFtmChannels"/>
+                                    </v:ref>
+
+                                    <v:ref name="IcuPortChannelRef" type="REFERENCE">
+                                        <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                            <html>
+                                            Select the PORT channel on which the functionality of the current ICU channel will be implemented
+                                            </html> ]]>
+                                        </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="UUID" value="ECUC:162ab5f7-5fc6-458b-a9b3-c953512d7447"/>
+                                        <a:a name="OPTIONAL" value="true"/>
+                                        <a:da name="EDITABLE" type="XPath" expr="contains(../IcuHwIP,'PORT') " />
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="
+                                                node:value(../IcuHwIP) = 'PORT' and not(node:refvalid(.))"
+                                                true="Invalid value of the PORT channel. Please select a valid PORT channel from list of already configured PORT channels. If list is empty,
+                                                please configure an PORT channel first by browsing in the tabs IcuConfigSet/IcuPort/IcuPortChannels"
+                                            />
+                                                <a:tst expr="node:value(../IcuHwIP) = 'PORT' and  not(text:uniq(../../*/IcuPortChannelRef, .)) and (string(node:value(.)) != '')" true="Duplicate physical channel"/>
+                                        </a:da>
+                                        <a:da name="REF"
+                                        value="ASPathDataOfSchema:/TS_T40D2M10I1R0/Icu/IcuConfigSet/IcuPort/IcuPortChannels"/>
+                                    </v:ref>
+
+                                    <v:ref name="IcuLpitChannelRef" type="REFERENCE">
+                                        <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                            <html>
+                                            Select the LPIT channel on which the functionality of the current ICU channel will be implemented
+                                            </html> ]]>
+                                        </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="UUID" value="ECUC:1825ae09-7015-48e2-bc15-5dd74b4958ed"/>
+                                        <a:a name="OPTIONAL" value="true"/>
+                                        <a:da name="EDITABLE" type="XPath" expr="contains(../IcuHwIP,'LPIT') " />
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="
+                                                node:value(../IcuHwIP) = 'LPIT' and not(node:refvalid(.))"
+                                                true="Invalid value of the LPIT channel. Please select a valid LPIT channel from list of already configured LPIT channels. If list is empty,
+                                                please configure an LPIT channel first by browsing in the tabs IcuConfigSet/IcuLpit/IcuLpitChannels"
+                                            />
+                                                <a:tst expr="node:value(../IcuHwIP) = 'LPIT' and not(text:uniq(../../*/IcuLpitChannelRef, .)) and (string(node:value(.)) != '')" true="Duplicate physical channel"/>
+                                        </a:da>
+                                        <a:da name="REF"
+                                        value="ASPathDataOfSchema:/TS_T40D2M10I1R0/Icu/IcuConfigSet/IcuLpit/IcuLpitChannels"/>
+                                    </v:ref>
+
+                                    <v:ref name="IcuLptmrChannelRef" type="REFERENCE">
+                                        <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                            <html>
+                                            Select the LPTMR channel on which the functionality of the current ICU channel will be implemented
+                                            </html> ]]>
+                                        </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="UUID" value="ECUC:1c0e52ae-0807-4e9a-8857-3206b2e795a0"/>
+                                        <a:a name="OPTIONAL" value="true"/>
+                                        <a:da name="EDITABLE" type="XPath" expr="contains(../IcuHwIP,'LPTMR') " />
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="
+                                                node:value(../IcuHwIP) = 'LPTMR' and not(node:refvalid(.))"
+                                                true="Invalid value of the LPTMR channel. Please select a valid LPTMR channel from list of already configured LPTMR channels. If list is empty,
+                                                please configure an LPTMR channel first by browsing in the tabs IcuConfigSet/IcuLptmr/IcuLptmrChannels"
+                                            />
+                                                <a:tst expr="node:value(../IcuHwIP) = 'LPTMR' and not(text:uniq(../../*/IcuLptmrChannelRef, .)) and (string(node:value(.)) != '')" true="Duplicate physical channel"/>
+                                        </a:da>
+                                        <a:da name="REF"
+                                        value="ASPathDataOfSchema:/TS_T40D2M10I1R0/Icu/IcuConfigSet/IcuLptmr/IcuLptmrChannels"/>
+                                    </v:ref>
+
+                                    <v:var name="IcuDMAChannelEnable" type="BOOLEAN">
+                                       <a:a name="DESC">
+                                            <a:v>
+                                                <![CDATA[EN: <html>
+                                                <b>IcuDMAChannelEnable</b> indicates if the corresponding channel will use DMA for measurement
+                                                </html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:5f6b6f0d-9dd2-4238-90fd-fe196b0231db"/>
+                                        <a:da name="DEFAULT" value="false"/>
+                                        <a:da name="EDITABLE" type="XPath">
+                                            <a:tst expr="(contains(../IcuHwIP,'FTM')) and (../IcuMeasurementMode= 'ICU_MODE_TIMESTAMP')" true="true" false="false"/>
+                                        </a:da>
+                                    </v:var>
+
+                                    <v:ref name="IcuDMAChannelRef" type="CHOICE-REFERENCE">
+                                        <a:a name="LABEL" value="IcuDMAChannelReference"/>
+                                        <a:a name="DESC">
+                                            <a:v>
+                                                <![CDATA[EN:
+                                                <html>
+                                                <b>Icu DMA Channel Reference</b><p>
+                                                Reference to the DMA Channel configure for the Request</p>
+                                                </html>
+                                                ]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                             type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:da name="EDITABLE" type="XPath">
+                                            <a:tst expr="(../IcuDMAChannelEnable = 'true')" true="true" false="false"/>
+                                        </a:da>
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="text:uniq(../../*/IcuDMAChannelRef, .)" false="Duplicate physical channel"/>
+                                            <a:tst expr="(../IcuDMAChannelEnable = 'true') and not(node:refvalid(.))" true="Invalid or empty reference."/>
+                                        </a:da>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="UUID" value="ECUC:511ba006-b102-4e66-9dd1-73bb51bc88ab"/>
+                                        <a:da name="REF">
+                                            <a:v>ASPathDataOfSchema:/TS_T40D2M10I1R0/Mcl/MclConfigSet/DMAChannel</a:v>
+                                        </a:da>
+                                    </v:ref>
+
+                                    <!-- @implements IcuDefaultStartEdge_Object -->
+                                    <v:var name="IcuDefaultStartEdge" type="ENUMERATION">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN: <html>
+                                                <p>Configures the default-activation-edge which shall be used for this channel</p>
+                                                <p>if there was no activation-edge configured by the call of service Icu_SetActivationCondition().</p>
+                                                <p>In case the Measurement Mode is &quot;IcuSignalMeasurement&quot; and the properties &quot;DutyCycle&quot; or &quot;Period&quot; are set, the edge configured here is used as Default Period Start Edge.</p>
+                                                <p>Implementation Type: Icu_ActivationType</p>
+                                                </html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:819929bd-c038-4d81-bfea-28333cf31fd5"/>
+                                        <a:da name="DEFAULT" value="ICU_RISING_EDGE"/>
+                                        <a:da name="RANGE">
+                                            <a:v>ICU_BOTH_EDGES</a:v>
+                                            <a:v>ICU_FALLING_EDGE</a:v>
+                                            <a:v>ICU_RISING_EDGE</a:v>
+                                        </a:da>
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="((../IcuMeasurementMode = 'ICU_MODE_SIGNAL_MEASUREMENT') and (../IcuSignalMeasurement/IcuSignalMeasurementProperty='ICU_HIGH_TIME') and (.!='ICU_RISING_EDGE') or
+                                                          (../IcuMeasurementMode = 'ICU_MODE_SIGNAL_MEASUREMENT') and (../IcuSignalMeasurement/IcuSignalMeasurementProperty='ICU_LOW_TIME') and (.!='ICU_FALLING_EDGE'))"
+                                                          true = " Error in configuring the default start edge - for measuring the high time should be ICU_RISING_EDGE and for measuring low time should be ICU_FALLING_EDGE"/>
+                                         </a:da>
+                                    </v:var>
+
+                                    <!-- @implements IcuMeasurementMode_Object -->
+                                    <v:var name="IcuMeasurementMode" type="ENUMERATION">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN: <html>
+                                                    <p>Configures the measurement mode of this channel.</p>
+                                                    <p>User should enable optional parameters with respect to the selected IcuMeasurementMode.</p>
+                                                    <p>Implementation Type: Icu_MeasurementModeType</p>
+                                                    </html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:d15ff176-dbe1-42be-99fd-13382c7daf7e"/>
+                                        <a:da name="DEFAULT" value="ICU_MODE_SIGNAL_EDGE_DETECT"/>
+                                        <a:da name="RANGE">
+                                            <a:v>ICU_MODE_EDGE_COUNTER</a:v>
+                                            <a:v>ICU_MODE_SIGNAL_EDGE_DETECT</a:v>
+                                            <a:v>ICU_MODE_SIGNAL_MEASUREMENT</a:v>
+                                            <a:v>ICU_MODE_TIMESTAMP</a:v>
+                                        </a:da>
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="((.='ICU_MODE_EDGE_COUNTER') and (//IcuEdgeCountApi='false' ))" true="If IcuMeasurementMode = 'ICU_MODE_EDGE_COUNTER', IcuEdgeCountApi switch should be set to ON"/>
+                                            <a:tst expr="((.='ICU_MODE_SIGNAL_EDGE_DETECT') and (//IcuEdgeDetectApi ='false'))" true="IcuMeasurementMode= 'ICU_MODE_SIGNAL_EDGE_DETECT', IcuEdgeDetectApi switch should be set to ON"/>
+                                            <a:tst expr="((.='ICU_MODE_SIGNAL_MEASUREMENT') and ( (//IcuGetDutyCycleValuesApi='false') and (//IcuGetTimeElapsedApi='false') ))" true="IcuMeasurementMode= 'ICU_MODE_SIGNAL_MEASUREMENT', IcuGetTimeElapsedApi or IcuGetDutyCycleValuesApi, switch should be set to ON"/>
+                                            <a:tst expr="((.='ICU_MODE_TIMESTAMP') and (//IcuTimestampApi='false'))" true="IcuMeasurementMode= 'ICU_MODE_TIMESTAMP', IcuTimestampApi switch should be set to ON"/>
+                                            <a:tst expr="((.='ICU_MODE_SIGNAL_EDGE_DETECT') and (not(node:exists(../IcuSignalEdgeDetection))))" true="IcuMeasurementMode= 'ICU_MODE_SIGNAL_EDGE_DETECT', Enable the IcuSignalEdgeDetection optional container"/>
+                                            <a:tst expr="((.='ICU_MODE_TIMESTAMP') and (not(node:exists(../IcuTimestampMeasurement))))" true="IcuMeasurementMode= 'ICU_MODE_TIMESTAMP', Enable the IcuTimestampMeasurement optional container"/>
+                                            <a:tst expr="((.='ICU_MODE_SIGNAL_MEASUREMENT') and (not(node:exists(../IcuSignalMeasurement))))" true="IcuMeasurementMode= 'ICU_MODE_SIGNAL_MEASUREMENT', Enable the IcuSignalMeasurement optional container"/>
+                                            <a:tst expr="(.='ICU_MODE_SIGNAL_MEASUREMENT') and (not(contains(../IcuHwIP,'FTM')))" true="LPIT,LPTMR and PORT_CI do not support for ICU_MODE_SIGNAL_MEASUREMENT"/>
+                                            <a:tst expr="(.='ICU_MODE_TIMESTAMP') and (not(contains(../IcuHwIP,'FTM'))) and (not(contains(../IcuHwIP,'LPIT')))" true="LPTMR and PORT_CI do not support for ICU_MODE_TIMESTAMP"/>
+                                            <a:tst expr="(.='ICU_MODE_EDGE_COUNTER') and (not(contains(../IcuHwIP,'FTM'))) and (not(contains(../IcuHwIP,'LPTMR')))" true="LPIT and PORT_CI do not support for ICU_MODE_EDGE_COUNTER"/>
+                                        </a:da>
+                                    </v:var>
+
+                                    <v:var name="IcuOverflowNotification" type="FUNCTION-NAME">
+                                        <a:a name="DESC">
+                                            <a:v>
+                                                <![CDATA[EN: <html>
+                                                <p><b>Icu Overflow Notification Handler</b></p>
+                                                <p>In order to activate this field you have to:</p>
+                                                <ul>
+                                                    <li>enable <i>IcuOverflowNotificationApi</i>,</li>
+                                                    <li>choose one of the modes:
+                                                     <ul>
+                                                        <li>ICU_MODE_EDGE_COUNTER,</li>
+                                                        <li>ICU_MODE_SIGNAL_MEASUREMENT,</li>
+                                                        <li>ICU_MODE_TIMESTAMP</li>
+                                                       </ul>
+                                                    </li>
+                                                    <li> to enable overflow detection on the internal counter</li>
+                                                </ul>
+                                                <p><b>Note:</b>
+                                                Due to hardware implementattion, the <i>Icu Overflow Notification</i>
+                                                is not syncronous with the event for <i>ICU_MODE_SIGNAL_MEASUREMENT</i>
+                                                and <i>ICU_MODE_TIMESTAMP</i> modes.</p>
+                                                <p>The notification will be triggered when measurement completes (for ICU_MODE_SIGNAL_MEASUREMENT)
+                                                or the next timestamp event occurs (for ICU_MODE_TIMESTAMP).</p>
+                                                </html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:72bb0cc4-ebfb-4b63-a566-37e68126726f"/>
+                                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="((.='NULL') or (.='Null') or (.='false') or (.='FALSE') or (.='null') or (.='null_ptr') or (.='Null_Ptr'))" true="Invalid name of the IcuOverflowNotification. Must be valid C function name, NULL_PTR, &quot;NULL_PTR&quot;."/>
+                                            <a:tst expr="normalize-space(.) = '&quot;NULL_PTR&quot;' or normalize-space(.) = 'NULL_PTR' or normalize-space(.) = '&quot;NULL&quot;' or normalize-space(.) = 'NULL' or text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" false="Invalid name of the IcuOverflowNotification. Must be valid C function name, NULL_PTR, &quot;NULL_PTR&quot;, NULL, or &quot;NULL&quot;."/>
+                                        </a:da>
+                                        <a:da name="EDITABLE" type="XPath">
+                                            <a:tst expr="((../../../../IcuNonAUTOSAR/IcuOverflowNotificationApi='true') and (contains(../IcuMeasurementMode, 'ICU_MODE_EDGE_COUNTER') or contains(../IcuMeasurementMode, 'ICU_MODE_TIMESTAMP')  or contains(../IcuMeasurementMode, 'ICU_MODE_SIGNAL_MEASUREMENT')))" true="true" false="false"/>
+                                        </a:da>
+                                    </v:var>
+
+                                    <v:var name="IcuLockableChannel" type="BOOLEAN">
+                                       <a:a name="DESC">
+                                            <a:v>
+                                                <![CDATA[EN: <html>
+                                                <b>IcuLockableChannel</b> indicates if the corresponding channel shall be the object of the configuration locking mechanism.
+                                                </html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:6722232e-aaae-433d-895d-bc4667cff1d2"/>
+                                        <a:da name="DEFAULT" value="false"/>
+                                        <a:da name="EDITABLE" type="XPath">
+                                            <a:tst expr="(../../../../IcuNonAUTOSAR/IcuRegisterLockingMode='SUPERVISOR_MODE_SOFT_LOCKING')" true="false" false="false"/>
+                                        </a:da>
+                                    </v:var>
+
+                                    <!-- @implements IcuWakeupCapability_Object -->
+                                    <v:var name="IcuWakeupCapability" type="BOOLEAN">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN: <html>
+                                                <p>Information about the wakeup-capability of this channel.</p>
+                                                <ul>
+                                                    <li>true: Channel is wakeup capable.</li>
+                                                    <li>false: Channel is not wakeup capable.</li>
+                                                </ul>
+                                                </html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:38bca9f1-c809-48bc-953a-b652d825e9ea"/>
+                                        <a:da name="DEFAULT" value="false"/>
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="((.='true') and num:i(num:i(count(../IcuWakeup/*)))= '0') " true="There is a Icu Wakeup Channel that is missing some configuration. Enable IcuWakeup container and select reference path ."/>
+                                            <a:tst expr="((.='true') and (//IcuEnableWakeupApi='false'))" true="If IcuWakeupCapability== ON, IcuEnableWakeupApi and IcuDisableWakeupApi switch should be set to ON"/>
+                                        </a:da>
+                                    </v:var>
+
+                                    <!-- @implements IcuSignalEdgeDetection_Object -->
+                                    <v:ctr name="IcuSignalEdgeDetection" type="IDENTIFIABLE">
+                                        <a:a name="DESC">
+                                            <a:v>
+                                                <![CDATA[EN: <html>This container contains the configuration (parameters) in case the measurement mode is &quot;IcuSignalEdgeDetection&quot;</html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="UUID" value="ECUC:5c3c8bb4-c94b-4fcb-9751-3e9ec437767c"/>
+                                        <a:a name="OPTIONAL" value="true"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                                        <!-- @implements IcuSignalNotification_Object -->
+                                        <v:var name="IcuSignalNotification" type="FUNCTION-NAME">
+                                            <a:a name="DESC">
+                                                <a:v>
+                                                    <![CDATA[EN: <html> Notification function for signal notification.</html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:6edf90de-adc3-4d9c-9ac0-f1c84e329733"/>
+                                            <a:da name="DEFAULT" value="NULL_PTR"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="((normalize-space(.) ='NULL') or (normalize-space(.)='Null') or (normalize-space(.)='false') or (normalize-space(.)='FALSE') or (normalize-space(.)='null') or (normalize-space(.)='null_ptr') or (normalize-space(.)='Null_Ptr'))" true="Invalid name of the IcuSignalNotification. Must be valid C function name, NULL_PTR, &quot;NULL_PTR&quot;."/>
+                                                <a:tst expr="normalize-space(.) = '&quot;NULL_PTR&quot;' or normalize-space(.) = 'NULL_PTR' or normalize-space(.) = '&quot;NULL&quot;' or normalize-space(.) = 'NULL' or text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" false="Invalid name of the IcuSignalNotification. Must be valid C function name, NULL_PTR, &quot;NULL_PTR&quot;, NULL, or &quot;NULL&quot;."/>
+                                            </a:da>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                        </v:var>
+                                    </v:ctr>
+
+                                    <!-- @implements IcuSignalMeasurement_Object -->
+                                    <v:ctr name="IcuSignalMeasurement" type="IDENTIFIABLE">
+                                        <a:a name="DESC">
+                                            <a:v>
+                                                <![CDATA[EN: <html>This container contains the configuration (parameters) in case the measurement mode is &quot;IcuSignalMeasurement&quot;</html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="UUID" value="ECUC:3b475748-3a56-4d57-9f9d-c08c4ac4ccea"/>
+                                        <a:a name="OPTIONAL" value="true"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+
+                                        <!-- @implements IcuSignalMeasurementProperty_Object -->
+                                        <v:var name="IcuSignalMeasurementProperty" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v>
+                                                    <![CDATA[EN: <html>
+                                                    <p>Configures the property that could be measured in case the mode is &quot;IcuSignalMeasurement&quot;.</p>
+                                                    <p>This property can not be changed during runtime.</p>
+                                                    <p>Followings are measurement mode</p>
+                                                    <ul>
+                                                        <li>ICU_DUTY_CYCLE</li>
+                                                        <li>ICU_HIGH_TIME</li>
+                                                        <li>ICU_LOW_TIME</li>
+                                                        <li>ICU_PERIOD_TIME</li>
+                                                    </ul>
+                                                    <p>Implementation Type: Icu_SignalMeasurementPropertyType</p>
+                                                    </html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:85b5f6f3-0fdf-41ea-b14f-b3e2f6fbb947"/>
+                                            <a:da name="DEFAULT" value="ICU_DUTY_CYCLE"/>
+                                            <a:da name="RANGE">
+                                                <a:v>ICU_DUTY_CYCLE</a:v>
+                                                <a:v>ICU_HIGH_TIME</a:v>
+                                                <a:v>ICU_LOW_TIME</a:v>
+                                                <a:v>ICU_PERIOD_TIME</a:v>
+                                            </a:da>
+                                                <a:da name="EDITABLE" type="XPath">
+                                                    <a:tst expr="(../../IcuMeasurementMode= 'ICU_MODE_SIGNAL_MEASUREMENT')" true="true" false="false" />
+                                                </a:da>
+                                            <a:da name="INVALID" type="XPath">
+                                                    <a:tst expr="((../../IcuMeasurementMode= 'ICU_MODE_SIGNAL_MEASUREMENT' ) and (node:exists(IcuSignalMeasurement)))" true="There is a IcuSignalMeasurement Channel that is missing some configuration" />
+                                                <a:tst expr="((.='ICU_DUTY_CYCLE') and (//IcuGetDutyCycleValuesApi ='false'))" true="IcuSignalMeasurementProperty= 'ICU_DUTY_CYCLE', IcuGetDutyCycleValuesApi switch should be set to ON"/>
+                                                <a:tst expr="((.='ICU_HIGH_TIME') and (//IcuGetTimeElapsedApi ='false'))" true="IcuSignalMeasurementProperty = 'ICU_HIGH_TIME', IcuGetTimeElapsedApi switch should be set to ON"/>
+                                                <a:tst expr="((.='ICU_LOW_TIME') and (//IcuGetTimeElapsedApi ='false'))" true="IcuSignalMeasurementProperty = 'ICU_LOW_TIME', IcuGetTimeElapsedApi switch should be set to ON"/>
+                                                <a:tst expr="((.='ICU_PERIOD_TIME') and (//IcuGetTimeElapsedApi ='false'))" true="IcuSignalMeasurementProperty = 'ICU_PERIOD_TIME', IcuGetTimeElapsedApi switch should be set to ON"/>
+                                            </a:da>
+                                        </v:var>
+                                    </v:ctr>
+
+                                    <!-- @implements IcuTimestampMeasurement_Object -->
+                                    <v:ctr name="IcuTimestampMeasurement" type="IDENTIFIABLE">
+                                        <a:a name="DESC" value="EN: This container contains the configuration (parameters) in case the measurement mode is &quot;IcuTimestamp&quot;"/>
+                                        <a:a name="UUID" value="ECUC:675d6aab-39e2-415b-920b-530873913d6e"/>
+                                        <a:a name="OPTIONAL" value="true"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+
+                                        <!-- @implements IcuTimestampMeasurementProperty_Object -->
+                                        <v:var name="IcuTimestampMeasurementProperty" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v>
+                                                    <![CDATA[EN: <html>
+                                                    <p>Configures the handling of the buffer in case the mode is &quot;Timestamp&quot;</p>
+                                                    <P>Following type of buffer inplemented in current implementation.</P>
+                                                        <ul>
+                                                            <li>ICU_CIRCULAR_BUFFER.</li>
+                                                            <li>ICU_LINEAR_BUFFER.</li>
+                                                        </ul>
+                                                    <p>Implementation Type: Icu_TimestampBufferType</p>
+                                                    </html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:fab366e2-a4a5-4dee-a4c3-324da0b908cd"/>
+                                            <a:da name="DEFAULT" value="ICU_LINEAR_BUFFER"/>
+                                            <a:da name="RANGE">
+                                                <a:v>ICU_CIRCULAR_BUFFER</a:v>
+                                                <a:v>ICU_LINEAR_BUFFER</a:v>
+                                                </a:da>
+                                        </v:var>
+
+                                        <!-- @implements IcuTimestampNotification_Object -->
+                                        <v:var name="IcuTimestampNotification" type="FUNCTION-NAME">
+                                            <a:a name="DESC">
+                                                <a:v>
+                                                    <![CDATA[EN: <html>Notification function if the number of requested timestamps(Notification interval &gt; 0) are acquired.</html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:55dbeaf2-6cbe-4f5e-bae3-2b9f0ad7f3b7"/>
+                                            <a:da name="DEFAULT" value="NULL_PTR"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="((.='NULL') or (.='Null') or (.='false') or (.='FALSE') or (.='null') or (.='null_ptr') or (.='Null_Ptr'))" true="Invalid name of the IcuTimestampNotification. Must be valid C function name, NULL_PTR, &quot;NULL_PTR&quot;."/>
+                                                <a:tst expr="normalize-space(.) = '&quot;NULL_PTR&quot;' or normalize-space(.) = 'NULL_PTR' or normalize-space(.) = '&quot;NULL&quot;' or normalize-space(.) = 'NULL' or text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" false="Invalid name of the IcuTimestampNotification. Must be valid C function name, NULL_PTR, &quot;NULL_PTR&quot;, NULL, or &quot;NULL&quot;."/>
+                                            </a:da>
+                                        </v:var>
+                                    </v:ctr>
+
+                                    <!-- @implements IcuWakeup_Object -->
+                                    <v:ctr name="IcuWakeup" type="IDENTIFIABLE">
+                                        <a:a name="DESC" value="EN: This container contains the configuration (parameters) needed to configure a wakeup capable channel"/>
+                                        <a:a name="UUID" value="ECUC:759c1fd8-1358-43e9-b1bb-020c330a3634"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                                        <a:a name="OPTIONAL" value="true"/>
+
+                                        <!-- @implements IcuChannelWakeupInfo_Object -->
+                                        <v:ref name="IcuChannelWakeupInfo" type="SYMBOLIC-NAME-REFERENCE">
+                                            <a:a name="DESC">
+                                                <a:v>
+                                                    <![CDATA[EN: <html>
+                                                    <p>If the wakeup-capability is true the wakeup source referenced  is transmitted to the ECU State Manager (EcuM) .</p>
+                                                    Implementation Type: reference to EcuM_WakeupSourceType
+                                                    </html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="UUID" value="ECUC:8d9dbe29-7618-4bb1-b056-4ab5c5e5ebd0"/>
+                                            <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                    <a:tst expr="(../../IcuWakeupCapability = 'true') and not(node:refvalid(.))" true="Invalid or empty reference."/>
+                                            </a:da>
+                                        </v:ref>
+                                    </v:ctr>
+                                </v:ctr>
+                            </v:lst>
+
+                            <v:lst name="IcuFtm" type="MAP">
+                                <a:da name="MIN" value="0"/>
+                                <a:da name="MAX" value="4"/>
+                                <v:ctr name="IcuFtm" type="IDENTIFIABLE">
+                                    <a:a name="LABEL" value="Ftm Modules"/>
+                                    <a:a name="DESC" value="EN: Configuration of a Ftm module available on the platfom."/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="UUID" value="ECUC:05d5cf30-cd99-43cc-a930-3668322a582f"/>
+
+                                    <v:var name="IcuFtmModule" type="ENUMERATION">
+                                        <a:a name="LABEL" value="Ftm Hardware Module"/>
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                                <html>
+                                                Select the physical Ftm Module.
+                                                </html> ]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:67382591-fd2e-4653-9823-af2a8d9d4070"/>
+                                        <a:da name="INVALID" type="XPath">
+                                        <a:tst expr="text:uniq(../../*/IcuFtmModule, .)" false="Duplicate physical Ftm module"/>
+                                        </a:da>
+                                        <!--  default value - increment the last channel used -->
+                                        <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Icu.Ftm_Hw_Modules'))[position()-1=node:fallback(node:current()/../@index,'0')]">
+
+                                        </a:da>
+                                        <a:da name="RANGE" type="XPath" expr="ecu:list('Icu.Ftm_Hw_Modules')"/>
+                                    </v:var>
+                                    <v:var name="Icu_FlexTimer_Prescaler" type="ENUMERATION">
+                                        <a:a name="LABEL" value="ICU FlexTimer Prescaler"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="DESC">
+                                            <a:v>
+                                                <![CDATA[EN: <html>If an FTM channel from module 1 is being used, this configures the prescaler value for the specific channel.</html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:67dbae75-a9fc-4fb0-9a6f-4dd990c57bba"/>
+                                        <a:da name="DEFAULT" value="ICU_FTM_PRESCALER_DIVIDE_128"/>
+                                        <a:da name="RANGE">
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_1</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_2</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_4</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_8</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_16</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_32</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_64</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_128</a:v>
+                                        </a:da>
+                                    </v:var>
+                                    <v:var name="Icu_FlexTimer_Prescaler_Alternate" type="ENUMERATION">
+                                        <a:a name="LABEL" value="ICU FlexTimer Alternate Prescaler"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="DESC">
+                                            <a:v>
+                                                <![CDATA[EN: <html>If an FTM channel from module 0 is being used, this configures the alternate prescaler value for the specific channel. This can be set when calling Icu_SetClockMode(ICU_ALTERNATE_CLOCK_MODE) </html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:da name="EDITABLE" type="XPath">
+                                            <a:tst expr="../../../../IcuNonAUTOSAR/IcuEnableDualClockMode ='true'"/>
+                                        </a:da>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:a3ebfd92-31e2-490c-8075-9a3e7cd9c94f"/>
+                                        <a:da name="DEFAULT" value="ICU_FTM_PRESCALER_DIVIDE_128"/>
+                                        <a:da name="RANGE">
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_1</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_2</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_4</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_8</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_16</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_32</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_64</a:v>
+                                            <a:v>ICU_FTM_PRESCALER_DIVIDE_128</a:v>
+                                        </a:da>
+                                    </v:var>
+                                    <v:var name="Icu_FlexTimer_ClockSource" type="ENUMERATION">
+                                        <a:a name="LABEL" value="Icu FlexTimer clock source"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="DESC">
+                                            <a:v>
+                                                <![CDATA[EN: <html>
+                                                <p><b>Input Filter Sample Count (FILT_CNT):</b> Number of consecutive samples that must agree prior to the input filter accepting an input transition.</p>
+                                                <b>Note:</b> This is an Implementation Specific Parameter.
+                                                </html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:5021f70c-63ec-4650-bd44-c276ad17c91e"/>
+                                        <a:da name="DEFAULT" value="ICU_FTM_SYSTEM_CLOCK"/>
+                                        <a:da name="RANGE">
+                                            <a:v>ICU_FTM_SYSTEM_CLOCK</a:v>
+                                            <a:v>ICU_FTM_EXTERNAL_CLOCK</a:v>
+                                            <a:v>ICU_FTM_FIXED_FREQUENCY_CLOCK</a:v>
+                                        </a:da>
+                                    </v:var>
+                                    <v:lst name="IcuFtmChannels" type="MAP">
+                                        <a:da name="MIN" value="1"/>
+                                        <a:da name="MAX" value="8"/>
+                                        <v:ctr name="IcuFtmChannels" type="IDENTIFIABLE">
+                                            <a:a name="LABEL" value="Ftm Channels"/>
+                                            <a:a name="DESC"><a:v><![CDATA[EN:
+                                                <html>
+                                                List of Ftm channels available on the platform.
+                                                </html> ]]>
+                                            </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="UUID" value="ECUC:0153e6e3-d3f5-49e6-878b-c53dee469f3e"/>
+
+                                            <v:var name="IcuFtmChannel" type="ENUMERATION">
+                                                <a:a name="LABEL" value="Ftm Channel"/>
+                                                <a:a name="DESC">
+                                                    <a:v><![CDATA[EN:
+                                                        <html>
+                                                        Selects one of the Ftm channels available on the platform.
+                                                        </html> ]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:ebe0784f-6ea3-49b4-b1bf-64b82d9e6873"/>
+                                                <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel.IcuFtmHw'))[position()-1=node:fallback(node:current()/../@index,'0')]">
+                                                </a:da>
+                                                <a:da name="RANGE" type="XPath" expr="ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel.IcuFtmHw')"/>
+                                                <a:da name="INVALID" type="XPath">
+                                                    <a:tst expr="text:uniq(../../*/IcuFtmChannel, .)" false="Duplicate physical Ftm channel"/>
+                                                </a:da>
+                                            </v:var>
+
+                                            <v:var name="Icu_FlexTimerFilter" type="INTEGER">
+                                                <a:a name="LABEL" value="Icu FlexTimer - Input Filter value"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                        <![CDATA[EN: <html>
+                                                        <p><b>Input Capture Filter Control:</b> Selects the filter value for the channel input. The filter is disabled when the value is zero.</p>
+                                                        <b>Note:</b> This is an Implementation Specific Parameter.
+                                                        </html>]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:da2b54b8-f8aa-4059-a581-fd693e3ee299"/>
+                                                <a:da name="DEFAULT" value="0"/>
+                                                <a:a name="INVALID" type="Multi">
+                                                    <mt:range> <mt:tst expr="&lt;=15"/> <mt:tst expr="&gt;=0"/> </mt:range>
+                                                    <mt:xpath expr="(num:i(substring-after(../IcuFtmChannel,'CH_')&gt;=4) and node:value(.)!=0)"
+                                                        true=" Error in configuration. Channels from 4 onwards (&gt;=4) do not have an input filter, please select 0 value for this channels"/>
+                                                </a:a>
+                                            </v:var>
+
+                                            <v:var name="IcuFreezeEnable" type="BOOLEAN">
+                                                <a:a name="DESC">
+                                                    <a:v><![CDATA[EN:
+                                                    <html>
+                                                    Vendor specific: Select to set hardware freeze enable during debug mode.
+                                                    On FlexTimer channels the freeze option must be the same for all channels belonging to the same module.
+                                                    </html>
+                                                    ]]></a:v>
+                                                </a:a>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:5470b157-cb05-4600-b939-9b92132f69a9"/>
+                                                <a:da name="DEFAULT" value="false"/>
+                                            </v:var>
+                                        </v:ctr>
+                                    </v:lst>
+                                </v:ctr>
+                            </v:lst>
+
+                            <v:lst name="IcuPort" type="MAP">
+                                <a:da name="MIN" value="0"/>
+                                <a:da name="MAX" value="5"/>
+                                <v:ctr name="IcuPort" type="IDENTIFIABLE">
+                                    <a:a name="LABEL" value="Port Modules"/>
+                                    <a:a name="DESC" value="EN: Configuration of a Port module available on the platfom."/>
+                                    <a:a name="UUID" value="ECUC:1b098ca6-ce34-4674-9c76-e043df422190"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+
+                                    <v:var name="IcuPortModule" type="ENUMERATION">
+                                        <a:a name="LABEL" value="Port Hardware Module"/>
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                                <html>
+                                                Select the physical Ftm Module.
+                                                </html> ]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:ed13feea-9674-4aa0-af9c-4f31466466b8"/>
+                                        <a:da name="INVALID" type="XPath">
+                                        <a:tst expr="text:uniq(../../*/IcuPortModule, .)" false="Duplicate physical Ftm module"/>
+                                        </a:da>
+                                        <!--  default value - increment the last channel used -->
+                                        <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Icu.Port_Hw_Modules'))[position()-1=node:fallback(node:current()/../@index,'0')]">
+
+                                        </a:da>
+                                        <a:da name="RANGE" type="XPath" expr="ecu:list('Icu.Port_Hw_Modules')"/>
+                                    </v:var>
+
+                                    <v:lst name="IcuPortChannels" type="MAP">
+                                        <a:da name="MIN" value="1"/>
+                                        <a:da name="MAX" value="18"/>
+                                        <v:ctr name="IcuPortChannels" type="IDENTIFIABLE">
+                                            <a:a name="LABEL" value="Port Channels"/>
+                                            <a:a name="DESC"><a:v><![CDATA[EN:
+                                                <html>
+                                                List of Port Channels on flatform.
+                                                </html> ]]>
+                                            </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="UUID" value="ECUC:23385258-6946-419d-a701-93b678a3cd7c"/>
+
+                                            <v:var name="IcuPortChannel" type="ENUMERATION">
+                                                <a:a name="LABEL" value="Port Channel"/>
+                                                <a:a name="DESC">
+                                                    <a:v><![CDATA[EN:
+                                                        <html>
+                                                        Selects one of the Port channels available on the platform.
+                                                        </html> ]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:ce8b3c3c-6d08-49bd-8751-6780a2e50668"/>
+                                                <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel.IcuPortHw'))[position()-1=node:fallback(node:current()/../@index,'0')]">
+                                                </a:da>
+                                                <a:da name="RANGE" type="XPath" expr="ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel.IcuPortHw')"/>
+                                                <a:da name="INVALID" type="XPath">
+                                                    <a:tst expr="text:uniq(../../*/IcuPortChannel, .)" false="Duplicate physical Port channel"/>
+                                                </a:da>
+                                            </v:var>
+                                        </v:ctr>
+                                    </v:lst>
+                               </v:ctr>
+                            </v:lst>
+                            <v:lst name="IcuLpit" type="MAP">
+                                <a:da name="MIN" value="0"/>
+                                <a:da name="MAX" value="1"/>
+                                <v:ctr name="IcuLpit" type="IDENTIFIABLE">
+                                    <a:a name="LABEL" value="Lpit Modules"/>
+                                    <a:a name="DESC" value="EN: Configuration of a Lpit module available on the platfom."/>
+                                    <a:a name="UUID" value="ECUC:c1fcf7f6-c6bf-4db2-99ae-b5003c2c7b9c"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+
+                                    <v:var name="IcuLpitModule" type="ENUMERATION">
+                                        <a:a name="LABEL" value="Lpit Hardware Module"/>
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                                <html>
+                                                Select the physical Lpit Module.
+                                                </html> ]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:7184b653-7269-41bf-a1d3-fcb4b55e85bc"/>
+                                        <a:da name="INVALID" type="XPath">
+                                        <a:tst expr="text:uniq(../../*/IcuLpitModule, .)" false="Duplicate physical Lpit module"/>
+                                        </a:da>
+                                        <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Icu.Lpit_Hw_Modules'))[position()-1=node:fallback(node:current()/../@index,'0')]">
+                                        </a:da>
+                                        <a:da name="RANGE" type="XPath" expr="ecu:list('Icu.Lpit_Hw_Modules')"/>
+                                    </v:var>
+                                    <v:var name="IcuFreezeEnable" type="BOOLEAN">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                            <html>
+                                            Vendor specific: Select to set hardware freeze enable during debug mode.
+                                            On FlexTimer channels the freeze option must be the same for all channels belonging to the same module.
+                                            </html>
+                                            ]]></a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:6ba72a3c-a7ed-4782-8b7b-588571aba3a9"/>
+                                        <a:da name="DEFAULT" value="false"/>
+                                   </v:var>
+                                    <v:lst name="IcuLpitChannels" type="MAP">
+                                        <a:da name="MIN" value="1"/>
+                                        <a:da name="MAX" value="4"/>
+                                        <v:ctr name="IcuLpitChannels" type="IDENTIFIABLE">
+                                            <a:a name="LABEL" value="Lpit Channels"/>
+                                            <a:a name="DESC"><a:v><![CDATA[EN:
+                                                <html>
+                                                List of Lpit Channels on flatform.
+                                                </html> ]]>
+                                            </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="UUID" value="ECUC:cee6877a-8b49-4c18-9034-1ce71c3b06a6"/>
+                                            <v:var name="IcuLpitChannel" type="ENUMERATION">
+                                                <a:a name="LABEL" value="Lpit Channel"/>
+                                                <a:a name="DESC">
+                                                    <a:v><![CDATA[EN:
+                                                        <html>
+                                                        Selects one of the Lpit channels available on the platform.
+                                                        </html> ]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:d5c0a1f4-62a3-446f-9b37-8b5254015d0f"/>
+                                                <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel.IcuLpitHw'))[position()-1=node:fallback(node:current()/../@index,'0')]">
+                                                </a:da>
+                                                <a:da name="RANGE" type="XPath" expr="ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel.IcuLpitHw')"/>
+                                                <a:da name="INVALID" type="XPath">
+                                                    <a:tst expr="text:uniq(../../*/IcuLpitChannel, .)" false="Duplicate physical Lpit channel"/>
+                                                </a:da>
+                                            </v:var>
+                                            <v:var name="IcuLpitTriggerSource" type="ENUMERATION">
+                                                <a:a name="DESC"><a:v><![CDATA[EN:
+                                                <html> Selects the internal and external trigger sources . <p></p>
+                                                    INTERNAL_TRIGGER<p></p>
+                                                    EXTERNAL_TRIGGER<p></p>
+                                                </html> ]]></a:v></a:a>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                     type="IMPLEMENTATIONCONFIGCLASS">
+                                                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:28d25a48-cf95-4b99-842f-62ac29893786"/>
+                                                <a:da name="DEFAULT" value="INTERNAL_TRIGGER"/>
+                                                <a:da name="RANGE">
+                                                  <a:v>INTERNAL_TRIGGER</a:v>
+                                                  <a:v>EXTERNAL_TRIGGER</a:v>
+                                                </a:da>
+                                            </v:var>
+                                            <v:var name="IcuLpitTriggerSelect" type="ENUMERATION">
+                                                <a:a name="DESC"><a:v><![CDATA[EN:
+                                                <html> Select one trigger from the set of internal or external triggers selected by TRG_SRC. <p></p>
+                                                    ICU_LPIT_TRG_CH0<p></p>
+                                                    ICU_LPIT_TRG_CH1<p></p>
+                                                    ICU_LPIT_TRG_CH2<p></p>
+                                                    ICU_LPIT_TRG_CH3<p></p>
+                                                </html> ]]></a:v></a:a>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                                     type="IMPLEMENTATIONCONFIGCLASS">
+                                                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:28d25a48-cf95-4b99-842f-62ac29893789"/>
+                                                <a:da name="DEFAULT" value="ICU_LPIT_TRG_CH0"/>
+                                                <a:da name="RANGE">
+                                                  <a:v>ICU_LPIT_TRG_CH0</a:v>
+                                                  <a:v>ICU_LPIT_TRG_CH1</a:v>
+                                                  <a:v>ICU_LPIT_TRG_CH2</a:v>
+                                                  <a:v>ICU_LPIT_TRG_CH3</a:v>
+                                                </a:da>
+                                            </v:var>
+                                        </v:ctr>
+                                    </v:lst>
+                                </v:ctr>
+                            </v:lst>
+
+                            <v:lst name="IcuLptmr" type="MAP">
+                                <a:da name="MIN" value="0"/>
+                                <a:da name="MAX" value="1"/>
+                                <v:ctr name="IcuLptmr" type="IDENTIFIABLE">
+                                    <a:a name="LABEL" value="Lptmr Modules"/>
+                                    <a:a name="DESC" value="EN: Configuration of a Lptmr module available on the platfom."/>
+                                    <a:a name="UUID" value="ECUC:c1d59652-41b8-4bc3-8eb4-94a59c70d63b"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <v:var name="IcuLptmrModule" type="ENUMERATION">
+                                        <a:a name="LABEL" value="Lptmr Hardware Module"/>
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                                <html>
+                                                Select the physical Lptmr Module.
+                                                </html> ]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:6fb07982-aeae-4694-a93d-72d391e6785c"/>
+                                        <a:da name="INVALID" type="XPath">
+                                        <a:tst expr="text:uniq(../../*/IcuLptmrModule, .)" false="Duplicate physical Lptmr module"/>
+                                        </a:da>
+                                        <!--  default value - increment the last channel used -->
+                                        <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Icu.Lptmr_Hw_Modules'))[position()-1=node:fallback(node:current()/../@index,'0')]">
+
+                                        </a:da>
+                                        <a:da name="RANGE" type="XPath" expr="ecu:list('Icu.Lptmr_Hw_Modules')"/>
+                                    </v:var>
+                                    <v:var name="PrescalerEnable" type="BOOLEAN">
+                                        <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                        <html>
+                                        When PBYP is set, the selected prescaler clock in Time Counter mode or selected input source in Pulse
+                                        Counter mode directly clocks the CNR.
+                                        </html>
+                                        ]]></a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:0566f9fd-5530-4837-8e61-e9928c88c082"/>
+                                        <a:da name="DEFAULT" value="true"/>
+                                        <a:a name="LABEL" value="IcuLptmrPrescalerEnable"/>
+                                    </v:var>
+                                    <v:var name="IcuLptmrPrescaler"  type="ENUMERATION">
+                                        <a:a name="DESC"><a:v><![CDATA[EN:
+                                        <html> Vendor specific: The ICU module specific Glitch filter value. <p></p>
+                                            Configures the Glitch filter in Pulse Counter mode.<p></p>
+                                            1 - Glitch filter recognizes change on input pin after 2 rising clock edges<p></p>
+                                            2 - Glitch filter recognizes change on input pin after 4 rising clock edges<p></p>
+                                            3 - Glitch filter recognizes change on input pin after 8 rising clock edges<p></p>
+                                            4 - Glitch filter recognizes change on input pin after 16 rising clock edges<p></p>
+                                            5 - Glitch filter recognizes change on input pin after 32 rising clock edges<p></p>
+                                            6 - Glitch filter recognizes change on input pin after 64 rising clock edges<p></p>
+                                            7 - Glitch filter recognizes change on input pin after 128 rising clock edges<p></p>
+                                            8 - Glitch filter recognizes change on input pin after 256 rising clock edges<p></p>
+                                            9 - Glitch filter recognizes change on input pin after 512 rising clock edges<p></p>
+                                            10 - Glitch filter recognizes change on input pin after 1024 rising clock edges<p></p>
+                                            11 - Glitch filter recognizes change on input pin after 2048 rising clock edges<p></p>
+                                            12 - Glitch filter recognizes change on input pin after 4096 rising clock edges<p></p>
+                                            13 - Glitch filter recognizes change on input pin after 8192 rising clock edges<p></p>
+                                            14 - Glitch filter recognizes change on input pin after 16384 rising clock edges<p></p>
+                                            15 - Glitch filter recognizes change on input pin after 32768 rising clock edges<p></p>
+                                        </html> ]]></a:v></a:a>
+                                        <a:da name="EDITABLE" type="XPath">
+                                        <a:tst expr="../PrescalerEnable ='true'"/>
+                                        </a:da>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                             type="IMPLEMENTATIONCONFIGCLASS">
+                                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:2c9254f4-541a-4999-bd7e-37970b0fa7fe"/>
+                                        <a:da name="DEFAULT" value="ICU_LPTMR_GLITCH_FILTER_2"/>
+                                        <a:da name="RANGE">
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_2</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_4</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_8</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_16</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_32</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_64</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_128</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_256</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_512</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_1024</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_2048</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_4096</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_8192</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_16384</a:v>
+                                            <a:v>ICU_LPTMR_GLITCH_FILTER_32768</a:v>
+                                        </a:da>
+                                      </v:var>
+                                    <v:var name="IcuLptmrChannelClkSrc" type="ENUMERATION">
+                                        <a:a name="DESC"><a:v><![CDATA[EN:
+                                        <html> Vendor specific: The ICU module specific clock input for the timer unit can statically be configured and allows to select different clock sources per module.<p></p>
+                                            Select the clock source for the FlexTimer module for this platform. <p></p>
+                                                SIRCDIV2_CLK<p></p>
+                                                LPO1K_CLK<p></p>
+                                                RTC_CLK<p></p>
+                                                PCC_LPTMR0<p></p>
+                                        </html> ]]></a:v></a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                             type="IMPLEMENTATIONCONFIGCLASS">
+                                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:3718c7e8-1bf3-4d84-bb5c-f99d3cadc59d"/>
+                                        <a:da name="DEFAULT" value="SIRCDIV2_CLK"/>
+                                        <a:da name="RANGE">
+                                          <a:v>SIRCDIV2_CLK</a:v>
+                                          <a:v>LPO1K_CLK</a:v>
+                                          <a:v>RTC_CLK</a:v>
+                                          <a:v>PCC_LPTMR0</a:v>
+                                        </a:da>
+                                      </v:var>
+                                    <v:var name="IcuLptmrPinSelect" type="ENUMERATION">
+                                        <a:a name="DESC"><a:v><![CDATA[EN:
+                                        <html> Configures the input source to be used in Pulse Counter mode.<p></p>
+                                            ALT1<p></p>
+                                            ALT2<p></p>
+                                            ALT3<p></p>
+                                        </html> ]]></a:v></a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                             type="IMPLEMENTATIONCONFIGCLASS">
+                                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:2c16d87f-d042-4c33-9383-e9f7e8401e62"/>
+                                        <a:da name="DEFAULT" value="ALT1"/>
+                                        <a:da name="RANGE">
+                                          <a:v>TRGMUX_OUTPUT</a:v>
+                                          <a:v>ALT1</a:v>
+                                          <a:v>ALT2</a:v>
+                                          <a:v>ALT3</a:v>
+                                        </a:da>
+                                      </v:var>
+                                    <v:lst name="IcuLptmrChannels" type="MAP">
+                                        <a:da name="MIN" value="1"/>
+                                        <a:da name="MAX" value="1"/>
+                                        <v:ctr name="IcuLptmrChannels" type="IDENTIFIABLE">
+                                            <a:a name="LABEL" value="Lptmr Channels"/>
+                                            <a:a name="DESC"><a:v><![CDATA[EN:
+                                                <html>
+                                                List of Lptmr Channels on flatform.
+                                                </html> ]]>
+                                            </a:v>
+                                            </a:a>
+                                            <a:a name="UUID" value="ECUC:0a6d3269-e466-4ca3-a5dd-46d14c1ab6d0"/>
+
+                                            <v:var name="IcuLptmrChannel" type="ENUMERATION">
+                                                <a:a name="LABEL" value="Lptmr Channel"/>
+                                                <a:a name="DESC">
+                                                    <a:v><![CDATA[EN:
+                                                        <html>
+                                                        Selects one of the Lptmr channels available on the platform.
+                                                        </html> ]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:ce4f0593-ec66-4fee-a6a4-3075f2e18627"/>
+                                                <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel.IcuLptmrHw'))[position()-1=node:fallback(node:current()/../@index,'0')]">
+                                                </a:da>
+                                                <a:da name="RANGE" type="XPath" expr="ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel.IcuLptmrHw')"/>
+                                                <a:da name="INVALID" type="XPath">
+                                                    <a:tst expr="text:uniq(../../*/IcuLptmrChannel, .)" false="Duplicate physical Lptmr channel"/>
+                                                </a:da>
+                                            </v:var>
+                                        </v:ctr>
+                                    </v:lst>
+                               </v:ctr>
+                            </v:lst>
+                            <v:lst name="IcuHwInterruptConfigList" type="MAP">
+                                <a:a name="MIN" type="XPath" expr="num:i(count(ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel')))"/>
+                                <a:a name="MAX" type="XPath" expr="num:i(count(ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel')))"/>
+
+                                <v:ctr name="IcuHwInterruptConfigList" type="IDENTIFIABLE">
+                                    <a:a name="LABEL" value="ISR USED"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                        <html>
+                                        List of HW interrupts available for the entire platform.
+                                        </html> ]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="UUID" value="ECUC:de2adbaf-34cc-6d23-89de-65775795e1b8"/>
+
+                                    <v:var name="IcuIsrHwId" type="ENUMERATION">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                            <html>
+                                            Id of the HW interrupt service routine available platform wide and usable by ICU module.
+                                            </html> ]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="LABEL" value="ICU Peripheral ISR Name"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                        <a:a name="UUID" value="ECUC:37972c2b-b403-4eef-bea9-87d0e04cab57"/>
+                                        <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel'))[position()-1=node:fallback(node:current()/../@index, num:i(0)+1)]">
+                                        </a:da>
+                                        <a:da name="RANGE" type="XPath" expr="ecu:list('Icu.IcuConfigSet.IcuChannel.IcuHwChannel')"/>
+                                        <a:da name="INVALID" type="XPath">
+                                           <a:tst expr="text:uniq(../../*/IcuIsrHwId, .)"
+                                                false="Icu channels should have unique IDs."/>
+                                        </a:da>
+                                    </v:var>
+
+                                    <v:var name="IcuIsrEnable" type="BOOLEAN">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                            <html>
+                                            Status of the HW Interrupt (true - Interrupt shall be enable platform wide; false - Interrupt shall be disabled platform wide.
+                                            </html> ]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                           <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                           <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:da name="DEFAULT" value="false"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:08fbe442-1ed3-565d-8b68-977c9fc0cb23"/>
+                                    </v:var>
+                                </v:ctr>
+                            </v:lst>
+                        </v:ctr>
+
+                        <!-- @implements IcuGeneral_Object -->
+                        <v:ctr name="IcuGeneral" type="IDENTIFIABLE">
+                            <a:a name="DESC" value="EN: Configuration of general ICU parameters."/>
+                            <a:a name="UUID" value="ECUC:61d77a0f-356e-4e66-9e21-49da538f484a"/>
+
+                            <!-- @implements IcuDevErrorDetect_Object -->
+                            <v:var name="IcuDevErrorDetect" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        <p>Switches the Development Error Detection and Notification on or off.</p>
+                                            <ul>
+                                                <li>true: Enabled.</li>
+                                                <li>false: Disabled.</li>
+                                            </ul>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:b66e6e29-c1e3-4afa-902f-2a42b05531aa"/>
+                                <a:da name="DEFAULT" value="true"/>
+                            </v:var>
+
+                            <!-- @implements IcuIndex_Object -->
+                            <v:var name="IcuIndex" type="INTEGER">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        <p>Specifies the InstanceId of this module instance. </p>
+                                        <p>If only one instance is present it shall have the Id 0.  </p>
+                                        <b>Note:</b> In current implementation this parameter is not used.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:dac6c90a-86da-4f0d-9a80-eb69f5f8600d"/>
+                                <a:da name="DEFAULT" value="0"/>
+                                <a:da name="EDITABLE" value="true"/>
+                                <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&gt;=0"/>
+                                    <a:tst expr="&lt;=255"/>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements IcuReportWakeupSource_Object -->
+                            <v:var name="IcuReportWakeupSource" type="BOOLEAN">
+                            <a:a name="DESC">
+                            <a:v><![CDATA[EN: <html>
+                            <p>Switch for enabling Wakeup source reporting.</p>
+                                <ul>
+                                    <li>true: Report Wakeup source.</li>
+                                    <li>false: Do not report Wakeup source.</li>
+                                </ul>
+                            </html>]]>
+                            </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="ECUC:fc863338-7842-46ee-9e73-cefc303e5c9c"/>
+                            <a:da name="DEFAULT" value="true"/>
+                            <a:da name="INVALID" type="XPath">
+                            <a:tst expr="((.='true') and (//IcuEnableWakeupApi='false') )" true="If IcuReportWakeupSource== ON, IcuEnableWakeupApi and IcuDisableWakeupApi   switch should be set to ON"/>
+                            </a:da>
+                            </v:var>
+
+                            <!-- @implements IcuEnableUserModeSupport_Object -->
+                            <v:var name="IcuEnableUserModeSupport" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN:<html>
+                                            <p>
+                                            There is no retriction when running from user mode for all ICU IPs. Therefore no further actions are needed in ICU driver<br>
+                                            for more information, please see chapter 5.7 User Mode Support in IM<br>
+                                            </p>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="LABEL" value="Icu Enable User Mode Support"/>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:f466ec0d-5bba-65fa-be74-2bd1bb030b88"/>
+                                <a:da name="DEFAULT" value="false"/>
+                                <a:da name="READONLY" value="true"/>
+                            </v:var>
+                        </v:ctr>
+
+                        <v:ctr name="IcuNonAUTOSAR" type="IDENTIFIABLE">
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[EN: <html>
+                                    Enabling the settings of this section will configure the driver in a mode not compliant with AUTOSAR requirements.
+                                    </html> ]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="UUID" value="ECUC:3397e41c-deae-401d-ace8-ab12b55ac8d6"/>
+
+                            <v:var name="IcuEnableDualClockMode" type="BOOLEAN">
+                                <a:a name="DESC">
+                                        <a:v><![CDATA[EN: <html>
+                                            Enables prescaler settings at mode transition.<br>
+                                            true: Enabled.<br>
+                                            false: Disabled.<br>
+                                            <b>Note:</b> This feature is not required by Autosar.
+                                        </html>]]>
+                                        </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:5021e6f1-9a9e-4c82-b123-6f23a36d2186"/>
+                                <a:da name="DEFAULT" value="false"/>
+                            </v:var>
+
+                            <v:var name="IcuOverflowNotificationApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Add / removes Overflow Notification functionality.
+                                        <p>Enabling <i>IcuOverflowNotificationApi</i> overflow events will not be treated as errors and a Notification Handler can be provided.</p>
+                                        If this optional API is not enabled, overflow events will trigger DET Report Error.
+                                        <p><b>Note:</b>
+                                        Due to hardware implementattion, the <i>Icu Overflow Notification</i> is not syncronous with
+                                        the event for <i>ICU_MODE_SIGNAL_MEASUREMENT</i> and <i>ICU_MODE_TIMESTAMP</i> modes. The notification
+                                        will be triggered when measurement completes (for ICU_MODE_SIGNAL_MEASUREMENT) or the
+                                        next timestamp event occurs (for ICU_MODE_TIMESTAMP).</p></html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:9faa558b-5b40-4140-8c4e-11ac1e2746fb"/>
+                                <a:da name="DEFAULT" value="false"/>
+                            </v:var>
+
+                            <v:var name="IcuGetInputLevelApi" type="BOOLEAN">
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        <p>Add / removes Icu_GetInputLevel API from the code. </p>
+                                        <p>This function returns Input pin state. </p>
+                                        <b>Note:</b> This feature is not required by Autosar.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:bc6d650a-69d5-4e09-adb3-2be1f87118b6"/>
+                                <a:da name="DEFAULT" value="false"/>
+                            </v:var>
+
+                            <v:var name="IcuRegisterLockingMode" type="ENUMERATION">
+                                <a:a name="LABEL" value="ICU Register Locking Mode"/>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                            IcuRegisterLockingMode can take following values:
+                                            <ul>
+                                            <li>NoRegisterLocking: no register locking is applicable</li>
+                                            <li>UserModeSoftLocking: each function writing to hardware registers is responsible for maintaining the register soft locking mechanism; no additional actions needed in the configuration locking mechanism; the register locking management is available in user mode.</li>
+                                            <li>SupervisorModeSoftLocking: the functions writing the hardware registers use register writes without locking; the configuration locking/unlocking functions are responsible for applying/releasing the register soft locking in supervisor mode only.</li>
+                                            </ul>
+                                           </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:f16a2ab4-0c8c-409a-a2a9-18091e1b13fb"/>
+                                <a:da name="DEFAULT" value="NO_REGISTER_LOCKING"/>
+                                <a:da name="RANGE">
+                                    <a:v>NO_REGISTER_LOCKING</a:v>
+                                    <!-- <a:v>USER_MODE_SOFT_LOCKING</a:v> -->
+                                    <!-- <a:v>SUPERVISOR_MODE_SOFT_LOCKING</a:v> -->
+                               </a:da>
+                            </v:var>
+
+                            <!-- @implements IcuGetCaptureRegisterValueApi_Object -->
+                            <v:var name="IcuGetCaptureRegisterValueApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v><![CDATA[EN: <html>
+                                    Adds / removes service Icu_GetCaptureRegisterValue from the code. <br>
+                                    This function returns value of Capture register for the mesurement channel or timestamp mode channel which is called by the user. <br>
+                                    It's enabled when IcuTimestampApi or IcuSignalMeasurementApi is true. <br>
+                                    </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:4ce1bd18-4b17-45cc-a585-b430f40f5cf7"/>
+                                <a:da name="EDITABLE" type="XPath">
+                                    <a:tst expr="(../../IcuOptionalApis/IcuTimestampApi ='true') or (../../IcuOptionalApis/IcuSignalMeasurementApi='true')" true="true" false="false"/>
+                                </a:da>
+                                <a:da name="DEFAULT" value="false"/>
+                            </v:var>
+
+                        </v:ctr>
+
+                        <!-- @implements IcuOptionalApis_Object -->
+                        <v:ctr name="IcuOptionalApis" type="IDENTIFIABLE">
+                            <a:a name="DESC" value="EN: This container contains all configuration switches for configuring optional API services of the ICU driver."/>
+                            <a:a name="UUID" value="ECUC:266b2654-1d87-4236-9930-fcf1a27ff224"/>
+
+                            <!-- @implements IcuDeInitApi_Object -->
+                            <v:var name="IcuDeInitApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        <p>Adds / removes the service Icu_DeInit() from the code.</p>
+                                            <ul>
+                                                <li>true: Icu_DeInit() can be used.</li>
+                                                <li>false: Icu_DeInit() can not be used.</li>
+                                            </ul>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:816daae7-f7db-44b6-8c19-06951cb4c355"/>
+                                <a:da name="DEFAULT" value="true"/>
+                            </v:var>
+
+                            <!-- @implements IcuDisableWakeupApi_Object -->
+                            <v:var name="IcuDisableWakeupApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Adds / removes the service Icu_DisableWakeup() from the code.
+                                            <ul>
+                                                <li>true: Icu_DisableWakeup() can be used.</li>
+                                                <li>false: Icu_DisableWakeup() can not be used.</li>
+                                            </ul>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:bdf071c4-26fc-409a-be7c-1d0b7a22a8f1"/>
+                                <a:da name="DEFAULT" value="true"/>
+                                <a:da name="INVALID" type="XPath">
+                                    <a:tst expr="((.='true') and (//IcuEnableWakeupApi='false'))" true="If IcuDisableWakeupApi== ON, IcuEnableWakeupApi switch should be set to ON"/>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements IcuEdgeCountApi_Object -->
+                            <v:var name="IcuEdgeCountApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        <p>Adds / removes all services related to the edge counting
+                                        functionality as listed below, from the code: Icu_ResetEdgeCount(),
+                                        Icu_EnableEdgeCount(), Icu_DisableEdgeCount(), Icu_GetEdgeNumbers().</p>
+                                            <ul>
+                                                <li>true: The services listed above can be used.</li>
+                                                <li>false: The services listed above can not be used.</li>
+                                            </ul>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:6188e39b-364f-4371-bff1-410ab053a820"/>
+                                <a:da name="DEFAULT" value="true"/>
+                            </v:var>
+
+                            <!-- @implements IcuEnableWakeupApi_Object -->
+                            <v:var name="IcuEnableWakeupApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Adds / removes the service Icu_EnableWakeup() from the code.
+                                        <ul>
+                                            <li>true: Icu_EnableWakeup() can be used.</li>
+                                            <li>false: Icu_EnableWakeup() can not be used.</li>
+                                        </ul>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:649799e4-a523-445e-8356-d7e79e037693"/>
+                                <a:da name="DEFAULT" value="true"/>
+                                <a:da name="INVALID" type="XPath">
+                                    <a:tst expr="((.='true') and (//IcuDisableWakeupApi='false'))" true="If IcuEnableWakeupApi== ON, IcuDisableWakeupApi switch should be set to ON"/>
+                                    <a:tst expr="((.='true') and (//IcuEdgeDetectApi='false'))" true="If IcuEnableWakeupApi== ON, IcuEdgeDetectApi switch should be set to ON"/>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements IcuGetDutyCycleValuesApi_Object -->
+                            <v:var name="IcuGetDutyCycleValuesApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Adds / removes the service Icu_GetDutyCycleValues() from the code.
+                                        <ul>
+                                            <li>true: Icu_GetDutyCycleValues() can be used.</li>
+                                            <li>false: Icu_GetDutyCycleValues() can not be used. </li>
+                                        </ul>
+                                        <b>Note:</b> If IcuSignalMeasurementApi == OFF this switch is shall also be set to OFF.
+                                        </html>]]>
+                                    </a:v>
+                            </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:bbd940db-2538-42de-8594-6502beb7048f"/>
+                                <a:da name="DEFAULT" value="true"/>
+                                <a:da name="INVALID" type="XPath">
+                                <a:tst expr="((.='true') and (//IcuSignalMeasurementApi='false'))" true="If IcuSignalMeasurementApi == OFF this switch should be set to OFF"/>
+                            </a:da>
+                            </v:var>
+
+                            <!-- @implements IcuGetInputStateApi_Object -->
+                            <v:var name="IcuGetInputStateApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Adds / removes the service Icu_GetInputState() from the code.
+                                        <ul>
+                                            <li>true: Icu_GetInputState() can be used.</li>
+                                            <li>false: Icu_GetInputState() can not be used.</li>
+                                        </ul>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:7740ee7a-3832-44cc-8da5-8dc8a8bfa5d8"/>
+                                <a:da name="DEFAULT" value="true"/>
+                            </v:var>
+
+                            <!-- @implements IcuGetTimeElapsedApi_Object -->
+                            <v:var name="IcuGetTimeElapsedApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Adds / removes the service Icu_GetTimeElapsed() from the code.
+                                        <ul>
+                                            <li>true: Icu_GetTimeElapsed() can be used.</li>
+                                            <li>false: Icu_GetTimeElapsed() can not be used.</li>
+                                        </ul>
+                                        <b>Note:</b> If IcuSignalMeasurementApi == OFF this switch is shall also be set to OFF.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:28de7ff5-fab0-4165-9a72-93be121d875a"/>
+                                <a:da name="DEFAULT" value="true"/>
+                                <a:da name="INVALID" type="XPath">
+                                    <a:tst expr="((.='true') and (//IcuSignalMeasurementApi='false'))" true="If IcuSignalMeasurementApi == OFF this switch should be set to OFF"/>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements IcuGetVersionInfoApi_Object -->
+                            <v:var name="IcuGetVersionInfoApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>Adds / removes the service Icu_GetVersionInfo() from the code.
+                                        <ul>
+                                            <li>true: Icu_GetVersionInfo() can be used.</li>
+                                            <li>false: Icu_GetVersionInfo() can not be used.</li>
+                                        </ul>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:3edafdb4-8dcc-409d-a386-b9eccb6030d4"/>
+                                <a:da name="DEFAULT" value="true"/>
+                            </v:var>
+
+                            <!-- @implements IcuSetModeApi_Object -->
+                            <v:var name="IcuSetModeApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Adds / removes the service Icu_SetMode() from the code.
+                                        <ul>
+                                            <li>true: Icu_SetMode() can be used.</li>
+                                            <li>false: Icu_SetMode() can not be used.</li>
+                                        </ul>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:c12ae3d6-0d6a-45ba-9182-e915394053e0"/>
+                                <a:da name="DEFAULT" value="true"/>
+                            </v:var>
+
+                            <!-- @implements IcuSignalMeasurementApi_Object -->
+                            <v:var name="IcuSignalMeasurementApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Adds / removes the services Icu_StartSignalMeasurement() and Icu_StopSignalMeasurement() from the code.
+                                        <ul>
+                                            <li>true: Icu_StartSignalMeasurement() and Icu_StopSignalMeasurement() can be used.</li>
+                                            <li>false: Icu_StartSignalMeasurement() and Icu_StopSignalMeasurement() can not be used.</li>
+                                        </ul>
+                                        </html>]]>
+                                    </a:v>
+                            </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:8ac54fa7-6776-4773-b923-9936428540af"/>
+                                <a:da name="DEFAULT" value="true"/>
+                            </v:var>
+
+                            <!-- @implements IcuTimestampApi_Object -->
+                            <v:var name="IcuTimestampApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Adds / removes all services related to the timestamping functionality as listed below from the code:
+                                        Icu_StartTimestamp(), Icu_StopTimestamp(), Icu_GetTimestampIndex().
+                                        <ul>
+                                            <li>true: The services listed above can be used.</li>
+                                            <li>false: The services listed above can not be used.</li>
+                                        </ul>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:cc6c34af-1fe4-44a9-ac8e-176f54688479"/>
+                                <a:da name="DEFAULT" value="true"/>
+                            </v:var>
+
+                            <!-- @implements IcuWakeupFunctionalityApi_Object -->
+                            <v:var name="IcuWakeupFunctionalityApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Adds / removes the service Icu_CheckWakeup() from the code.
+                                        <ul>
+                                            <li>true: Icu_CheckWakeup() can be used.</li>
+                                            <li>false: Icu_CheckWakeup() can not be used.</li>
+                                        </ul>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:ad8b8d33-2a01-4104-b614-8b361aef2ca8"/>
+                                <a:da name="INVALID" type="XPath">
+                                    <a:tst expr="((.='true') and (//IcuEnableWakeupApi='false') )" true="If IcuWakeupFunctionalityApi== ON, IcuEnableWakeupApi switch should be set to ON"/>
+                                    <a:tst expr="((.='true') and (//IcuReportWakeupSource='false') )" true="If IcuWakeupFunctionalityApi== ON,IcuReportWakeupSource switch should be set to ON"/>
+                                </a:da>
+                                <a:da name="DEFAULT" value="true"/>
+                            </v:var>
+
+                            <!-- @implements IcuEdgeDetectApi_Object -->
+                            <v:var name="IcuEdgeDetectApi" type="BOOLEAN">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Adds / removes the services Icu_EnableEdgeDetection() and Icu_DisableEdgeDetection() from the code.
+                                        <ul>
+                                            <li>true: Icu_EnableEdgeDetection() and Icu_DisableEdgeDetection() can be used.</li>
+                                            <li>false: Icu_EnableEdgeDetection() and Icu_DisableEdgeDetection() can not be used.</li>
+                                        </ul>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:95b006ad-6cce-44b7-82e2-7b81a11b6f95"/>
+                                <a:da name="DEFAULT" value="true"/>
+                            </v:var>
+
+                        </v:ctr>
+
+                        <!-- @implements CommonPublishedInformation_Object -->
+                        <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[EN: <html>
+                                    Common container, aggregated by all modules. It contains published information about vendor and versions.
+                                    </html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="UUID" value="ECUC:38e85ffb-73d7-4534-aed0-bd552391c5a8"/>
+
+                            <!-- @implements ArReleaseMajorVersion_Object -->
+                            <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Major version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                              </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:554f886c-8b1e-4e87-ad78-d681d2246785"/>
+                                <a:da name="DEFAULT" value="4"/>
+                                <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&gt;=4"/>
+                                    <a:tst expr="&lt;=4"/>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements ArReleaseMinorVersion_Object -->
+                            <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Minor version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                              </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:4357fd61-8a05-4a8a-be74-564f45a70cd8"/>
+                                <a:da name="DEFAULT" value="2"/>
+                                <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&gt;=2"/>
+                                    <a:tst expr="&lt;=2"/>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements ArReleaseRevisionVersion_Object -->
+                            <v:var name="ArReleaseRevisionVersion" type="INTEGER_LABEL">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN:<html>
+                                        Revision version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                              </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:f0faa356-5f3c-4bb3-933a-7b3bfe2c1b56"/>
+                                <a:da name="DEFAULT" value="2"/>
+                                <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&gt;=2"/>
+                                    <a:tst expr="&lt;=2"/>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements ModuleId_Object -->
+                            <v:var name="ModuleId" type="INTEGER_LABEL">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Module ID of this module from Module List.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                              </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:4f7b061b-3813-47c0-bf57-4497872d06b2"/>
+                                <a:da name="DEFAULT" value="122"/>
+                                <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&gt;=122"/>
+                                    <a:tst expr="&lt;=122"/>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements SwMajorVersion_Object -->
+                            <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Major version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                              </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:33a40dbe-2b57-459f-b4b7-65319a347ec8"/>
+                                <a:da name="DEFAULT" value="1"/>
+                                <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&gt;=1"/>
+                                    <a:tst expr="&lt;=1"/>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements SwMinorVersion_Object -->
+                            <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Minor version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                              </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:3e91d049-1af4-4005-b144-f13a05a97ccb"/>
+                                <a:da name="DEFAULT" value="0"/>
+                                <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&gt;=0"/>
+                                    <a:tst expr="&lt;=0"/>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements SwPatchVersion_Object -->
+                            <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                              </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:fb010077-8b68-4459-8a6d-6fa70db77d78"/>
+                                <a:da name="DEFAULT" value="1"/>
+                                <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&gt;=1"/>
+                                    <a:tst expr="&lt;=1"/>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements VendorApiInfix_Object -->
+                            <v:var name="VendorApiInfix" type="STRING_LABEL">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        In driver modules which can be instantiated several times on a single ECU, BSW00347 requires
+                                        that the name of APIs is extended by the VendorId and a vendor specific name.
+                                        This parameter is used to specify the vendor specific name. In total, the
+                                        implementation specific name is generated as follows: &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+                                        <p>E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write.
+                                        This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.</p>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                              </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:5729ce53-e4c1-4939-8da5-2541dce65350"/>
+                                <a:da name="DEFAULT" value=""/>
+                                <a:a name="OPTIONAL" value="true"/>
+                                <a:da name="READONLY" value="true"/>
+                            </v:var>
+
+                            <!-- @implements VendorId_Object -->
+                            <v:var name="VendorId" type="INTEGER_LABEL">
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN: <html>
+                                        Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list.
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                              </a:a>
+                                <a:a name="ORIGIN" value="NXP"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" value="ECUC:f7ee9c39-2f15-41eb-9e7c-a118f6b3ec29"/>
+                                <a:da name="DEFAULT" value="43"/>
+                                <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&gt;=43"/>
+                                    <a:tst expr="&lt;=43"/>
+                                </a:da>
+                            </v:var>
+                        </v:ctr>
+
+                        <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcucDefs/Icu"/>
+                    </v:ctr>
+                </d:chc>
+                <d:chc name="Icu_EcuParameterDefinition"
+                    type="AR-ELEMENT" value="ECU_PARAMETER_DEFINITION">
+                    <d:ctr type="AR-ELEMENT">
+                        <a:a name="UUID" value="ECUC:032a6h33-3415-4410-a59b-c803c0egfa2d"/>
+                        <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+                        <d:lst name="MODULE_REF">
+                            <d:ref type="MODULE_REF" value="ASPath:/TS_T40D2M10I1R0/Icu"/>
+                        </d:lst>
+                    </d:ctr>
+                </d:chc>
+                <d:chc name="Icu_ModuleDescription"
+                    type="AR-ELEMENT" value="BSW_MODULE_DESCRIPTION">
+                    <d:ctr type="AR-ELEMENT">
+                        <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/BSW_MODULE_DESCRIPTION"/>
+                        <d:var name="MODULE_ID" type="INTEGER" >
+                            <a:a name="EDITABLE" value="false"/>
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:ref type="RECOMMENDED_CONFIGURATION" >
+                            <a:a name="EDITABLE" value="false"/>
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:ref type="PRE_CONFIGURED_CONF" >
+                            <a:a name="EDITABLE" value="false"/>
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:ref type="VENDOR_SPECIFIC_MODULE_DEF"
+                        value="ASPath:/TS_T40D2M10I1R0/Icu"/>
+                    </d:ctr>
+                </d:chc>
+            </d:lst>
+        </d:ctr>
+    </d:lst>
+</d:ctr>
+
+</datamodel>

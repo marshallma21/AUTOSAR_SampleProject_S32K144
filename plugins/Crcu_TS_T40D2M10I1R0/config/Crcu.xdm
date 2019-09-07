@@ -1,0 +1,846 @@
+<?xml version='1.0'?>
+<datamodel version="3.0" 
+        xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+        xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+        xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+        xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+        
+    <!--
+*   @file    Crcu.xdm
+*   @version 1.0.1
+*
+*   @brief   AUTOSAR Crcu - Tresos Studio plugin schema file
+*   @details This file contains the schema configuration for and Crcu Tresos Studio plugin.
+-->
+    <!--
+====================================================================================================
+*   Project              : AUTOSAR 4.2 MCAL
+*   Platform             : ARM
+*   Peripheral           : CRCV2
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.2.2
+*   Autosar Revision     : ASR_REL_4_2_REV_0002
+*   Autosar Conf.Variant :
+*   SW Version           : 1.0.1
+*   Build Version        : S32K14x_MCAL_1_0_1_RTM_ASR_REL_4_2_REV_0002_20180713
+
+*   (c) Copyright 2006-2016 Freescale Semiconductor, Inc. 
+*       Copyright 2017-2018 NXP
+*   All Rights Reserved.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+-->    
+    <d:ctr type="AUTOSAR" factory="autosar" 
+            xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+            xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+            xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+        <d:lst type="TOP-LEVEL-PACKAGES">
+            <d:ctr name="TS_T40D2M10I1R0" type="AR-PACKAGE">
+                <a:a name="UUID" value="ECUC:eb01bc20-8be4-11e2-9e96-0800200c9a66"/>
+                <d:lst type="ELEMENTS">
+                    <d:chc name="Crcu" type="AR-ELEMENT" value="MODULE-DEF">
+                        <v:ctr type="MODULE-DEF">
+                            <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[EN:<html>
+                                        Configuration of the CRCU module.
+                                    </html>]]>
+                                </a:v>
+                            </a:a>                        
+                            <a:a name="LOWER-MULTIPLICITY" value="1"/>
+                            <a:a name="UPPER-MULTIPLICITY" value="1"/>
+                            <a:a name="RELEASE" value="asc:4.2"/>
+                            <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                                <ad:ADMIN-DATA>
+                                    <ad:LANGUAGE>EN</ad:LANGUAGE>
+                                    <ad:DOC-REVISIONS>
+                                        <ad:DOC-REVISION>
+                                            <ad:REVISION-LABEL>1.0.1</ad:REVISION-LABEL>
+                                            <ad:ISSUED-BY>NXP</ad:ISSUED-BY>
+                                            <ad:DATE>2017-01-30</ad:DATE>
+                                        </ad:DOC-REVISION>
+                                    </ad:DOC-REVISIONS>
+                                </ad:ADMIN-DATA>
+                            </a:a>
+                            <a:a name="UUID" value="ECUC:27d542d0-8be4-11e2-9e96-0800200c9a66"/>
+                            
+                            <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                                <a:a name="LABEL" value="Config Variant"/>
+                                <a:a name="UUID" value="ECUC:33810ac0-8be4-11e2-9e96-0800200c9a66"/>
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN:<html>
+                                            VariantPreCompile: Only precompile time configuration parameters. Only one set of parameters.<p/>
+                                            VariantPostBuild: Mix of precompile and postbuild time configuration parameters.<p/>
+                                        </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                </a:a>
+                                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                                <a:da name="RANGE">
+                                    <a:v>VariantPostBuild</a:v>
+                                    <a:v>VariantPreCompile</a:v>
+                                </a:da>
+                            </v:var>
+                            
+                            <!--  @implements CrcuConfig_Object  -->
+                                <v:ctr name="CrcuConfig" type="IDENTIFIABLE">
+                                    <a:a name="DESC" 
+                                         value="EN: This container contains the configuration parameters and sub containers of the AUTOSAR Crcu module."/>
+                                    <a:a name="UUID" value="ECUC:5e1b9d37-58b0-46ba-a549-c40c8e80d6f3"/>
+
+                                    <!--  @implements CrcuChannel_Object  -->
+                                    <v:lst name="CrcuChannel" type="MAP">
+                                        <a:da name="MIN" value="1"/>
+                                        <a:da name="MAX" value="255"/>
+                                        <v:ctr name="CrcuChannel" type="IDENTIFIABLE">
+                                            <a:a name="DESC">
+                                                <a:v>
+                                                    <![CDATA[EN:
+                                                        <html><p>
+                                                            Configuration of an individual Crcu channel. Symbolic names will be generated for each channel.
+                                                        </p></html>
+                                                    ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                                <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="UUID" value="ECUC:37aaf24e-fe6b-4d85-9655-e20239723ac8"/>
+                                            
+                                            <v:var name="CrcuChannelId" type="INTEGER">
+                                              <a:a name="DESC">
+                                                  <a:v>
+                                                      <![CDATA[EN:
+                                                          <html>
+                                                          Identifies the Crcu channel. <p/>
+                                                          Note: Implementation Specific Parameter. <p/>
+                                                          </html>
+                                                      ]]>
+                                                  </a:v>
+                                              </a:a> 
+                                              <a:a name="LABEL" value="Crcu Channel ID" />
+                                              <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                              </a:a>
+                                              <a:a name="ORIGIN" value="NXP"/>
+                                              <a:a name="SCOPE" value="LOCAL"/>
+                                              <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                              <a:a name="UUID" 
+                                                   value="ECUC:aac952ef-7cb7-4c94-acc5-b6c4ca845e7a"/>
+                                              <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, num:i(1))"/>
+                                              <a:da name="INVALID" type="Range">
+                                                  <a:tst expr="&gt;=0"/>
+                                                  <a:tst expr="&lt;=255"/>
+                                              </a:da>
+                                              <a:da name="RANGE" type="XPath">
+                                                  <a:tst expr="(. &gt;= 0) and (.&lt; num:i(count(node:current()/../../*)))"
+                                                          false="Value out of range: must be in range 0 to N-1 (N is number of configured channels). Use the Calc button to calculate correct default value"/>
+                                                  <a:tst expr="text:uniq(../../*/CrcuChannelId, .)"
+                                                          false="Duplicated value, CrcuChannelId must be unique across all Crcu channels. Use the Calc button to calculate correct default value."/>
+                                              </a:da>
+                                            </v:var>
+                                    
+                                            <v:var name="CrcChannel" type="ENUMERATION">
+                                                <a:a name="LABEL" value="CRC Channel"/>
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                        <![CDATA[EN:
+                                                            <html><p>
+                                                                 Selects one of the CRC channels available on the platform.
+                                                            </p></html>
+                                                        ]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="SCOPE" value="LOCAL"/>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:0233ad95-d800-476d-a551-96fcf5c84481"/>
+                                                <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Crcu.CrcHwChannels'))[position()-1=node:fallback(node:current()/../@index, '0')]"/>
+                                                <a:da name="RANGE" type="XPath" expr="ecu:list('Crcu.CrcHwChannels')"/>
+                                                <a:da name="INVALID" type="XPath">
+                                                    <a:tst expr="text:uniq(../../*/CrcChannel, .)" false="Duplicate physical CRC channel"/>
+                                                </a:da>
+                                            </v:var>
+                                            <v:ref name="CrcuDmaChannelRef" type="REFERENCE">
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                      <![CDATA[EN: 
+                                                       <html>
+                                                          <p>Reference to a DMA channel (set in the Mcl driver configuration) used by the Crcu driver when calling function Crcu_AsyncCalculateCrc().</p>
+                                                          Note: Implementation Specific Parameter. <p/>
+                                                      </html>
+                                                      ]]>
+                                                  </a:v>
+                                                </a:a>
+                                                <a:a name="SCOPE" value="LOCAL"/>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                </a:a>
+                                                <a:a name="OPTIONAL" value="true"/>
+                                                <a:a name="LABEL" value="Crcu DMA Channel"/>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="UUID" value="ECUC:5419ebbb-b73b-4ee2-9e88-22e201491b61"/>
+                                                <a:a name="EDITABLE" type="XPath">
+                                                  <a:tst expr="(node:fallback(../../../../CrcuGeneral/CrcuDmaUsed, 'false') = 'true')"/>
+                                                </a:a>
+                                                <a:a name="INVALID" type="XPath">
+                                                  <a:tst expr="not(node:refvalid(.))" true="The selected DMA channel is not valid."/>
+                                                  <a:tst expr="text:uniq(../../*/CrcuDmaChannelRef, .)" false="Duplicate DMA channel"/>
+                                                </a:a>
+                                                <a:da name="REF" value="ASPathDataOfSchema:/TS_T40D2M10I1R0/Mcl/MclConfigSet/DMAChannel"/>
+                                            </v:ref> 
+                                            <v:var name="CrcuAsyncCalculateCrcCompleteNotification" type="FUNCTION-NAME">
+                                                <a:a name="LABEL" value="Async CRC Complete Notification"/>
+                                                <a:a name="DESC">
+                                                  <a:v>
+                                                      <![CDATA[EN:<html>
+                                                          Function name of notification called when an async CRC calculation operation has completed.<p/>
+                                                          Note: Implementation Specific Parameter.
+                                                      </html>]]>
+                                                  </a:v>
+                                                </a:a>
+                                                <a:a name="SCOPE" value="LOCAL"/>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                                        type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:6c3f6592-4a40-49c7-9ef9-1002f4024b09"/>
+                                                <a:da name="DEFAULT" value="Crcu_AsyncCalculateCrcCompleteNotif"/>
+                                                <a:a name="EDITABLE" type="XPath">
+                                                    <a:tst expr="(node:fallback(../../../../CrcuGeneral/CrcuDmaUsed, 'false') = 'true' and node:exists(../CrcuDmaChannelRef))"/>
+                                                </a:a>                                    
+                                                <a:da name="INVALID" type="XPath">
+                                                  <a:tst expr="(  (node:fallback(., '') = 'NULL') or
+                                                                  (node:fallback(., '') = 'Null') or
+                                                                  (node:fallback(., '') = 'false') or
+                                                                  (node:fallback(., '') = 'FALSE') or
+                                                                  (node:fallback(., '') = 'null') or
+                                                                  (node:fallback(., '') = 'null_ptr') or
+                                                                  (node:fallback(., '') = 'Null_Ptr') or
+                                                                  (node:fallback(., '') = 'NULL_PTR') 
+                                                               )"
+                                                      true="Invalid name, it must be a valid C function name."/>
+                                                  <a:tst expr="(normalize-space(node:fallback(., '')) = '&quot;NULL_PTR&quot;') or
+                                                               (normalize-space(node:fallback(., '')) = 'NULL_PTR') or
+                                                               (normalize-space(node:fallback(., '')) = '&quot;NULL&quot;') or
+                                                               (normalize-space(node:fallback(., '')) = 'NULL') or
+                                                               (text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                                                     false="Invalid name, it must be a valid C function name"/>
+                                                </a:da>
+                                            </v:var>
+                                        </v:ctr>
+                                    </v:lst>
+                                    <!--  @implements CrcuChannelConfig_Object  -->
+                                    <v:lst name="CrcuChannelConfig" type="MAP">
+                                        <a:da name="MIN" value="1"/>
+                                        <a:da name="MAX" value="255"/>
+                                        <v:ctr name="CrcuChannelConfig" type="IDENTIFIABLE">
+                                            <a:a name="DESC">
+                                                <a:v>
+                                                    <![CDATA[EN:
+                                                        <html><p>
+                                                            A Crcu channel configuration represents a group of settings that define the way the CRC is going to be computed.
+                                                        </p></html>
+                                                    ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                                <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="UUID" value="ECUC:49154b03-0601-4bfd-8f96-5ec46a6543ea"/>
+                                          
+                                            <v:var name="CrcuChannelConfigId" type="INTEGER">
+                                              <a:a name="DESC">
+                                                  <a:v>
+                                                      <![CDATA[EN:
+                                                          <html>
+                                                          Identifies the Crcu channel configuration. <p/>
+                                                          Note: Implementation Specific Parameter. <p/>
+                                                          </html>
+                                                      ]]>
+                                                  </a:v>
+                                              </a:a>
+                                              <a:a name="SCOPE" value="LOCAL"/>
+                                              <a:a name="LABEL" value="Crcu Channel Config ID" />
+                                              <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                              </a:a>
+                                              <a:a name="ORIGIN" value="NXP"/>
+                                              <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                              <a:a name="UUID" 
+                                                   value="ECUC:aac952ef-7cb7-4c94-acc5-b6c4ca835e7a"/>
+                                              <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, num:i(1))"/>
+                                              <a:da name="INVALID" type="Range">
+                                                  <a:tst expr="&gt;=0"/>
+                                                  <a:tst expr="&lt;=255"/>
+                                              </a:da>
+                                              <a:da name="RANGE" type="XPath">
+                                                  <a:tst expr="(. &gt;= 0) and (.&lt; num:i(count(node:current()/../../*)))"
+                                                          false="Value out of range: must be in range 0 to N-1 (N is number of configured channel configuration). Use the Calc button to calculate correct default value"/>
+                                                  <a:tst expr="text:uniq(../../*/CrcuChannelConfigId, .)"
+                                                          false="Duplicated value, CrcuChannelConfigId must be unique across all Crcu channel configurations. Use the Calc button to calculate correct default value."/>
+                                              </a:da>
+                                            </v:var>
+
+                                            <v:var name="Crcu_Width" type="ENUMERATION">
+                                                <a:a name="LABEL" value="CRC Width"/>
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                        <![CDATA[EN:
+                                                            <html><p>
+                                                             Width of the CRC protocol to be used. (16, 32 bit)
+                                                            </p></html>
+                                                        ]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="SCOPE" value="LOCAL"/>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                 <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                                     type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:55afbdd1-b2b7-42e8-82fc-c09f8321978b"/>
+                                                <a:da name="DEFAULT" value="CRCU_WIDTH_32"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>CRCU_WIDTH_16</a:v>
+                                                    <a:v>CRCU_WIDTH_32</a:v>
+                                                </a:da>
+                                            </v:var> 
+                                            <v:var name="Crcu_Polynom" type="INTEGER">
+                                                <a:a name="LABEL" value="Polynom"/>
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                        <![CDATA[EN:
+                                                            <html><p>
+                                                             The polynom that will be used during CRC calculation
+                                                            </p></html> 
+                                                        ]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="SCOPE" value="LOCAL"/>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:0223ad95-d800-476d-a551-96fcf6c84482"/>
+                                                <a:da name="DEFAULT" value='1'/>
+                                                <a:da name="INVALID" type="Range">
+                                                    <a:tst expr="&gt;=1"/>
+                                                    <a:tst expr="&lt;=4294967295"/>
+                                                </a:da>
+                                                <a:da name="RANGE" type="XPath">
+                                                    <a:tst expr="((../Crcu_Width = 'CRCU_WIDTH_16') and (../Crcu_Polynom > num:hextoint('0xFFFF')))"  
+                                                    true="When Crcu width is set to 'CRCU_WIDTH_16', the maximum value of the polynom is 0xFFFF."/>
+                                                </a:da>
+                                            </v:var>
+                                            <v:var name="Crcu_In_Swap" type="ENUMERATION">
+                                                <a:a name="LABEL" value="Input Data Swap"/>
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                        <![CDATA[EN:
+                                                            <html><p>
+                                                             Enumerator that defines CRC input data bitwise and bytewise swap (transpose) functionality.
+                                                            </p></html>
+                                                        ]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="SCOPE" value="LOCAL"/>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                 <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                                     type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:55afbdd1-b2b7-42e8-82fc-c09f8621878b"/>
+                                                <a:da name="DEFAULT" value="CRCU_IN_NOSWAP"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>CRCU_IN_NOSWAP</a:v>
+                                                    <a:v>CRCU_IN_BITSWAP</a:v>
+                                                    <a:v>CRCU_IN_BITANDBYTESWAP</a:v>
+                                                    <a:v>CRCU_IN_BYTESWAP</a:v>
+                                                </a:da>                                                
+                                            </v:var>                                             
+                                            <v:var name="Crcu_Out_Swap" type="ENUMERATION">
+                                                <a:a name="LABEL" value="Output Data Swap"/>
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                        <![CDATA[EN:
+                                                            <html><p>
+                                                             Enumerator that defines CRC output data bitwise and bytewise swap (transpose) functionality.
+                                                            </p></html>
+                                                        ]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="SCOPE" value="LOCAL"/>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                 <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                                     type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:44afbdd1-b2b7-42e8-12fc-c09f8621878b"/>
+                                                <a:da name="DEFAULT" value="CRCU_OUT_NOSWAP"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>CRCU_OUT_NOSWAP</a:v>
+                                                    <a:v>CRCU_OUT_BITSWAP</a:v>
+                                                    <a:v>CRCU_OUT_BITANDBYTESWAP</a:v>
+                                                    <a:v>CRCU_OUT_BYTESWAP</a:v>
+                                                </a:da>                                                
+                                            </v:var>   
+                                            <v:var name="Crcu_Out_Inversion" type="ENUMERATION">
+                                                <a:a name="LABEL" value="Output Data Inversion"/>
+                                                <a:a name="DESC">
+                                                    <a:v>
+                                                        <![CDATA[EN:
+                                                            <html><p>
+                                                             Enumerator that defines CRC output Inversion functionality.
+                                                            </p></html>
+                                                        ]]>
+                                                    </a:v>
+                                                </a:a>
+                                                <a:a name="SCOPE" value="LOCAL"/>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                 <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                                     type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:44afbdd1-b2b7-52e7-12fc-d09f8621878b"/>
+                                                <a:da name="DEFAULT" value="CRCU_OUT_NOINVERSION"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>CRCU_OUT_NOINVERSION</a:v>
+                                                    <a:v>CRCU_OUT_INVERSION</a:v>
+                                                </a:da>                                                
+                                            </v:var>   
+                                         </v:ctr>
+                                    </v:lst>
+                                </v:ctr>
+                            
+                            <!--/**@implements CrcuGeneral_Object */ -->
+                            <v:ctr name="CrcuGeneral" type="IDENTIFIABLE">
+                                <a:a name="DESC">
+                                    <a:v> <![CDATA[EN: <html>
+                                    <h1>CrcuGeneral</h1><p>
+                                    All general parameters of the Crcu driver are collected here.
+                                    </p></html>]]>
+                                    </a:v> 
+                                </a:a>
+                                <a:a name="UUID" value="ECUC:2dc75a20-8be4-11e2-9e96-0800200c9a66"/>
+                                <!-- /** @implements   CrcuDevErrorDetect_Object */ -->
+                                <v:var name="CrcuDevErrorDetect" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Development Error Detection"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN: <html>
+                                            <h1>Crcu Development Error Detect</h1><p>
+                                            Compile switch to enable / disable development error detection for this module.
+                                            <ul>
+                                            <li>Unchecked: Development error detection disabled</li>
+                                            <li>Checked  : Development error detection enabled </li>
+                                            </ul>
+                                            </p></html>
+                                            ]]> 
+                                        </a:v> 
+                                    </a:a> 
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:38a92630-8be4-11e2-9e96-0800200c9a66"/>
+                                    <a:da name="DEFAULT" value="true"/> 
+                                </v:var>
+                                
+                                <!-- /** @implements   CrcuVersionInfoApi_Object */ -->
+                                <v:var name="CrcuVersionInfoApi" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Provide Version Info API"/>                
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>Crcu VersionInfo Api</h1><p>
+                                            Compile switch to enable / disable the version information API.
+                                            <ul>
+                                            <li>Checked  : API enabled </li>
+                                            <li>Unchecked:API disabled </li>
+                                            </ul>
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:44b03860-8be4-11e2-9e96-0800200c9a66"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                                <v:var name="CrcuDmaUsed" type="BOOLEAN">
+                                    <a:a name="LABEL" value="Use DMA for Async CRC Calculation"/>
+                                    <a:a name="DESC">
+                                    <a:v>
+                                    <![CDATA[EN:
+                                        <html>
+                                            <p>Check this in order to be able to use DMA in the Crcu driver.</p>
+                                            <p>Leaving this unchecked will allow the Crcu driver to compile with no dependencies from the Mcl driver.</p>
+                                            Note: Implementation Specific Parameter. <p/>
+                                        </html>
+                                    ]]>
+                                    </a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:72a8a738-4009-4639-224a-bb4daf844a8b"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                <!--  @implements CrcuEnableUserModeSupport_Object  -->						
+                                <v:var name="CrcuEnableUserModeSupport" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                This parameter is added in Crcu configuration in order to keep a consistent design over the entire set of MCAL drivers. 
+                                                It cannot be configured by the user and is always set to 'false'. 
+                                                There are no registers used by the driver which require special measures in order to be accessed from user mode, so Crcu driver can be run from either user or supervisor mode.<p/>
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Enable Crcu User Mode Support"/>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:2c37b26f-6cb3-4634-b20b-b616fg579f11c"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:da name="READONLY" value="true"/>
+                                </v:var>
+                            </v:ctr> 
+                                
+                            <!-- /**@implements CrcuCommonPublishedInformation_Object */ -->   
+                            <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">              
+                                <a:a name="DESC">
+                                    <a:v> <![CDATA[EN: <html>
+                                        <h1>CommonPublishedInformation</h1><p>
+                                        Common container, aggregated by all modules. It contains published information about vendor and versions.
+                                        </p></html> ]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="UUID" value="ECUC:6d274270-8be4-11e2-9e96-0800200c9a66"/>  
+                                <!-- /** @implements ArReleaseMajorVersion_Object */ --> 
+                                <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="AUTOSAR Release Major Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>AUTOSAR Release Major Version</h1><p>
+                                            Major version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:77546480-8be4-11e2-9e96-0800200c9a66"/>
+                                    <a:da name="DEFAULT" value="4"/>                       
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=4"/>
+                                        <a:tst expr="&lt;=4"/>
+                                    </a:da>                    
+                                </v:var>
+                                <!-- /** @implements ArReleaseMinorVersion_Object */ -->
+                                <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="AUTOSAR Release Minor Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>AUTOSAR Release Minor Version</h1><p>
+                                            Minor version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>   
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:800a01c0-8be4-11e2-9e96-0800200c9a66"/>
+                                    <a:da name="DEFAULT" value="2"/>                       
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=2"/>
+                                        <a:tst expr="&lt;=2"/>
+                                    </a:da>                    
+                                </v:var>
+                                <!-- /** @implements ArReleaseRevisionVersion_Object */ -->
+                                <v:var name="ArReleaseRevisionVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="AUTOSAR Release Revision Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>AUTOSAR Patch Version</h1><p>
+                                            Revision version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:89cdb3a0-8be4-11e2-9e96-0800200c9a66"/>
+                                    <a:da name="DEFAULT" value="2"/>                       
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=2"/>
+                                        <a:tst expr="&lt;=2"/>
+                                    </a:da>                    
+                                </v:var>
+                                <!-- /** @implements ModuleId_Object */ -->
+                                <v:var name="ModuleId" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Numeric Module ID"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>Module ID</h1><p>
+                                            Module ID of this module from Module List.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:93ca28c0-8be4-11e2-9e96-0800200c9a66"/>
+                                    <a:da name="DEFAULT" value="255"/>                                         
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=255"/>
+                                        <a:tst expr="&lt;=255"/>
+                                    </a:da>                    
+                                </v:var>
+                                <!-- /** @implements SwMajorVersion_Object */ -->
+                                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Software Major Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>Software Major Version</h1><p>
+                                            Major version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>                                    
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:9caeec50-8be4-11e2-9e96-0800200c9a66"/>
+                                    <a:da name="DEFAULT" value="1"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=1"/>
+                                        <a:tst expr="&lt;=1"/>
+                                    </a:da>                    
+                                </v:var>
+                                <!-- /** @implements SwMinorVersion_Object */ -->
+                                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Software Minor Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>Software Minor Version</h1><p>
+                                            Minor version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>                                    
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:b85b6d20-8be4-11e2-9e96-0800200c9a66"/>
+                                    <a:da name="DEFAULT" value="0"/>                     
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0"/>
+                                        <a:tst expr="&lt;=0"/>
+                                    </a:da>                    
+                                </v:var>
+                                <!-- /** @implements SwPatchVersion_Object */ -->
+                                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Software Patch Version"/>
+                                    <a:a name="DESC">
+                                        <a:v> <![CDATA[EN: <html>
+                                            <h1>Software Patch Version</h1><p>
+                                            Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>                                    
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:c3000920-8be4-11e2-9e96-0800200c9a66"/>
+                                    <a:da name="DEFAULT" value="1"/>                                         
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=1"/>
+                                        <a:tst expr="&lt;=1"/>
+                                    </a:da>                    
+                                </v:var>
+                                <!-- /** @implements VendorApiInfix_Object */ -->
+                                <v:var name="VendorApiInfix" type="STRING_LABEL">
+                                    <a:a name="LABEL" value="Vendor Api Infix"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>
+                                            <h1>Vendor Api Infix</h1><p>
+                                            In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name. 
+                                            This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+                                            &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+
+                                            E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write. 
+
+                                            This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a> 
+                                    <a:a name="SCOPE" value="LOCAL"/>                                    
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="OPTIONAL" value="true"/>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:cee90c00-8be4-11e2-9e96-0800200c9a66"/>
+                                    <a:da name="DEFAULT" value=""/>                
+                                    <a:da name="READONLY" value="true"/>
+                                </v:var>
+                                <!-- /** @implements VendorId_Object */ -->
+                                <v:var name="VendorId" type="INTEGER_LABEL">
+                                    <a:a name="LABEL" value="Vendor ID"/>
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:<html>
+                                            <h1>Vendor ID</h1><p>
+                                            Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list.
+                                            </p></html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="SCOPE" value="LOCAL"/>                                    
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:d6ebfb10-8be4-11e2-9e96-0800200c9a66"/>
+                                    <a:da name="DEFAULT" value="43"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=43"/>
+                                        <a:tst expr="&lt;=43"/>
+                                    </a:da>                    
+                                </v:var>
+                                
+                            </v:ctr>              
+                            
+                        </v:ctr>
+                        
+                    </d:chc>
+
+                    <d:chc name="Crcu_EcuParameterDefinition" 
+                            type="AR-ELEMENT" value="ECU_PARAMETER_DEFINITION">
+                        <d:ctr type="AR-ELEMENT">
+                            <a:a name="UUID" value="ECUC:ded101e0-8be4-11e2-9e96-0800200c9a66"/>
+                            <a:a name="DEF" 
+                                    value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+                            <d:lst name="MODULE_REF">
+                                <d:ref type="MODULE_REF" value="ASPath:/TS_T40D2M10I1R0/Crcu"/>
+                            </d:lst>
+                        </d:ctr>
+                    </d:chc>
+                    <d:chc name="Crcu_ModuleDescription" 
+                            type="AR-ELEMENT" value="BSW_MODULE_DESCRIPTION">
+                        <d:ctr type="AR-ELEMENT">
+                            <a:a name="DEF" 
+                                    value="ASPath:/AR_PACKAGE_SCHEMA/BSW_MODULE_DESCRIPTION"/>
+                            
+                            <d:var name="MODULE_ID" type="INTEGER" >
+                                <a:a name="ENABLE" value="false"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            
+                            <d:ref type="RECOMMENDED_CONFIGURATION" >
+                                <a:a name="ENABLE" value="false"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:ref>
+                            
+                            <d:ref type="PRE_CONFIGURED_CONF" >
+                                <a:a name="ENABLE" value="false"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:ref>
+                            
+                            <d:ref type="VENDOR_SPECIFIC_MODULE_DEF" 
+                                    value="ASPath:/TS_T40D2M10I1R0/Crcu"/>
+                        </d:ctr>
+                    </d:chc>
+                    
+                </d:lst>
+            
+            </d:ctr>
+        
+        </d:lst>
+    </d:ctr>
+
+</datamodel>

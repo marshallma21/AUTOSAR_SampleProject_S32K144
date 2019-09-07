@@ -1,0 +1,1262 @@
+<?xml version='1.0'?>
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+<!--
+*   @file    Fee.xdm
+*   @implements Fee.xdm_Artifact
+*   @version 1.0.1
+*
+*   @brief   AUTOSAR Fee - Tresos Studio plugin schema file
+*   @details This file contains the schema configuration for and Fee Tresos Studio plugin.
+-->
+<!--
+====================================================================================================
+*   Project              : AUTOSAR 4.2 MCAL
+*   Platform             : ARM
+*   Peripheral           : none
+*   Dependencies         : Fls
+*
+*   Autosar Version      : 4.2.2
+*   Autosar Revision     : ASR_REL_4_2_REV_0002
+*   Autosar Conf.Variant :
+*   SW Version           : 1.0.1
+*   Build Version        : S32K14x_MCAL_1_0_1_RTM_ASR_REL_4_2_REV_0002_20180713
+
+*   (c) Copyright 2006-2016 Freescale Semiconductor, Inc. 
+*       Copyright 2017-2018 NXP
+*   All Rights Reserved.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+-->
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="TS_T40D2M10I1R0" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:81222665-a211-4373-82da-0000966c66bd"/>
+        <d:lst type="ELEMENTS">
+        <d:chc name="Fee" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+                <a:a name="RELEASE" value="asc:4.2"/>
+                <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                    <ad:DOC-REVISIONS>
+                        <ad:DOC-REVISION>
+                            <ad:REVISION-LABEL>4.6.0</ad:REVISION-LABEL>
+                            <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                            <ad:DATE>2014-10-31</ad:DATE>
+                        </ad:DOC-REVISION>
+                    </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+                </a:a>
+                <a:a name="DESC"> 
+                    <a:v>
+                        <![CDATA[EN:<html><p>
+                        Configuration of the Fee (Flash EEPROM Emulation) module.
+                        </p></html>]]>
+                    </a:v>
+                </a:a>
+                <a:a name="POSTBUILDVARIANTSUPPORT" value="false"/>
+                <a:a name="LOWER-MULTIPLICITY" value="1"/>
+                <a:a name="UPPER-MULTIPLICITY" value="1"/>
+                <a:a name="UUID" value="ECUC:5e05cec7-c480-4eb9-8620-483370c33b52"/>
+                <!-- @implements IMPLEMENTATION_CONFIG_VARIANT_Object -->
+                <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                    <a:a name="LABEL" value="Config Variant"/>
+                    <a:a name="DESC">
+                        <a:v>
+                            <![CDATA[EN:<html><p>
+                                <strong>VariantPreCompile</strong>: Precompile configuration parameters.
+                             </p></html>]]>
+                        </a:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:7cf926ba-5ce1-4a83-8ce9-8228e609914c"/>
+                    <a:da name="DEFAULT" value="VariantPreCompile"/>
+                    <a:da name="RANGE" value="VariantPreCompile"/>
+                </v:var>
+                
+                <v:lst name="FeeClusterGroup" type="MAP">
+                    <a:da name="MIN" value="1"/>
+                    <v:ctr name="FeeClusterGroup" type="IDENTIFIABLE">
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a> 
+                        <a:a name="LABEL" value="Fee Cluster Group" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                  <strong>Vendor specific:</strong> Configuration of cluster group specific 
+                                  parameters for the Flash EEPROM Emulation module.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="UUID"  value="ECUC:49409fc2-eb73-4dbd-bb0d-f5096d633459"/>
+                        
+                        <v:lst name="FeeCluster" type="MAP">
+                            <a:da name="MIN" value="2"/>
+                            <v:ctr name="FeeCluster" type="IDENTIFIABLE">
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                </a:a>               
+                                <a:a name="LABEL" value="Fee Cluster"/>
+                                <a:a name="DESC">
+                                    <a:v>
+                                        <![CDATA[EN:<html><p>
+                                        <strong>Vendor specific:</strong> Configuration of cluster specific 
+                                        parameters for the Flash EEPROM Emulation module.
+                                        </p></html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="UUID" value="ECUC:383c5b05-51f1-4c53-9b34-8bc20933d2be"/>
+                                
+                                <v:lst name="FeeSector" type="MAP">
+                                    <a:da name="MIN" value="1"/>
+                                    <a:a name="COLUMNS">
+                                        <a:v>FeeSectorRef</a:v>
+                                        <a:v>FeeSectorIndex</a:v>
+                                    </a:a>
+                                    <v:ctr name="FeeSector" type="IDENTIFIABLE">
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>             
+                                        <a:a name="LABEL" value="Fee Sector"/>
+                                        <a:a name="DESC">
+                                            <a:v>
+                                                <![CDATA[EN:<html><p>
+                                                    <strong>Vendor specific:</strong> Configuration of sector specific 
+                                                    parameters for the Flash EEPROM Emulation module.
+                                                </p></html>]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="UUID" value="ECUC:73b94d92-3c43-418c-8c73-8277774fb4f7"/>
+                                        <v:ref name="FeeSectorRef" type="REFERENCE">
+                                            <a:a name="LABEL" value="Fee Sector Ref" />
+                                            <a:a name="DESC">
+                                                <a:v>
+                                                    <![CDATA[EN:<html><p>
+                                                    <strong>Vendor specific:</strong> Reference to a logical Fls sector 
+                                                    the Fee cluster consist of.
+                                                    </p></html>]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>             
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="UUID" value="ECUC:60115048-7d18-41d9-9cc1-5a50f342dc91"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="node:refvalid(.)" false="Invalid or empty reference to Fls sector."/>
+                                                <a:tst expr="text:uniq(../../../../../../*/FeeCluster/*/FeeSector/*/FeeSectorRef,.)" false="Fls sector is already used."/>
+                                                <a:tst expr="(../FeeSectorIndex != 0 and node:ref(.)/FlsSectorStartaddress != node:ref(../../*[FeeSectorIndex = (node:current()/../FeeSectorIndex -1)]/FeeSectorRef)/FlsSectorSize + node:ref(../../*[FeeSectorIndex = (node:current()/../FeeSectorIndex -1)]/FeeSectorRef)/FlsSectorStartaddress )" true="Fee cluster must combine Fls sectors into one linear address space. There is gap between this and previous sector."/>
+                                                <a:tst expr="count(../../../../../../*/FeeCluster/*/FeeSector/*[node:refvalid(FeeSectorRef) and node:refvalid(node:current()) and node:name(node:ref(node:current())/../../..) != node:name(node:ref(FeeSectorRef)/../../..)]) = 0" false="All Fls sectors referenced by Fee module must belong to same FlsConfigSet."/>
+                                                <a:tst 
+                                                  expr="(node:refexists(.)='true') and (node:value(node:refs('ASPathDataOfSchema:/AUTOSAR/Fls')/FlsGeneral/FlsCancelApi)='true') and (node:value(node:ref(.)/FlsPageWriteAsynch)='true')"
+                                                  true="Incompatible FLS configuration. If the Fls_Cancel API is enabled in the FLS driver used by the FEE, the Fls Page Write Asynch mode cannot be used for flash sectors. Disable Fls_Cancel API, select different sector, or use synchronous write."/>
+                                                <a:tst 
+                                                  expr="(node:refexists(.)='true') and (node:value(node:refs('ASPathDataOfSchema:/AUTOSAR/Fls')/FlsGeneral/FlsCancelApi)='true') and (node:ref(.)/../../../FlsMaxWriteNormalMode  &lt;  node:when(node:fallback(node:value(../../../../../../../FeeGeneral/FeeVirtualPageSize),16)  &lt;  16,16,node:value(../../../../../../../FeeGeneral/FeeVirtualPageSize)))"
+                                                  true="Incompatible FLS configuration. If the Fls_Cancel API is enabled in the FLS driver used by the FEE, the FlsMaxWriteNormalMode parameter value cannot be smaller than the size of the FEE Block/Cluster Header or the size of the FEE virtual page, whichever is larger. Disable Fls_Cancel API, increase the FlsMaxWriteNormalMode parameter value in the given FlsConfigSet, or select a sector from a compatible FlsConfigSet."/>
+                                                <a:tst 
+                                                  expr="(node:refexists(.)='true') and (node:value(node:refs('ASPathDataOfSchema:/AUTOSAR/Fls')/FlsGeneral/FlsCancelApi)='true') and (node:ref(.)/../../../FlsMaxWriteFastMode  &lt;  node:when(node:fallback(node:value(../../../../../../../FeeGeneral/FeeVirtualPageSize),16)  &lt;  16,16,node:value(../../../../../../../FeeGeneral/FeeVirtualPageSize)))"
+                                                  true="Incompatible FLS configuration. If the Fls_Cancel API is enabled in the FLS driver used by the FEE, the FlsMaxWriteFastMode parameter value cannot be smaller than the size of the FEE Block/Cluster Header or the size of the FEE virtual page, whichever is larger. Disable Fls_Cancel API, increase the FlsMaxWriteFastMode parameter value in the given FlsConfigSet, or select a sector from a compatible FlsConfigSet."/>
+                                            </a:da>
+                                            <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Fls/FlsConfigSet/FlsSectorList/FlsSector"/>
+                                        </v:ref>
+                                        
+                                        <!-- FeeSectorIndex -->
+                                        <v:var name="FeeSectorIndex" type="INTEGER">
+                                            <a:a name="LABEL" value="Fee Sector Index" />
+                                            <a:a name="DESC">
+                                              <a:v>
+                                              <![CDATA[EN:<html><p>
+                                                Vendor specific: Fee Sector Index is an invariant index, used to order Fee sectors  and loop 
+                                                over them in the correct, configured order. Its value should be equal with the position of the 
+                                                configured sector inside the configured sector list (the same value as the shown index).<br />
+                                                Rationale: The generated .epc configuration might reorder the flash sectors(alphabetically), thus the index parameter
+                                                changes, becoming out of sync with the real intended order .<br />
+                                                Range:<br />
+                                                <strong>min</strong> = 0<br />
+                                                <strong>max</strong> = 65534<br />                                                
+                                                </p></html>]]>
+                                                </a:v>                   
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>               
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:582f386b-55db-4923-bb69-ad658099fb45"/>
+                                            <a:da name="DEFAULT" type="XPath">
+                                                <a:tst expr="num:i(node:fallback(../@index, 0))"/>
+                                            </a:da>
+                                            <a:da name="RANGE" type="XPath">
+                                                <a:tst expr="text:uniq(text:split(node:fallback(../../*/FeeSectorIndex, 1)), node:fallback(., 1))" 
+                                                       false="This sector ID is already in use. The sector ID must be unique."/>    
+                                                <a:tst expr="(  node:fallback( ../FeeSectorIndex, 0 ) != 0 and 
+                                                                node:fallback(../../*[FeeSectorIndex = (node:current()/../FeeSectorIndex - 1)],0) != 0
+                                                             )" 
+                                                   true="Invalid Sector Index value, the values of sector index must be consecutive, with no gaps. "/>  
+                                            </a:da>
+                                            <a:da name="INVALID" type="Range">
+                                              <a:tst expr="&lt;=65534"/>
+                                              <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var> <!-- FeeSectorIndex -->         
+                                    </v:ctr> <!--<v:ctr name="FeeSector" type="IDENTIFIABLE">-->
+                                </v:lst><!--<v:lst name="FeeSector" type="MAP">-->
+                            </v:ctr><!--<v:ctr name="FeeCluster" type="IDENTIFIABLE">-->
+                        </v:lst><!--<v:lst name="FeeCluster" type="MAP">-->
+                    </v:ctr><!--<v:ctr name="FeeClusterGroup" type="IDENTIFIABLE">-->
+                </v:lst><!--<v:lst name="FeeClusterGroup" type="MAP">-->
+              
+                <!-- @implements FeeBlockConfiguration_Object -->
+                <v:lst name="FeeBlockConfiguration" type="MAP">
+                    <a:da name="MIN" value="1"/>
+                    <a:a name="COLUMNS">
+                        <a:v>FeeClusterGroupRef</a:v>
+                    </a:a>
+                    <v:ctr name="FeeBlockConfiguration" type="IDENTIFIABLE">
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                Configuration of block specific parameters for the Flash EEPROM Emulation module.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>              
+                        <a:a name="UUID" value="ECUC:d438accf-aa3f-49a7-8804-49639a48dc6c"/>
+                        <v:ref name="FeeClusterGroupRef" type="REFERENCE">
+                            <a:a name="LABEL" value="Fee Cluster Group Ref" />
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[EN:<html><p>
+                                    <strong>Vendor specific:</strong> Reference to the Fee cluster group which the Fee 
+                                    block belongs to. In other words, FeeClusterGroupRef assigns the Fee block 
+                                    to particular Fee cluster group.
+                                    </p></html>]]>
+                                </a:v>
+                            </a:a> 
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>              
+                            <a:a name="ORIGIN" value="NXP"/>
+                            <a:a name="UUID" value="ECUC:6dda909f-fa34-426b-8ea9-389156def48e"/>
+                            <a:da name="INVALID" type="XPath" expr="node:refvalid(.)" false="Invalid or empty reference to FeeClusterGroup."/>
+                            <a:da name="REF" value="ASPathDataOfSchema:/TS_T40D2M10I1R0/Fee/FeeClusterGroup"/>
+                        </v:ref>
+                        
+                        <!-- @implements FeeBlockNumber_Object -->
+                        <v:var name="FeeBlockNumber" type="INTEGER">
+                            <a:a name="LABEL" value="Fee Block Number" />
+                                <a:a name="DESC">
+                                    <a:v>
+                                      <![CDATA[EN:<html><p>
+                                        Block identifier (handle).<br />
+                                        <code>0x0000</code> and  <code>0xFFFF</code> shall not be used for block 
+                                        numbers (see FEE006).<br />
+                                        Range:<br />
+                                        <strong>min</strong> = 2^NVM_DATA_SELECTION_BITS<br />
+                                        <strong>max</strong> = 0xFFFF&nbsp;-&nbsp;2^NVM_DATA_SELECTION_BITS<br />
+                                        <strong>Note:</strong> Depending on the number of bits set aside for dataset selection 
+                                        several other block numbers shall also be left out to ease implementation. 
+                                        </p></html>]]>
+                                    </a:v>                   
+                                </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>            
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="SCOPE" value="ECU"/>            
+                            <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                            <a:a name="UUID" value="ECUC:582f386b-55db-4923-bb73-eb698099fb9f"/>
+                            <a:da name="DEFAULT" type="XPath">
+                                <a:tst expr="num:i(node:fallback(../@index, 0)+1)"/>
+                            </a:da>
+                            <a:da name="RANGE" type="XPath">
+                                <a:tst expr="text:uniq(text:split(node:fallback(../../*/FeeBlockNumber, 1)), node:fallback(., 1))" false="This block number is already in use."/> 
+                            </a:da>
+                            <a:da name="INVALID" type="Range">
+                                <a:tst expr="&lt;=65534"/>
+                                <a:tst expr="&gt;=1"/>
+                            </a:da>
+                        </v:var>
+                        
+                        <!-- @implements FeeBlockSize_Object -->
+                        <v:var name="FeeBlockSize" type="INTEGER">
+                            <a:a name="LABEL" value="Fee Block Size" />
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[EN:<html><p>
+                                      Size of a logical block in bytes.
+                                    </p></html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>                
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="SCOPE" value="ECU"/>              
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="ECUC:d32ca7e3-76c1-41c4-9c41-14ecb43145f7"/>
+                            <a:da name="DEFAULT" value="1"/>
+                            <a:da name="INVALID" type="Range">
+                                <a:tst expr="&lt;=65535"/>
+                                <a:tst expr="&gt;=1"/>
+                            </a:da>
+                        </v:var>
+                        
+                        <!-- @implements FeeImmediateData_Object -->
+                        <v:var name="FeeImmediateData" type="BOOLEAN">
+                            <a:a name="LABEL" value="Fee Immediate Data" />
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[EN:<html><p>
+                                        Marker for high priority data.<br />
+                                        <strong>true</strong>:   Block contains immediate data.<br />
+                                        <strong>false</strong>:  Block does not contain immediate data.
+                                    </p></html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>              
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="SCOPE" value="ECU"/>                
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="ECUC:ca97d601-85ed-4389-938e-d01df6c0fa90"/>
+                            <a:da name="DEFAULT" value="false"/>
+                        </v:var>
+                  
+                        <v:var name="FeeNumberOfWriteCycles" type="INTEGER">
+                            <a:a name="LABEL" value="Fee Number Of Write Cycles" />
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[EN:<html><p>Number of write cycles required for this block.
+                                    </p></html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>             
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="SCOPE" value="LOCAL"/>               
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="ECUC:c0f2f12f-cda1-4e1b-bd0e-630910e89586"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                                <a:tst expr="&lt;=4294967295"/>
+                                <a:tst expr="&gt;=0"/>
+                            </a:da>
+                            <a:da name="READONLY" value="true"/>
+                        </v:var>
+                  
+                        <!-- @implements FeeDeviceIndex_Object -->
+                        <v:ref name="FeeDeviceIndex" type="SYMBOLIC-NAME-REFERENCE">
+                            <a:a name="LABEL" value="Fee Device Index" />
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[EN:<html><p>
+                                        Device index (handle).<br />
+                                        Range: 0 .. 254 (<code>0xFF</code> reserved for broadcast call to 
+                                        GetStatus function).
+                                    </p></html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>              
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="SCOPE" value="LOCAL"/>                
+                            <a:a name="UUID" value="ECUC:1512f559-ffb7-4bf4-a120-61797b250d19"/>
+                            <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Fls/FlsGeneral"/>
+                        </v:ref>
+                    
+                        <v:var name="FeeBlockAssignment" type="ENUMERATION">
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[EN:<html>
+                                        Choose to which project this block is assigned.
+                                            BootLoader - Block is used only by the boot loader project
+                                            Application - Block is used only by the application project
+                                            Shared - Block is used for the Application and Boot Loader projects
+                                    </html>]]>
+                                </a:v>
+                            </a:a>                                        
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>               
+                            <a:a name="ORIGIN" value="NXP"/>
+                            <a:a name="SCOPE" value="LOCAL"/>                
+                            <a:a name="LABEL" value="Fee Block Assignment"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="ECUC:afee76aa-edda-4e4c-9ef8-da7bc8abe5fa"/>
+                            <a:da name="DEFAULT" value="APPLICATION"/>
+                            <a:da name="RANGE">
+                                <a:v>APPLICATION</a:v>
+                                <a:v>BOOTLOADER</a:v>
+                                <a:v>SHARED</a:v>
+                            </a:da>
+                            <a:a name="EDITABLE" type="XPath">
+                                <a:tst expr="../../../FeeGeneral/FeeSwapForeignBlocksEnabled ='true'"/>     
+                            </a:a> 
+                            <a:a name="INVALID" type="XPath">
+                                <a:tst expr="(../../../FeeGeneral/FeeSwapForeignBlocksEnabled ='true') and
+                                            (../../../FeeGeneral/FeeConfigAssignment ='APPLICATION') and 
+                                            (node:fallback(., 'APPLICATION') = 'BOOTLOADER')"
+                                            true="Blocks used only by the bootloader are not allowed in the application config.If block is used for application and bootloader update the Fee Block Assignment to SHARED. "/>  
+                                <a:tst expr="(../../../FeeGeneral/FeeSwapForeignBlocksEnabled ='true')and
+                                            (../../../FeeGeneral/FeeConfigAssignment ='BOOTLOADER') and 
+                                            (node:fallback(., 'BOOTLOADER') = 'APPLICATION')" 
+                                            true="Blocks used only by the application are not allowed in the bootloader config.If block is used for application and bootloader update the Fee Block Assignment to SHARED. "/>   
+                            </a:a> 
+                        </v:var>
+                    </v:ctr><!--<v:ctr name="FeeBlockConfiguration" type="IDENTIFIABLE">-->
+                </v:lst><!--<v:lst name="FeeBlockConfiguration" type="MAP">-->
+              
+                <!-- @implements FeeGeneral_Object -->
+                <v:ctr name="FeeGeneral" type="IDENTIFIABLE">
+                    <a:a name="LABEL" value="Fee General" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                Container for general parameters. These parameters are not specific to a block.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                    <a:a name="UUID" value="ECUC:19baf399-49c8-4861-b4d2-b1bd1275c5ee"/>
+                    
+                    <!-- @implements FeeDevErrorDetect_Object -->
+                    <v:var name="FeeDevErrorDetect" type="BOOLEAN">
+                        <a:a name="LABEL" value="Fee Development Error Detect" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                Pre-processor switch to enable and disable development error detection.<br />
+                                <strong>true</strong>: Development error detection enabled.<br />
+                                <strong>false</strong>: Development error detection disabled.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>            
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>            
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:99a4a692-fd69-4fac-800a-36626a2a97b5"/>
+                        <a:da name="DEFAULT" value="true"/>
+                    </v:var>
+                    
+                    <!-- @implements FeeEnableUserModeSupport_Object -->
+                    <v:var name="FeeEnableUserModeSupport" type="BOOLEAN">
+                        <a:a name="LABEL" value="Fee Enable User Mode Support" />
+                        <a:a name="DESC">
+                            <a:v>
+                                        <![CDATA[EN:
+                                          <html>
+                                               <p> Fee driver is an independent hardware module, so it can run in user mode without any specific measures. 
+                                                   The parameter is not used in the Fee implementation.</p> 
+                                          </html>
+                                      ]]>             
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>            
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>            
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:99a4a692-fd69-4fac-800a-36626a2a58a7"/>
+                        <a:da name="DEFAULT" value="false"/>
+                        <a:da name="READONLY" value="true"/>
+                            
+                    </v:var>        
+ 
+                    <v:var name="FeeMainFunctionPeriod" type="FLOAT">
+                        <a:a name="DESC" value="EN: The period between successive calls to the main function in seconds."/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="ECU"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:2c8740be-2544-43d1-8f9f-f7c073bd8fc1"/>
+                        <a:da name="DEFAULT" value="5.0E-3"/>
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=100000"/>
+                            <a:tst expr="&gt;=1.0E-7"/>
+                        </a:da>
+                    </v:var>
+                    <!-- @implements FeeNvmJobEndNotification_Object -->
+                    <v:var name="FeeNvmJobEndNotification" type="FUNCTION-NAME">
+                        <a:a name="LABEL" value="Fee Nvm Job End Notification" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p> 
+                                Mapped to the job end notification routine provided by the upper layer 
+                                module (NvM_JobEndNotification).<br />
+                                Note: Disable the end notification to have it set as NULL_PTR.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>  
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>              
+                        <a:a name="OPTIONAL" value="true"/>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>                 
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:7fc6976e-1df6-4320-9019-bfcfd29daf81"/>
+                        <a:da name="EDITABLE" value="true"/>
+                        <a:da name="DEFAULT" value="NvM_JobEndNotification"/>
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="text:match(normalize-space(.),'^[_a-zA-Z][_0-9a-zA-Z]*$')"
+                                   false="Invalid name of the job end notification routine. Must be valid C function name."/>
+                            <a:tst expr="(not(normalize-space(.) = 'NULL_PTR') and not(normalize-space(.) = 'NULL'))"
+                                   false="Invalid name of the job end notification routine. Must not be NULL_PTR or NULL."/>
+                        </a:da>
+                    </v:var>
+                    
+                    <!-- @implements FeeNvmJobErrorNotification_Object -->
+                    <v:var name="FeeNvmJobErrorNotification" type="FUNCTION-NAME">
+                        <a:a name="LABEL" value="Fee Nvm Job Error Notification" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                Mapped to the job error notification routine provided by the upper layer 
+                                module (NvM_JobErrorNotification).<br />
+                                Note: Disable the error notification to have it set as NULL_PTR.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>      
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>              
+                        <a:a name="OPTIONAL" value="true"/>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>           
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:5d3d2831-1ec6-4f60-8c7a-8e3318c3bcd8"/>
+                        <a:da name="EDITABLE" value="true"/>
+                        <a:da name="DEFAULT" value="NvM_JobErrorNotification"/>
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="text:match(normalize-space(.),'^[_a-zA-Z][_0-9a-zA-Z]*$')"
+                                   false="Invalid name of the job end notification routine. Must be valid C function name."/>
+                            <a:tst expr="(not(normalize-space(.) = 'NULL_PTR') and not(normalize-space(.) = 'NULL'))"
+                                   false="Invalid name of the job end notification routine. Must not be NULL_PTR or NULL."/>
+                        </a:da>
+                    </v:var>
+                    <!-- @implements FeeClusterFormatNotification_Object -->
+                    <v:var name="FeeClusterFormatNotification" type="FUNCTION-NAME">
+                        <a:a name="LABEL" value="Fee Cluster Format During Init Notification" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                Fee calls  this  notification to inform the user in case a cluster erase and write cluster header is performed during the Fee initialization.
+                                Note: Disable the error notification to have it set as NULL_PTR.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>      
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>              
+                        <a:a name="OPTIONAL" value="true"/>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>                
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:5d3d2831-1ec6-4f60-8c7a-8e3319a2bcd8"/>
+                        <a:da name="EDITABLE" value="true"/>
+                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="text:match(normalize-space(.),'^[_a-zA-Z][_0-9a-zA-Z]*$')"
+                                   false="Invalid name of the Fee Cluster Format Notification routine. Must be valid C function name."/>
+                            <a:tst expr="(not(normalize-space(.) = 'NULL_PTR') and not(normalize-space(.) = 'NULL'))"
+                                   false="Invalid name of the Fee Cluster Format Notification routine. Must not be NULL_PTR or NULL."/>
+                        </a:da>
+                    </v:var>
+                    
+                    <v:var name="FeePollingMode" type="BOOLEAN">
+                        <a:a name="LABEL" value="Fee Polling Mode" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p><br />
+                                Pre-processor switch to enable and disable the polling mode for this module<br />
+                                <strong>Note:</strong> This paramater is not utilized in this BSW module implementation
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>             
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/> 
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:149e7d1c-bb28-4c15-91bc-5aacce6b85bd"/>
+                        <a:da name="DEFAULT" value="false"/>
+                        <a:da name="READONLY" value="true"/>
+                    </v:var>
+                    
+                    <!-- @implements FeeSetModeSupported_Object -->
+                    <v:var name="FeeSetModeSupported" type="BOOLEAN">
+                        <a:a name="LABEL" value="Fee Set Mode Supported" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                Compiler switch to enable/disable the SetMode functionality of the 
+                                FEE module.<br />
+                                <strong>true</strong>: SetMode functionality supported / code present,<br />
+                                <strong>false</strong>: SetMode functionality not supported / code not present.<br />
+                                <strong>Note:</strong> This configuration setting has to be consistent with that 
+                                of all underlying flash device drivers (configuration parameter FlsSetModeApi).
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a> 
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>              
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:68792382-5e9c-4dfe-a18d-6cb9c8b81411"/>
+                        <a:da name="DEFAULT" value="true"/>
+                    </v:var>
+                    
+                    <!-- @implements FeeVersionInfoApi_Object -->
+                    <v:var name="FeeVersionInfoApi" type="BOOLEAN">
+                        <a:a name="LABEL" value="Fee Version Info Api" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                Pre-processor switch to enable/disable the API to read out the module 
+                                version information.<br />
+                                <strong>true</strong>: Version info API enabled.<br />
+                                <strong>false</strong>: Version info API disabled.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>              
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>              
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:936243b5-4227-4a85-8470-f1281aa70388"/>
+                        <a:da name="DEFAULT" value="true"/>
+                    </v:var>
+                    
+                    <!-- @implements FeeVirtualPageSize_Object -->
+                    <v:var name="FeeVirtualPageSize" type="INTEGER">
+                        <a:a name="LABEL" value="Fee Virtual Page Size" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                The size in bytes to which logical blocks shall be aligned.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>              
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>        
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:5cff40de-ecc0-4dda-be27-2228e23d8d04"/>
+                        <a:da name="DEFAULT" value="32"/>
+                        <a:da name="RANGE" type="XPath">
+                            <a:tst expr="node:fallback( ., 0 ) = 0" true="FeeVirtualPageSize must not be zero"/>
+                        </a:da>
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=65535"/>
+                            <a:tst expr="&gt;=8"/>
+                        </a:da>
+                    </v:var>
+                
+                    <v:var name="FeeDataBufferSize" type="INTEGER">                
+                        <a:a name="LABEL" value="Fee Data Buffer Size" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                    <strong>Vendor specific:</strong> Size of the data buffer in bytes.<br /> 
+                                    The data buffer is used to buffer data when Fee is copying data 
+                                    from one cluster to another and when Fee is reading the block header 
+                                    information on startup.<br /> 
+                                    Size of the data buffer affects number of Fls_MainFunction cycles. 
+                                    Bigger data buffer improves performance of the Fee cluster management 
+                                    operations and speeds up the startup phase as Fee can read more data 
+                                    in one cycle of Fls_MainFunction<br />
+                                    <strong>Note:</strong> FeeDataBufferSize must be equal or greater than 
+                                    FEE_CLUSTER_OVERHEAD. Where FEE_CLUSTER_OVERHEAD is management overhead 
+                                    per logical cluster in bytes and can be calculated using the following 
+                                    formula:<br /> 
+                                    &nbsp;&nbsp;ceiling(&nbsp;16&nbsp;/&nbsp;FEE_VIRTUAL_PAGE_SIZE&nbsp;+&nbsp;2&nbsp;)&nbsp;*&nbsp;FEE_VIRTUAL_PAGE_SIZE
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>              
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>               
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:ee892a87-2b7d-4b95-a26b-56eea39acc92"/>
+                        <a:da name="DEFAULT" type="XPath" expr="num:i(ceiling(16 div node:fallback(../FeeVirtualPageSize, 32) + 2) * node:fallback(../FeeVirtualPageSize, 32))"/>
+                        <a:da name="RANGE" type="XPath">
+                            <a:tst expr="node:fallback( ., 0 ) &gt;= num:i(ceiling(16 div node:fallback( ../FeeVirtualPageSize, 32) + 2) * node:fallback( ../FeeVirtualPageSize, 32))" false="FeeDataBufferSize must be equal or greater than FEE_CLUSTER_OVERHEAD. Please see description of the FeeDataBufferSize parameter. Hit the calc button to calculate the smallest FeeDataBufferSize value."/>
+                            <a:tst expr="node:when( node:fallback( ../FeeVirtualPageSize, 32)=0, 1, node:fallback( ., 0 ) mod node:when( node:fallback( ../FeeVirtualPageSize, 32 )=0, 1, ../FeeVirtualPageSize ) ) = 0" false="FeeDataBufferSize must be integer multiple of FeeVirtualPageSize."/>
+                        </a:da>
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=0"/>
+                            <a:tst expr="&lt;=65535"/>
+                        </a:da>                
+                    </v:var>
+                
+                    <!-- @implements FeeBlockAlwaysAvailable_Object -->
+                    <v:var name="FeeBlockAlwaysAvailable" type="BOOLEAN">                
+                        <a:a name="LABEL" value="Fee Block Always Available" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                <strong>Vendor specific:</strong> According to the AUTOSAR requirements, when the 
+                                write operation starts, corresponding block is marked as inconsistent. 
+                                It is marked as consistent after successful write. 
+                                It means that when write operation is interrupted (cancel, reset) 
+                                application cannot access the block data anymore.<br /> 
+                                Enabling this parameter allows to set the behavior against the AUTOSAR 
+                                requirements. In this case, the last valid information is always provided. 
+                                Valid information means:
+                                <ul>
+                                <li>FEE_BLOCK_INVALID if the block was invalidated or the block is 
+                                    not present in the cluster at all.</li>
+                                <li>FEE_BLOCK_VALID in case the previous instance of the block exists and 
+                                    was not invalidated.</li>
+                                </ul>
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>          
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:7b6b2bab-e9eb-411d-a972-38dce1525983"/>
+                        <a:da name="DEFAULT" value="false"/>          
+                    </v:var>           
+
+                    <!-- @implements FeeLegacyMode_Object -->
+                    <v:var name="FeeLegacyMode" type="BOOLEAN">
+                        <a:a name="LABEL" value="Fee Legacy Mode" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>If this parameter is disabled, optimized immediate block handling is active.
+                                If enabled, the FEE driver is configured in the legacy mode.</p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>               
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>              
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:9a5f751b-c959-41b5-9584-8dfc76484f8b"/>
+                        <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                
+                    <!-- @implements FeeLegacyEraseMode_Object -->
+                    <v:var name="FeeLegacyEraseMode" type="BOOLEAN">
+                    <a:a name="LABEL" value="Fee EraseImmediate Legacy Mode" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>If enabled, the Fee_EraseImmediateBlock function invalidates the referred 
+                                block if it has been already written. Otherwise, the block is left intact.</p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>             
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>                
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:be69ce5a-f88b-4df0-829c-4ea12149cacb"/>
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="../FeeLegacyMode = 'true' and . = 'true'"
+                                   true="Fee EraseImmediate Legacy Mode is available only when optimized immediate block handling is active (i.e. when Fee Legacy Mode is deselected)"/>
+                        </a:da>
+                        <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+
+                    <!-- @implements FeeSwapForeignBlocksEnabled_Object -->
+                    <v:var name="FeeSwapForeignBlocksEnabled" type="BOOLEAN">
+                    <a:a name="LABEL" value="Fee Swap Foreign Blocks Enabled" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                The recommendation is not to use this mode Enabled for the production phase as it increases the cluster swap overall timing.
+                                This mode may be useful for developement phase if Fee is used in 2 projects running on the same ECU and the integrator wants
+                                to be able to change configuration for the application project without changing it for the second project.
+                                If disabled,the Fee driver will swap only blocks existing in the current configuration.
+                                If enabled, the Fee driver will swap foreign blocks. This is a limited support when using 2 subprojects with different Fee configurations
+                                running on the same ECU(example:boot loader and applications projects).For example if this paramters is enabled and Fee is running in application 1 mode, 
+                                it will swap blocks assigned to application 2, even if those blocks are not present in application 1 configuration.This allow to update the Fee configuration for application 2 without reconfiguring application 1.
+                                Nevertheless, this mode will result in a longer time for cluster swap.</p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a> 
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>             
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:be69dd5a-f88b-4df0-829c-4ea12149cacb"/>
+                        <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    
+                    <v:var name="FeeMarkEmptyBlocksInvalid" type="BOOLEAN">
+                    <a:a name="LABEL" value="Fee Mark Empty Blocks As Invalid" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>If the parameter is enabled, Fee will mark the never written blocks as INVALID,
+                                otherwise Fee will mark the never written blocks as INCONSISTENT. Having this define set as false is compatible with AUTOSAR 4.2.2 version.
+                                Previous AUTOSAR versions do not specify which status must be returned for empty blocks.</p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>      
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>                 
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:be69ce5a-f88b-4df0-829c-4ea12166cacb"/>
+                        <a:da name="DEFAULT" value="false"/>                
+                    </v:var>
+                    
+                    <!-- @implements FeeConfigAssignment_Object -->
+                    <v:var name="FeeConfigAssignment" type="ENUMERATION">
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html>
+                                    Choose for which project this Fee configuration is used.
+                                        BootLoader - Configuration is used only by the boot loader project
+                                        Application - Configuration is used only by the application project
+                                </html>]]>
+                            </a:v>
+                        </a:a>                                        
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>            
+                        <a:a name="LABEL" value="Fee Configuration Assignment"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:afee76aa-edda-4e4c-9ef8-bb7bc8abe5fa"/>
+                        <a:da name="DEFAULT" value="APPLICATION"/>
+                        <a:da name="RANGE">
+                            <a:v>APPLICATION</a:v>
+                            <a:v>BOOTLOADER</a:v>
+                        </a:da>
+                        <a:a name="EDITABLE" type="XPath">
+                                    <a:tst expr="../FeeSwapForeignBlocksEnabled ='true'"/>     
+                        </a:a> 
+                    </v:var>
+                    
+                    <v:var name="FeeMaximumNumberBlocks" type="INTEGER">
+                            <a:a name="LABEL" value="Fee Maximum Number of Blocks" />
+                                <a:a name="DESC">
+                                    <a:v>
+                                      <![CDATA[EN:<html><p>
+                                        This must be configured to total number of boot loader, application blocks and also some buffer for blocks added in the future.
+                                        This parameter will be used to statically allocate space for the block runtime information, 
+                                        so it should be configured to accommodate the total number of blocks running on the ECU in all project versions.
+                                        The parameter is used to support Fee Swap Foreign Blocks Feature.
+                                        Example of configuration:
+                                        If application uses 2 blocks, boot loader 1 block and another 1 is shared between application and bootloader then
+                                        this parameter must be configured to 2(only appl) + 1(only boot loader) + 1(shared) + X,
+                                        where x is the maximum number of blocks we estimate it will be added in future versions.
+                                        </p></html>]]>
+                                    </a:v>                   
+                                </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="NXP"/>
+                            <a:a name="SCOPE" value="ECU"/>            
+                            <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                            <a:a name="UUID" value="ECUC:582f386b-55db-4923-bb69-eb698099fb9f"/>
+                            <a:da name="DEFAULT" value="1"/>
+                            <a:da name="RANGE" type="XPath">
+                                <a:tst expr="(num:i(node:fallback(.,0)) &lt;= num:i(node:fallback(count(../../FeeBlockConfiguration/*), 0))) and (node:fallback(../FeeSwapForeignBlocksEnabled,false)='true')" true="Fee Maximum Number of Blocks must be higher than the number of blocks configured."/> 
+                            </a:da>
+                            <a:da name="INVALID" type="Range">
+                                <a:tst expr="&lt;=65534"/>
+                                <a:tst expr="&gt;=1"/>
+                            </a:da>
+                            <a:a name="EDITABLE" type="XPath">
+                                        <a:tst expr="../FeeSwapForeignBlocksEnabled ='true'"/>     
+                            </a:a>
+                    </v:var>
+                </v:ctr><!--<v:ctr name="FeeGeneral" type="IDENTIFIABLE">-->
+                
+                <!-- @implements CommonPublishedInformation_Object -->
+                <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                    <a:a name="DESC">
+                        <a:v>
+                            <![CDATA[EN:<html><p>
+                                <strong><em>CommonPublishedInformation</em></strong>
+                                Common container, aggregated by all modules. It contains published 
+                                information about vendor and versions.
+                            </p></html>]]>
+                        </a:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:934c286e-1f44-465d-b54d-392879a45b1e"/>
+                    
+                    <!-- @implements ArReleaseMajorVersion_Object -->
+                    <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="AUTOSAR Major Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><strong><em>AUTOSAR Major Version</em></strong>
+                                    <p><strong>Vendor specific:</strong> Major version number of AUTOSAR specification 
+                                    on which the appropriate implementation is based on.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>              
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:62a31253-7575-49d0-a35b-d51668fccc87"/>
+                        <a:da name="DEFAULT" value="4"/>                       
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=4"/>
+                            <a:tst expr="&lt;=4"/>
+                        </a:da>                 
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                        </a:a>
+                    </v:var>
+                    
+                    <!-- @implements ArReleaseMinorVersion_Object -->
+                    <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="AUTOSAR Minor Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><strong><em>AUTOSAR Minor Version</em></strong>
+                                <p><strong>Vendor specific:</strong> Minor version number of AUTOSAR specification 
+                                on which the appropriate implementation is based on.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>              
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:c0abdd39-9c7e-4533-b4f7-f8fbc7f246e8"/>
+                        <a:da name="DEFAULT" value="2"/>                       
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=2"/>
+                            <a:tst expr="&lt;=2"/>
+                        </a:da>                    
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                        </a:a>
+                    </v:var>
+                    
+                    <!-- @implements ArReleaseRevisionVersion_Object -->
+                    <v:var name="ArReleaseRevisionVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="AUTOSAR Revision Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><strong><em>AUTOSAR Patch Version</em></strong>
+                                <p><strong>Vendor specific:</strong> Revision version number of AUTOSAR specification 
+                                on which the appropriate implementation is based on.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>                
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:c90f75a3-803d-4296-98cb-b99c88651826"/>
+                        <a:da name="DEFAULT" value="2"/>                       
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=2"/>
+                            <a:tst expr="&lt;=2"/>
+                        </a:da>                    
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                        </a:a>
+                    </v:var>
+                    
+                    <!-- @implements ModuleId_Object -->
+                    <v:var name="ModuleId" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Numeric Module ID"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><strong><em>Module ID</em></strong>
+                                <p><strong>Vendor specific:</strong> Module ID of this module from Module List.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>               
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:d1e6c2aa-1ea3-4057-9c46-b6eb075d3d54"/>
+                        <a:da name="DEFAULT" value="21"/>                                         
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=21"/>
+                            <a:tst expr="&lt;=21"/>
+                        </a:da>                    
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                        </a:a>       
+                    </v:var>
+                    
+                    <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Software Major Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><strong><em>Software Major Version</em></strong>
+                                <p><strong>Vendor specific:</strong> Major version number of the vendor specific 
+                                implementation of the module. The numbering is vendor specific.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>                
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:37e94f0e-c8e8-42ea-88f8-f3b6b68b7aee"/>
+                        <a:da name="DEFAULT" value="1"/>
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=1"/>
+                            <a:tst expr="&lt;=1"/>
+                        </a:da>                    
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                        </a:a> 
+                    </v:var>
+                    
+                    <!-- @implements SwMinorVersion_Object -->
+                    <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Software Minor Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><strong><em>Software Minor Version</em></strong>
+                                <p><strong>Vendor specific:</strong> Minor version number of the vendor specific 
+                                implementation of the module. The numbering is vendor specific.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>                 
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:a9c3efe3-a8d0-4367-ba54-a21714eec89e"/>
+                        <a:da name="DEFAULT" value="0"/>                     
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=0"/>
+                            <a:tst expr="&lt;=0"/>
+                        </a:da>                    
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                        </a:a> 
+                    </v:var>
+                    
+                    <!-- @implements SwPatchVersion_Object -->
+                    <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Software Patch Version"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><strong><em>Software Patch Version</em></strong>
+                                <p><strong>Vendor specific:</strong> Patch level version number of the vendor 
+                                specific implementation of the module. The numbering is vendor specific.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>                
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:c7ca4b89-eb3c-415f-b4c8-9bfe3996f54e"/>
+                        <a:da name="DEFAULT" value="1"/>                                         
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=1"/>
+                            <a:tst expr="&lt;=1"/>
+                        </a:da>                    
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                        </a:a> 
+                    </v:var>
+                    
+                    <!-- @implements VendorApiInfix_Object -->
+                    <v:var name="VendorApiInfix" type="STRING_LABEL">
+                        <a:a name="LABEL" value="Vendor Api Infix"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><strong><em>Vendor Api Infix</em></strong>
+                                <p><strong>Vendor specific:</strong> In driver modules which can be instantiated several 
+                                times on a single ECU, BSW00347 requires that the name of APIs is extended 
+                                by the VendorId and a vendor specific name.<br /> 
+                                This parameter is used to specify the vendor specific name. In total, the 
+                                implementation specific name is generated as follows:<br /> 
+                                &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api 
+                                name from SWS&gt;.<br /> 
+
+                                E.g.  assuming that the VendorId of the implementor is 123 and the 
+                                implementer chose a VendorApiInfix of &quot;v11r456&quot; a API name 
+                                Can_Write defined in the SWS will translate to Can_123_v11r456Write.<br /> 
+
+                                This parameter is mandatory for all modules with 
+                                upper multiplicity&nbsp;&gt;&nbsp;1.<br /> 
+                                It shall not be used for modules with upper multiplicity&nbsp;=&nbsp;1.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/>               
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:9f344fcd-a64f-465d-b133-eb5ef5a156eb"/>
+                        <a:da name="DEFAULT" value=""/>
+                        <a:a name="OPTIONAL" value="true"/>
+                        <a:da name="READONLY" value="true"/> 
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                        </a:a>             
+                    </v:var>
+                    
+                    <!-- @implements VendorId_Object -->
+                    <v:var name="VendorId" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Vendor ID"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><strong><em>Vendor ID</em></strong>
+                                <p><strong>Vendor specific:</strong> Vendor ID of the dedicated implementation of this 
+                                module according to the AUTOSAR vendor list.
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="NXP"/>
+                        <a:a name="SCOPE" value="LOCAL"/> 
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:1612160a-154b-4847-b521-12b8feb436b5"/>
+                        <a:da name="DEFAULT" value="43"/>
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=43"/>
+                            <a:tst expr="&lt;=43"/>
+                        </a:da>                    
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                        </a:a>  
+                    </v:var>
+                </v:ctr><!--<v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">-->
+              
+                <!-- @implements FeePublishedInformation_Object -->
+                <v:ctr name="FeePublishedInformation" type="IDENTIFIABLE">
+                    <a:a name="LABEL" value="Fee Published Information"/>
+                    <a:a name="DESC">
+                        <a:v>
+                            <![CDATA[EN:<html><p>
+                            Additional published parameters not covered by CommonPublishedInformation
+                            container.<br />
+                            <strong>Note:</strong><br /> 
+                            That these parameters do not have any configuration class setting, since 
+                            they are published information.
+                            </p></html>]]>
+                        </a:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:8506433a-b9b6-4574-b90a-ed8f7e4168de"/>
+                    
+                    <!-- @implements FeeBlockOverhead_Object -->
+                    <v:var name="FeeBlockOverhead" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Fee Block Overhead" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                Management overhead per logical block in bytes<br />
+                                <strong>Note:</strong><br />
+                                The logical block management overhead depends on FeeVirtualPageSize and can be 
+                                calculated using the following formula:<br />
+                                &nbsp;&nbsp;ceiling(&nbsp;12&nbsp;/&nbsp;FEE_VIRTUAL_PAGE_SIZE&nbsp;+&nbsp;2&nbsp;)&nbsp;*&nbsp;FEE_VIRTUAL_PAGE_SIZE
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                        </a:a> 
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>              
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:e57ab982-050c-49d1-b067-bbe5e4846355"/>
+                        <a:da name="DEFAULT" value="0"/>
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=65535"/>
+                            <a:tst expr="&gt;=0"/>
+                        </a:da>
+                    </v:var>
+                    <!-- @implements FeePageOverhead_Object -->
+                    <v:var name="FeePageOverhead" type="INTEGER_LABEL">
+                        <a:a name="LABEL" value="Fee Page Overhead" />
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                Management overhead per page in bytes<br />
+                                <strong>Note:</strong><br />
+                                The page management overhead is 0 bytes
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                        </a:a>  
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>              
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:204ecd7c-810f-463d-9f4c-a537efe25c12"/>
+                        <a:da name="DEFAULT" value="0"/>
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=65535"/>
+                            <a:tst expr="&gt;=0"/>
+                        </a:da>
+                    </v:var>
+                </v:ctr><!--<v:ctr name="FeePublishedInformation" type="IDENTIFIABLE">-->
+                
+                <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcucDefs/Fee"/>
+                
+            </v:ctr><!-- <v:ctr type="MODULE-DEF">-->
+        </d:chc><!--<d:chc name="Fee" type="AR-ELEMENT" value="MODULE-DEF">-->
+        <d:chc name="Fee_EcuParameterDefinition" 
+               type="AR-ELEMENT" value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+                <a:a name="UUID" value="ECUC:032a6e71-3425-4410-a58b-c803c0effa2d"/>
+                <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+                <d:lst name="MODULE_REF">
+                    <d:ref type="MODULE_REF" value="ASPath:/TS_T40D2M10I1R0/Fee"/>
+                </d:lst>
+            </d:ctr>
+        </d:chc>
+        <d:chc name="Fee_ModuleDescription" 
+               type="AR-ELEMENT" value="BSW_MODULE_DESCRIPTION">
+            <d:ctr type="AR-ELEMENT">
+                <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/BSW_MODULE_DESCRIPTION"/>
+                <d:var name="MODULE_ID" type="INTEGER" >
+                    <a:a name="EDITABLE" value="false"/>
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:ref type="RECOMMENDED_CONFIGURATION" >
+                    <a:a name="EDITABLE" value="false"/>
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:ref>
+                <d:ref type="PRE_CONFIGURED_CONF" >
+                    <a:a name="EDITABLE" value="false"/>
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:ref>
+                <d:ref type="VENDOR_SPECIFIC_MODULE_DEF" 
+                       value="ASPath:/TS_T40D2M10I1R0/Fee"/>
+            </d:ctr>
+        </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

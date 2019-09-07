@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "swcrte_cfg.h": "c",
+        "port.h": "c",
+        "sysdal_intsch.h": "c",
+        "sysdal.h": "c",
+        "swcrte.h": "c",
+        "mcal.h": "c",
+        "compiler.h": "c",
+        "compiler_cfg.h": "c",
+        "compilerdefinition.h": "c",
+        "iodal_ani.h": "c",
+        "iodal_pwm.h": "c",
+        "iodal_dio.h": "c",
+        "iodal.h": "c",
+        "mcu.h": "c",
+        "sysdal_cfg.h": "c",
+        "sys_init.h": "c"
+    }
+}

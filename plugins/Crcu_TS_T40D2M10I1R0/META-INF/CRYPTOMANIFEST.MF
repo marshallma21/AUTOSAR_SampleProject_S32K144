@@ -1,0 +1,57 @@
+
+Name: generate_PB/src/CDD_Crcu_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424764480931374707297229893877589517383690018844355
+ 4334603740499370848249941016827527613624879929568357
+
+Name: generate_PC/Crcu_VersionCheck_Src.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423683120544290310968709104455619190924791062419272
+ 1291893610920922298985847025803118740664288826275428
+
+Name: generate_PC/src/CDD_Crcu_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594743518789972136516951521276109701006509176831445240
+ 103118611680194504437587969203184975172492207597116637
+
+Name: generate_PB/Crcu_VersionCheck_Src_PB.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422905073060557856783063525823873119076011752203585
+ 7446600468809939662698226640915178519287542304814592
+
+Name: generate_PC/include/CDD_Crcu_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420400557587133321134435677036913413513211164161061
+ 4708010401722422969480898218780967976275300474495578
+
+Name: generate_PB/Crcu_VersionCheck_Inc.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 74155374890372662702261452498290627780102015112890174737255
+ 47474740645998414303514932030811016096547297735696464461
+
+Name: config/Crcu.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773967487321935225820185108250888878649460904531835
+ 217152461283610398532261649904584721264732017561945509
+
+Name: generate_PC/Crcu_VersionCheck_Inc.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421878536288967764822532025249638360129018144400074
+ 1310630593093111605485762112175492839030178167100988
+

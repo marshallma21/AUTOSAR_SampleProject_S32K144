@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<!--
+*   @file    plugin.xml
+*   @version 1.0.1
+*
+*   @brief   AUTOSAR WdgIf_TS_T40D2M10I1R0 - Tresos Studio plugin configuration file.
+*   @details This file contains the configuration for and WdgIf Tresos Studio plugin.
+-->
+<!--
+====================================================================================================
+*   Project              : AUTOSAR 4.2 MCAL
+*   Platform             : ARM
+*   Peripheral           : generic
+*   Dependencies         : 
+*
+*   Autosar Version      : 4.2.2
+*   Autosar Revision     : ASR_REL_4_2_REV_0002
+*   Autosar Conf.Variant :
+*   SW Version           : 1.0.1
+*   Build Version        : S32K14x_MCAL_1_0_1_RTM_ASR_REL_4_2_REV_0002_20180713
+*
+*   Copyright 2006-2016 Freescale Semiconductor, Inc.  Copyright 2017-2018 NXP
+*   All Rights Reserved.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+-->
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="WdgIf_TS_T40D2M10I1R0_ModuleId"
+             name="WdgIf_TS_T40D2M10I1R0 Module">
+
+    <module id="WdgIf_TS_T40D2M10I1R0"
+            label="WdgIf"
+            mandatory="false"
+            allowMultiple="false"
+            description="WdgIf BSW module"
+            copyright="Copyright 2006-2016 Freescale Semiconductor, Inc.  Copyright 2017-2018 NXP"
+            swVersionMajor="1"
+            swVersionMinor="0"
+            swVersionPatch="1"
+            swVersionSuffix="RTM"
+            specVersionMajor="3"
+            specVersionMinor="1"
+            specVersionPatch="0"
+            specVersionSuffix="Rev_0001"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="2"
+            relVersionPatch="2"
+            relVersionSuffix="0002"
+            categoryType="WdgIf"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="ARM" derivate="S32K14X"/>
+      <ecuType target="CORTEXM" derivate=""/>
+
+    </module>
+    </extension>
+   
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="WdgIf_TS_T40D2M10I1R0_ConfigId"
+             name="WdgIf_TS_T40D2M10I1R0 Configuration">
+    <configuration moduleId="WdgIf_TS_T40D2M10I1R0">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for WdgIf -->
+          <resource value="config/WdgIf.xdm" type="xdm"/>
+
+
+
+
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/TS_T40D2M10I1R0/WdgIf"/>
+      </data>
+
+      <editor id="WdgIf_TS_T40D2M10I1R0_EditorId"
+              label="Default"
+              tooltip="WdgIf BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/TS_T40D2M10I1R0/WdgIf"/>
+          <parameter name="title" value="WdgIf"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+
+ <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="EPCGenerator"
+             name="EPC Generator">
+  <generator moduleId="WdgIf_TS_T40D2M10I1R0"
+               id="WdgIf_TS_T40D2M10I1R0"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+   
+  <parameter name="variantAware" value="true"/>
+  <parameter name="cfgFilePath" value="output"/>
+  <parameter name="generateAllModules" value="false"/>
+  <parameter name="generateIntoOneFile" value="false"/>
+  <parameter name="contentType" value="asc:4.2.2"/>
+  </generator>
+ </extension>
+  
+ <extension point="dreisoft.tresos.generator.api.plugin.generator" id="WdgIf_TS_T40D2M10I1R0_NGGeneratorId">
+          <generator moduleId="WdgIf_TS_T40D2M10I1R0"
+                     class="dreisoft.tresos.generator.ng.api.NGGenerator"
+                     id="WdgIf_TS_T40D2M10I1R0_UniqueNGGeneratorId"
+                     modes="generate,generate_PC,generate_PB,verify"
+                     step="post"> <!-- run after code-generation -->
+              <parameter name="buildfile" value="ant_generator.xml"/>
+           <parameter name="variantAware" value="true"/>
+          </generator>
+  </extension>
+      <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="WdgIf_TS_T40D2M10I1R0_GeneratorId"
+              name="WdgIf_TS_T40D2M10I1R0 Generator">
+    <generator moduleId="WdgIf_TS_T40D2M10I1R0"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+  
+    <parameter name="variantAware" value="true"/>
+    <!-- swcd modes and template path parameters -->
+    <parameter name="mode_type" mode="generate_swcd" value="generate"></parameter>
+    <parameter name="mode_type" mode="verify_swcd" value="verify"></parameter>
+    <parameter name="templates" mode="generate_swcd,verify_swcd" value="generate_swcd"></parameter>   
+
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+    </generator>
+  </extension>
+  
+  <extension point="org.eclipse.help.toc">
+    <toc file="anchors.xml" primary="true"/>
+    <toc file="$nl$/WdgIf/toc.xml" primary="false"/>
+    <!-- toc file="$nl$/ReleaseNotes/toc.xml" primary="false"/ !-->
+  </extension>
+</plugin>

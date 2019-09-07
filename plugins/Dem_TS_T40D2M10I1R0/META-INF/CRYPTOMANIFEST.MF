@@ -1,0 +1,22 @@
+
+Name: config/Dem.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773963194909406967606512947845604102376244028938419
+ 702841970590820629080577063785499141880976160495542324
+
+Name: config_ext/DemRecConfiguration_MCALDemIDs.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424063246907902818089074236081921359158340591307021
+ 0533682829320822460410168141581797268628261200317391
+
+Name: generate_PC/include/Dem_IntErrId.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424762908229229603092526636175704244855263230113189
+ 2044773316854778964291814985489255601849258906204508
+

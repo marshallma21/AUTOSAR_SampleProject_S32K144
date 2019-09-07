@@ -1,0 +1,177 @@
+<?xml version='1.0'?>
+<datamodel version="4.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/10/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/10/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="TS_T40D2M10I1R0" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Os" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.2.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                      <ad:DATE>2011-11-09</ad:DATE>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: Configuration of the Os (Operating System) module."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="RELEASE" value="asc:4.2"/>
+              <a:a name="UPPER-MULTIPLICITY" value="1"/>
+              <a:a name="UUID" value="ECUC:7e4d185b-0d1f-4d2b-a819-930e54a59f55"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="ECUC:3a422f8c-214f-49c9-a1e6-bd2fd9eb05ae"/>
+                <a:a name="__ORIGIN" value="NXP"/>
+                <a:da name="DEFAULT" value="VariantPreCompile"/>
+                <a:da name="RANGE" value="VariantPreCompile"/>
+              </v:var>
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              
+              <v:lst name="OsCounter" type="MAP">
+                <v:ctr name="OsCounter" type="IDENTIFIABLE">
+                  <a:a name="DESC" 
+                       value="EN: Configuration information for the counters that belong to the OsApplication."/>
+                  <a:a name="UUID" value="ECUC:bd128ecf-41cd-48dd-a4b6-0a9561b206a5"/>
+                  <v:var name="OsCounterMaxAllowedValue" type="INTEGER">
+                    <a:a name="DESC" 
+                         value="EN: Maximum possible allowed value of the system counter in ticks."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:e4b8ee39-6b75-4a03-9596-1abc60ea5936"/>
+                    <a:a name="__ORIGIN" value="NXP"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=9223372036854775807"/>
+                      <a:tst expr="&gt;=1"/>
+                    </a:da>
+                  </v:var>
+                  <v:var name="OsCounterMinCycle" type="INTEGER">
+                    <a:a name="DESC" 
+                         value="EN: The MINCYCLE attribute specifies the minimum allowed number of counter ticks for a cyclic alarm linked to the counter."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:c8f07eb5-d5ce-4ae3-8a7f-de184b6a2456"/>
+                    <a:a name="__ORIGIN" value="NXP"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=9223372036854775807"/>
+                      <a:tst expr="&gt;=1"/>
+                    </a:da>
+                  </v:var>
+                  <v:var name="OsCounterTicksPerBase" type="INTEGER">
+                    <a:a name="DESC" 
+                         value="EN: The TICKSPERBASE attribute specifies the number of ticks required to reach a counterspecific unit. The interpretation is implementation-specific."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:76963250-f8c7-4deb-b067-617630be4f55"/>
+                    <a:a name="__ORIGIN" value="NXP"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295"/>
+                      <a:tst expr="&gt;=1"/>
+                    </a:da>
+                  </v:var>
+                  <v:var name="OsCounterType" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: This parameter contains the natural type or unit of the counter."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:95427b28-e0a7-430b-9d64-ca3e39d2bd7d"/>
+                    <a:a name="__ORIGIN" value="NXP"/>
+                    <a:da name="RANGE">
+                      <a:v>HARDWARE</a:v>
+                      <a:v>SOFTWARE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="OsSecondsPerTick" type="FLOAT">
+                    <a:a name="DESC" 
+                         value="EN: Time of one counter tick in seconds."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="OPTIONAL" value="true"/>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:1bf8fc39-e67b-4c4a-af3a-d3bf1a590419"/>
+                    <a:a name="__ORIGIN" value="NXP"/>
+                    <a:da name="ENABLE" value="false"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=Infinity"/>
+                      <a:tst expr="&gt;=0.0"/>
+                    </a:da>
+                  </v:var>
+                </v:ctr>
+              </v:lst>
+
+            </v:ctr>
+          </d:chc>
+          <d:chc name="Os_EcuParameterDefinition" type="AR-ELEMENT" 
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/TS_T40D2M10I1R0/Os"/>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+          <d:chc name="Os_ModuleDescription" 
+                 type="AR-ELEMENT" value="BSW_MODULE_DESCRIPTION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/BSW_MODULE_DESCRIPTION"/>
+              <d:var name="MODULE_ID" type="INTEGER" >
+                <a:a name="EDITABLE" value="false"/>
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:ref type="RECOMMENDED_CONFIGURATION" >
+                <a:a name="EDITABLE" value="false"/>
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:ref>
+              <d:ref type="PRE_CONFIGURED_CONF" >
+                <a:a name="EDITABLE" value="false"/>
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:ref>
+              <d:ref type="VENDOR_SPECIFIC_MODULE_DEF" 
+                     value="ASPath:/TS_T40D2M10I1R0/Os"/>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

@@ -1,0 +1,1370 @@
+<?xml version='1.0'?>
+<datamodel version="3.0"
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd"
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd"
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd"
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+<!--
+*   @file    Ocu.xdm
+*   @version 1.0.1
+*
+*   @brief   AUTOSAR Ocu - Tresos Studio plugin schema file
+*   @details This file contains the schema configuration for and Ocu Tresos Studio plugin.
+-->
+<!--
+====================================================================================================
+*   Project              : AUTOSAR 4.2 MCAL
+*   Platform             : ARM
+*   Peripheral           : Ftm
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.2.2
+*   Autosar Revision     : ASR_REL_4_2_REV_0002
+*   Autosar Conf.Variant :
+*   SW Version           : 1.0.1
+*   Build Version        : S32K14x_MCAL_1_0_1_RTM_ASR_REL_4_2_REV_0002_20180713
+
+
+*   (c) Copyright 2006-2016 Freescale Semiconductor, Inc. 
+*       Copyright 2017-2018 NXP
+*   All Rights Reserved.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+-->               
+    <d:ctr type="AUTOSAR" 
+        factory="autosar"  
+        xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+        xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+        xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd">
+        <d:lst type="TOP-LEVEL-PACKAGES">
+            <d:ctr name="TS_T40D2M10I1R0" type="AR-PACKAGE">
+                <a:a name="UUID" value="ECUC:d6c10c14-c0fd-4aad-80cd-1e46d214da35"/>           
+                <d:lst type="ELEMENTS">
+                    <!-- @implements Ocu_Object -->
+                    <d:chc name="Ocu" type="AR-ELEMENT" value="MODULE-DEF">          
+                        <v:ctr type="MODULE-DEF">              
+                            <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                                <ad:ADMIN-DATA>
+                                    <ad:LANGUAGE>EN</ad:LANGUAGE>
+                                    <ad:DOC-REVISIONS>
+                                        <ad:DOC-REVISION>
+                                            <ad:REVISION-LABEL>1.0.1</ad:REVISION-LABEL>
+                                            <ad:ISSUED-BY>NXP</ad:ISSUED-BY>
+                                            <ad:DATE>2010-12-03</ad:DATE>
+                                        </ad:DOC-REVISION>
+                                    </ad:DOC-REVISIONS>
+                                </ad:ADMIN-DATA>
+                            </a:a>
+                            
+                            <a:a name="RELEASE" value="asc:4.2"/>
+                            <a:a name="DESC">
+                                <a:v><![CDATA[EN:
+                                        <html>
+                                        Configuration of Ocu (Output Compare Unit) module.
+                                        </html> ]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="UUID" value="ECUC:d9e52fe5-1f8f-4a4f-a7f0-9fcfe9826f28"/>
+                            <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcucDefs/Ocu"/>
+                            <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+                            
+                            <!-- @implements IMPLEMENTATION_CONFIG_VARIANT_Object -->
+                            <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                                <a:a name="LABEL" value="Config Variant"/>
+                                <a:a name="UUID" value="ECUC:3678333d-362a-4733-9fd7-3b909ef5a5fa"/>
+                                <a:a name="DESC">
+                                    <a:v>
+                                    <![CDATA[EN:
+                                    <html>
+                                    <p> VariantPreCompile: Only precompile time configuration parameters. Only one set of parameters.
+                                    VariantPostBuild: Mix of precompile and postbuild time configuration parameters.
+                                    </p>
+                                    </html> ]]>
+                                    </a:v>
+                                </a:a>                    
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                     <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                     <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                </a:a>
+                                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                                <a:da name="RANGE">
+                                    <a:v>VariantPostBuild</a:v>
+                                    <a:v>VariantPreCompile</a:v>
+                                </a:da>
+                            </v:var>
+
+                            <!-- @implements OcuConfigurationOfOptionalApis_Object -->
+                            <v:ctr name="OcuConfigurationOfOptionalApis" type="IDENTIFIABLE">
+                                <a:a name="DESC" value="EN: Configuration of optional APIs."/>
+                                <a:a name="UUID" value="ECUC:e16beda2-28c4-427f-b185-f9463e6c6370"/>
+                              
+                                  <!-- @implements OcuDeInitApi_Object -->
+                                <v:var name="OcuDeInitApi" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                         <html>
+                                         Adds / removes the service Ocu_DeInit() from the code.
+                                         </html> ]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                       <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                       <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:6ac5ea15-0cfd-4b86-a9eb-3637de469651"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                              
+                                <!-- @implements OcuGetCounterApi_Object -->
+                                <v:var name="OcuGetCounterApi" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                         <html>
+                                         Adds / removes the service Ocu_GetCounter() from the code.
+                                         </html> ]]>
+                                        </a:v>
+                                    </a:a>   
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                       <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                       <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:297265c7-2f7d-4ff9-bba5-739f01140b4e"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                              
+                                <!-- @implements OcuNotificationSupported_Object -->
+                                <v:var name="OcuNotificationSupported" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                         <html>
+                                         Adds / removes the services Ocu_EnableNotification() and Ocu_DisableNotification() from the code.
+                                         </html> ]]>
+                                        </a:v>
+                                    </a:a>    
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:58d059bf-df03-4c55-9bb3-db07a769ad44"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                              
+                                <!-- @implements OcuSetAbsoluteThresholdApi_Object -->
+                                <v:var name="OcuSetAbsoluteThresholdApi" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                         <html>
+                                         Adds / removes the service Ocu_SetAbsoluteThreshold() from the code.
+                                         </html> ]]>
+                                        </a:v>
+                                    </a:a>        
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:67ecd76b-89e2-4f76-bf3f-bf7a80dbefaa"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                              
+                                <!-- @implements OcuSetPinActionApi_Object -->
+                                <v:var name="OcuSetPinActionApi" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                         <html>
+                                         Adds / removes the service Ocu_SetPinAction() from the code.
+                                         </html> ]]>
+                                        </a:v>
+                                    </a:a> 
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>                                
+                                    <a:a name="UUID" value="ECUC:659680f5-9859-4f0a-9944-1561d7a1df4a"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                              
+                                <!-- @implements OcuSetPinStateApi_Object -->
+                                <v:var name="OcuSetPinStateApi" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                         <html>
+                                         Adds / removes the service Ocu_SetPinState() from the code.
+                                         </html> ]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:c6bcd1dd-c776-4f1c-a486-1ec1d1110f9e"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                              
+                                <!-- @implements OcuSetRelativeThresholdApi_Object -->
+                                <v:var name="OcuSetRelativeThresholdApi" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                         <html>
+                                         Adds / removes the service Ocu_SetRelativeThreshold() from the code.
+                                         </html> ]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:5f30a317-a0f7-4042-aec3-8fae3594d282"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                              
+                                <!-- @implements OcuVersionInfoApi_Object -->
+                                <v:var name="OcuVersionInfoApi" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                         <html>
+                                         Switch to indicate that the Ocu_GetVersionInfo() is supported.
+                                         </html> ]]>
+                                        </a:v>
+                                    </a:a>                                       
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:188b3459-28e3-4493-9689-827de6e6f500"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                            </v:ctr>
+                              
+                            <!-- @implements OcuConfigSet_Object -->
+                            <v:ctr name="OcuConfigSet" type="IDENTIFIABLE">
+                                <a:a name="DESC">
+                                    <a:v><![CDATA[EN:
+                                    <html>
+                                         This container is the base of a Configuration Set, which contains the configured OCU channels. This way, different configuration sets can be defined for post-build process.
+                                    </html> ]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="UUID" value="ECUC:5ce51b69-fffb-4b87-863d-7463e09eeeb1"/>
+                            
+                                <!-- @implements OcuCountdirection_Object -->
+                                <v:var name="OcuCountdirection" type="ENUMERATION">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                         <html>
+                                         This parameter indicates the count direction for the whole OCU driver.
+                                         </html> ]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="OPTIONAL" value="true"/>
+                                    <a:a name="READONLY" value="true"/>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:a8dc410c-633d-410d-ba43-d59bf7b86a6e"/>
+                                    <a:da name="DEFAULT" value="OCU_UPCOUNTING"/>
+                                    <a:da name="RANGE">
+                                        <a:v>OCU_DOWNCOUNTING</a:v>
+                                        <a:v>OCU_UPCOUNTING</a:v>
+                                    </a:da>
+                                </v:var>
+                     
+                                <v:lst name="OcuChannel" type="MAP">
+                                    <a:da name="MIN" value="1"/>
+                                    <a:a name="MAX" type="XPath" expr="num:i(count(ecu:list('Ocu.Ftm_Hw_Channels_List')))"/>
+                              
+                                    <!-- @implements OcuChannel_Object -->
+                                    <v:ctr name="OcuChannel" type="IDENTIFIABLE">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                            <html>
+                                            Configuration of an individual OCU channel.
+                                            </html> ]]>
+                                            </a:v>
+                                        </a:a> 
+                                        <a:a name="UUID" value="ECUC:8d95a4f1-9d41-4ab0-80fb-341e78968c4b"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                            <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                                         
+                                        <!-- @implements OcuChannelId_Object -->    
+                                        <v:var name="OcuChannelId" type="INTEGER">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                Channel Id of the OCU channel. This value will be assigned to the symbolic name derived from the OcuChannel container short name. It defines the assignment of the channel to the physical OCU hardware channel.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>                                                
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS"  type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                            <a:a name="UUID" value="ECUC:ae7f2b9b-74ab-4a31-9d76-7c4eca6f36ac"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=65535"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                            <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, num:i(1))"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="(node:value(.) >= num:i(count(../../*/.)))" 
+                                                true="Ocu channel IDs is out of range maximum value is given by the total number of channels."/>
+                                                <a:tst expr="text:uniq(../../*/OcuChannelId, .)"                                   
+                                                false="Ocu channels should have unique IDs."/>                              
+                                            </a:da>                                            
+                                        </v:var> 
+                                        
+                                        <!-- @implements OcuAssignedHardwareChannel_Object -->
+                                        <v:var name="OcuAssignedHardwareChannel" type="INTEGER">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                The physical hardware channel that is assigned to this logical channel.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>                                            
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="READONLY" value="true"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:41b79bdf-db86-4a56-b6f6-ce1a3dcd3491"/>                                    
+                                            <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, num:i(1))"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=255"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+                                        
+                                        <v:var name="FtmHwChannel" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                The Ftm hardware channel that is assigned to this logical channel.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:41b79bdf-dc86-4a56-b6f6-ce1a3dcd3491"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="text:uniq(../../*/FtmHwChannel, .)" false="Duplicate physical Ftm module"/>
+                                                <a:tst expr="node:exists(../../../../OcuGeneral/OcuHwResourceConfig/*[contains(./OcuHwResourceId , node:current()) and ./OcuChannelIsUsed = 'true'])" false="Please enable this channel in OcuHwResourceConfig/*/OcuChannelIsUsed"/>
+                                                <a:tst expr="node:exists(../../../OcuHWSpecificSettings/*[text:split(OcuFtmModule,'_')[2] = text:split(node:current()/../FtmHwChannel,'_')[2]])" false="This FTM module is not configured yet. Please add and configure corresponding FTM module in OcuHWSpecificSettings"/>
+                                            </a:da>
+
+                                            <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Ocu.Ftm_Hw_Channels_List'))[position()-1=node:fallback(node:current()/../@index,'0')]">      
+                                            </a:da>
+                                            <a:da name="RANGE" type="XPath" expr="ecu:list('Ocu.Ftm_Hw_Channels_List')"/>    
+                                        </v:var>
+                               
+                                        <!-- @implements OcuDefaultThreshold_Object -->
+                                        <v:var name="OcuDefaultThreshold" type="INTEGER">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                Value of comparison threshold used for Initialization.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>                                            
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:d5dafdc3-f57e-4221-9c18-f888e69263a8"/>
+                                            <a:a name="DEFAULT" value="10000"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=65535"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+                                        
+                                        <!-- @implements OcuHardwareTriggeredAdc_Object -->
+                                        <v:var name="OcuHardwareTriggeredAdc" type="INTEGER">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                This parameter is used to allow the OCU channel to trigger an ADC channel upon compare match, if this is supported by hardware. The value of the parameter represents the ADC physical channel to trigger..
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>                                             
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>                                        
+                                            </a:a>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:199861fd-bcd7-4082-9b73-be9d0ef20b4e"/>
+                                            <a:da name="DEFAULT" value="0"/>
+                                            <a:da name="READONLY" value="true"/>
+                                            <a:da name="EDITABLE" value="false"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=255"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+                                
+                                        <!-- @implements OcuHardwareTriggeredDMA_Object -->
+                                        <v:var name="OcuHardwareTriggeredDMA" type="INTEGER">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                This parameter is used to allow the OCU channel to trigger a DMA channel upon compare match, if this is supported by hardware. The value of the parameter represents the DMA physical channel to trigger.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>                                             
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>                                        
+                                            </a:a>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:97064751-356d-4b87-8b91-8d9ce61968b4"/>
+                                            <a:da name="DEFAULT" value="0"/>
+                                            <a:da name="READONLY" value="true"/>
+                                            <a:da name="EDITABLE" value="false"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=255"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+                                
+                                        <!-- @implements OcuMaxCounterValue_Object -->
+                                        <v:var name="OcuMaxCounterValue" type="INTEGER">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                Maximum value in ticks, the counter of the OCU channel is able to count.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:4eac33f1-9e49-4976-8e2d-c689a9693373"/>
+                                            <a:da name="DEFAULT" value="65535"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=65535"/>
+                                                <a:tst expr="&gt;=1"/>
+                                            </a:da>
+                                        </v:var>
+                                
+                                        <!-- @implements OcuNotification_Object -->
+                                        <v:var name="OcuNotification" type="FUNCTION-NAME">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                User callback function
+                                                NOTE: please use NULL or NULL_PTR w/o any quotes. If the used string is different from NULL or NULL_PTR it will be used as the configured function name.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/> 
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:5f27e056-04d8-4032-a111-7cbd36e11585"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="node:value(../../../../OcuConfigurationOfOptionalApis/OcuNotificationSupported ) = 'true'" />
+                                            <a:da name="DEFAULT" value="NULL"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="normalize-space(.) = '&quot;NULL_PTR&quot;' or normalize-space(.) = 'NULL_PTR' or normalize-space(.) = '&quot;NULL&quot;' or normalize-space(.) = 'NULL' or text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" 
+                                                false="Invalid name of the OcuNotification. Must be a valid C function name, NULL_PTR, &quot;NULL_PTR&quot;, NULL, or &quot;NULL&quot;."/>
+                                                <a:tst expr="((.) !='NULL' and (.) != NULL_PTR) and ((../../../../OcuGeneral/OcuHwResourceConfig/*[OcuHwResourceId= node:current()/../FtmHwChannel])/OcuIsrEnable = 'false' )" 
+                                                true="Please enable interrupt for this channel in OcuHWSpecificSettings/OcuIsrEnable "/>
+                                            </a:da>
+                                        </v:var>
+                                        
+                                        <!-- @implements OcuOuptutPinUsed_Object -->
+                                        <v:var name="OcuOuptutPinUsed" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                Information about the usage of an output pin on this channel.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:da name="DEFAULT" value="false"/>
+                                            <a:a name="UUID"  value="ECUC:f456814e-4ea3-40d1-881a-72fc038a3330"/>
+                                        </v:var>
+                                        
+                                        <!-- @implements OcuOutputPinDefaultState_Object -->
+                                        <v:var name="OcuOutputPinDefaultState" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                The parameter OcuOutputPinDefaultState represents the state that a pin associated with a channel shall be set to after initialisation.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>     
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>                                        
+                                            </a:a>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:737c45f0-f677-496a-8fbe-2a4c89d3e048"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="node:value(../OcuOuptutPinUsed) = 'true'" />
+                                            <a:da name="DEFAULT" value="OCU_LOW"/>
+                                            <a:da name="RANGE">
+                                                <a:v>OCU_HIGH</a:v>
+                                                <a:v>OCU_LOW</a:v>
+                                            </a:da>
+                                        </v:var>
+ 
+                                        <!--  OcuOutputPinAction -->
+                                        <v:var name="OcuOutputPinAction" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                The parameter OcuOutputPinAction represents the action that a pin associated with a channel shall be set imediatly after a compare match event.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/> 
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>                                        
+                                            </a:a>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:737c45f0-f677-496a-8fbe-2a4c89d3e037"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="node:value(../OcuOuptutPinUsed) = 'true'" />
+                                            <a:da name="DEFAULT" value="OCU_DISABLE"/>
+                                            <a:da name="RANGE">
+                                                <a:v>OCU_SET_LOW</a:v>
+                                                <a:v>OCU_SET_HIGH</a:v>
+                                                <a:v>OCU_TOGGLE</a:v>
+                                                <a:v>OCU_DISABLE</a:v>                                                
+                                            </a:da>
+                                        </v:var>
+                                        
+                                         <!--  OcuUseMcuReferencePoint -->
+                                        <v:var name="OcuUseMcuReferencePoint" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                This parameter allows for automatic calculation of the Channel Tick duration based on the
+                                                configured MCU Referenced Clock.
+                                                If OcuUseMcuReferencePoint is set to true than selectig a Clock source from MCU is possible and based on that source clock OcuChannelTickDuration can be auto-calculated.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="
+                                                     ((node:value(.) = 'true') and not(node:exists(../OcuMcuClockReferencePoint)))"
+                                                     true="If use MCU reference point is true then a valid reference to MCU driver should be selected."/>       
+                                            </a:da>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:da name="DEFAULT" value="false"/>
+                                            <a:a name="UUID"  value="ECUC:f456815f-4ea3-40c0-881a-72fc038a3330"/>
+                                        </v:var>                                        
+                                        
+                                        <!-- @implements OcuChannelTickDuration_Object -->
+                                        <v:var name="OcuChannelTickDuration" type="INTEGER">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                Specifies the tick duration of the counter of the channel. This parameter is the number of the input clock edges (rising edges or falling edges exclusively) counted each time to increase the counter by one unit.
+                                                Note. The default value is calculated using a default prescaler of 1. For a different prescaler value the calculated value should be devided by the said prescaler value.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>                                            
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>                                        
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:08b32196-a3a9-4969-bdbe-64f261032eeb"/>                                              
+                                            <a:da name="DEFAULT" type="XPath">
+                                                <a:tst expr=" (num:i((num:f(number(noderef:value(concat(noderef:ref(node:fallback(../OcuMcuClockReferencePoint,.)),'/McuClockReferencePointFrequency'))))
+                                                        )                                                                
+                                                        div num:f(65536)
+                                                      )
+                                                )
+                                               "/>
+                                            </a:da>
+                                            <!--a:da name="READONLY" type="XPath" expr="node:value(../OcuUseMcuReferencePoint) = 'false'" /-->
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="
+                                                     (node:value(../OcuUseMcuReferencePoint) = 'true' and not(node:refexists(../OcuMcuClockReferencePoint)))"
+                                                     true="To automatically calculate channel tick duration all references to HW channel and MCU clock need to be correct."/>
+                                            </a:da>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=65535"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+                                        
+                                        <v:ref name="OcuMcuClockReferencePoint" type="REFERENCE">
+                                            <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                                <html>
+                                                    Reference to the Ftm clock source configuration,
+                                                    which is set in the MCU driver configuration. <p></p>
+                                                </html> ]]>
+                                            </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="OPTIONAL" value="true"/>
+                                            <a:a name="SCOPE" value="ECU"/>
+                                            <a:a name="UUID" value="ECUC:a6618c4e-cba9-4ed1-9447-7f61666ebf8a"/>
+                                            <a:da name="EDITABLE" type="XPath" expr="node:value(../OcuUseMcuReferencePoint) = 'true'" />
+                                            <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="node:refvalid(.)" false="Invalid or empty reference."/>
+                                            </a:da>
+                                        </v:ref>                               
+
+                                    </v:ctr>
+                                </v:lst>
+                            
+                                <v:lst name="OcuGroup" type="MAP">
+                                    <a:da name="READONLY" value="true" />
+                                    <!-- @implements OcuGroup_Object -->
+                                    <v:ctr name="OcuGroup" type="IDENTIFIABLE">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                            <html>
+                                            This container contains the parameters for configuring an OCU group.
+                                            </html> ]]>
+                                            </a:v>
+                                        </a:a>                                             
+                                        <a:a name="UUID" value="ECUC:5d332cf4-0d23-4d4d-be78-ad121f0562e8"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                            <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                                        
+                                        <!-- @implements OcuGroupId_Object -->
+                                        <v:var name="OcuGroupId" type="INTEGER">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                Numeric ID of the group. This parameter is the symbolic name of the group.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>    
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                            <a:a name="UUID" value="ECUC:62d48842-799c-4573-9cfa-a1249545739e"/>
+                                            <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, num:i(1))"/>
+                                            <a:da name="INVALID" type="Range">
+                                                <a:tst expr="&lt;=65535"/>
+                                                <a:tst expr="&gt;=0"/>
+                                            </a:da>
+                                        </v:var>
+                                            
+
+                                        <v:lst name="OcuGroupDefinition">
+                                            <a:da name="MIN" value="1"/>
+                                          
+                                            <!-- @implements OcuGroupDefinition_Object -->
+                                            <v:ref name="OcuGroupDefinition" type="REFERENCE">
+                                                <a:a name="DESC">
+                                                    <a:v><![CDATA[EN:
+                                                    <html>
+                                                    Assignment of OcuChannels to an OcuGroup..
+                                                    </html> ]]>
+                                                    </a:v>
+                                                </a:a>    
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                    <icc:v class="PreCompile">VariantPreCompile</icc:v>                                        
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                                <a:a name="SCOPE" value="LOCAL"/>
+                                                <a:a name="UUID" value="ECUC:6fc493da-1d18-4bfe-84fb-12f19390af28"/>
+                                                <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Ocu/OcuConfigSet/OcuChannel"/>
+                                            </v:ref>
+                                        </v:lst>
+                                    </v:ctr>
+                                </v:lst>
+                                
+                                <!-- @implements OcuHWSpecificSettings_Object -->
+                                <v:lst name="OcuHWSpecificSettings" type="MAP">       
+                                    <a:a name="MIN" value='0'/>
+                                    <a:a name="MAX" type="XPath" expr="num:i(count(ecu:list('Ocu.Ftm_Hw_Modules_List')))"/>
+                                    
+                                    <v:ctr name="OcuHWSpecificSettings" type="IDENTIFIABLE">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                            <html>
+                                            This container contains Ocu-specific parameters for selecting the clock source and setting optional prescalers if supported by hardware.
+                                            </html> ]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="UUID" value="ECUC:5d332cf4-0e14-4df4-be78-ad121f0562e8"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS"  type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                                            <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                        <v:var name="OcuFtmModule" type="ENUMERATION">
+                                            <a:a name="LABEL" value="FTM Module"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                Selects one Ftm modules available on the platform.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:7fabd469-6f92-4398-8151-f1a1a3d09aec"/>
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="text:uniq(../../*/OcuFtmModule, .)" false="Duplicate physical Ftm module"/>
+                                                <a:tst expr="node:exists(../../../OcuChannel/*[text:split(FtmHwChannel,'_')[2] = text:split(node:current()/../OcuFtmModule,'_')[2]])" false="There are not any OcuChannels use this FTM module. Please add channel(s) in OcuChannel use this Ftm hardware module or select another FTM module "/>
+                                            </a:da>
+
+                                            <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Ocu.Ftm_Hw_Modules_List'))[position()-1=node:fallback(node:current()/../@index,'0')]">      
+                                            </a:da>
+                                            <a:da name="RANGE" type="XPath" expr="ecu:list('Ocu.Ftm_Hw_Modules_List')"/>    
+                                        </v:var> 
+                                                
+                                        <!-- @implements OcuClockSource_Object -->
+                                        <v:var name="OcuClockSource" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>                                                        
+                                                The OCU driver specific clock input for the unit can statically be configured to select different clock sources if provided by hardware. Enumeration literals are defined vendor specific.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>                              
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:debcf028-05a1-4eda-9ef2-d261fc69ce5a"/>
+                                            <a:da name="OPTIONAL" value="true"/>
+                                            <a:da name="DEFAULT" value="OCU_SYSTEM_CLOCK"/>
+                                            <a:da name="RANGE">
+                                                <a:v>OCU_SYSTEM_CLOCK</a:v>
+                                                <a:v>OCU_EXTERNAL_CLOCK</a:v>
+                                            </a:da>
+                                        </v:var>
+                                        
+                                        <!-- @implements OcuPrescale_Object -->
+                                        <v:var name="OcuPrescale" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>                                                        
+                                                Optional OCU driver specific clock prescale factor, if supported by hardware. Implementation is defined vendor specific.                                                            
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>         
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                                <icc:v class="PreCompile">VariantPreCompile</icc:v>          
+                                            </a:a>    
+                                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:d9ad3539-0ba2-414d-add7-c5609c597f82"/>
+                                            <a:da name="OPTIONAL" value="true"/>
+                                            <a:da name="DEFAULT" value="DIV1"/>
+                                            <a:da name="RANGE">
+                                                <a:v>DIV1</a:v>
+                                                <a:v>DIV2</a:v>
+                                                <a:v>DIV4</a:v>
+                                                <a:v>DIV8</a:v>
+                                                <a:v>DIV16</a:v>
+                                                <a:v>DIV32</a:v>
+                                                <a:v>DIV64</a:v>
+                                                <a:v>DIV128</a:v>
+                                            </a:da>
+                                        </v:var>
+                                        <v:var name="OcuPrescale_Alternate" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                Select input count source (clock) used for this FTM module. This parameter will be used by the Ocu_SetClockMode function.
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="ORIGIN" value="NXP"/>
+                                                <a:a name="UUID" value="ECUC:966496c6-e6f4-48e3-a5dd-823ec654c269"/>
+                                                <a:da name="EDITABLE" type="XPath" expr="node:value(../../../../OcuGeneral/OcuEnableDualClockMode) = 'true'" />
+                                                <a:da name="DEFAULT" value="DIV1"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>DIV1</a:v>
+                                                    <a:v>DIV2</a:v>
+                                                    <a:v>DIV4</a:v>
+                                                    <a:v>DIV8</a:v>
+                                                    <a:v>DIV16</a:v>
+                                                    <a:v>DIV32</a:v>
+                                                    <a:v>DIV64</a:v>
+                                                    <a:v>DIV128</a:v>
+                                                </a:da>
+                                        </v:var>
+                                        <v:var name="OcuDebugMode" type="ENUMERATION">
+                                            <a:a name="LABEL" value="Debug Mode"/>
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                OcuDebugMode
+                                                These bits allow select the behavior of the FTM counter, the CH(n)F bit, the channels output, and the writing to the MOD, CNTIN, and C(n)V registers (wave form register)
+                                                <p>CNT_ON_OUTPUTS_ON - Continue with normal operation during debug mode.</p>
+                                                <p>CNT_STOPED_OUTPUTS_FROZEN - Counter is stopped, channels outputs are frozen, writes to wave form registers bypass the registers buffers </p>
+                                                <p>CNT_STOPED_OUTPUTS_SAFE - Counter is stopped, channels outputs are forced to their safe value according to POLn bit, writes to wave form registers bypass the registers buffers </p>
+                                                <p>CNT_STOPED_FLAG_SET - Counter is stopped, channels outputs operate with its functionality, writes to wave form registers bypass the registers buffers </p>
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:f86da512-7670-43a7-a8e1-108f100d7db0"/>
+                                            <a:da name="DEFAULT" value="CNT_ON_OUTPUTS_ON"/>
+                                            <a:da name="RANGE">
+                                                <a:v>CNT_ON_OUTPUTS_ON</a:v>
+                                                <a:v>CNT_STOPED_OUTPUTS_FROZEN</a:v>
+                                                <a:v>CNT_STOPED_OUTPUTS_SAFE</a:v>
+                                                <a:v>CNT_STOPED_FLAG_SET</a:v>
+                                            </a:da>
+                                        </v:var>
+                                    </v:ctr>
+                                </v:lst>
+                            </v:ctr>
+
+                            <!-- @implements OcuGeneral_Object -->
+                            <v:ctr name="OcuGeneral" type="IDENTIFIABLE">
+                                <a:a name="UUID" value="ECUC:fabfd77f-4f07-4ffb-a24a-c8ec54951d22"/>
+                                <a:a name="DESC">
+                                    <a:v>
+                                    <![CDATA[EN:
+                                    <html>
+                                    This container contains the module-wide configuration parameters of the OCU Driver.
+                                    </html> ]]>
+                                    </a:v>
+                                </a:a>         
+                                
+                                <!-- @implements OcuDevErrorDetect_Object -->
+                                <v:var name="OcuDevErrorDetect" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                        <![CDATA[EN:
+                                        <html>
+                                         Switch for enabling the development error detection.
+                                        </html> ]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                    <a:a name="SCOPE" value="LOCAL"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:bce48e8f-51f4-484b-9bec-9afd5ff067d1"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                
+                                <!-- @implements OcuEnableDualClockMode_Object -->
+                                <v:var name="OcuEnableDualClockMode" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                        <html>
+                                        Adds / removes the services Ocu_SetClockMode() from the code.This function is called when the prescaler value needs to be change to maintain same period at different frequency.
+                                        Note:
+                                        <h1>Note</h1>This is an Implementation Specific Parameter.
+                                        </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:eed75853-6256-42b2-b7a9-c2135b4c0d9d"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                    </a:a>
+                                </v:var> 
+                                
+                                <!-- @implements OcuEnableUserModeSupport_Object -->
+                                <v:var name="OcuEnableUserModeSupport" type="BOOLEAN">
+                                    <a:a name="DESC">
+                                        <a:v>
+                                            <![CDATA[EN:<html>
+                                                When this parameter is enabled, the OCU module will adapt to run from User Mode, with the following measures:
+Configuring REG_PROT for Ftm IP so that the registers under protection can be accessed from user mode by setting UAA bit in REG_PROT_GCR to 1
+<p>For more information, please see chapter 5.7 User Mode Support in IM  </p>
+                                                Note: Implementation Specific Parameter.
+                                            </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="LABEL" value="Ocu Enable User Mode Support"/>
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:f466f20d-52ba-65fa-be74-2bd1bb030b88"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:da name="READONLY" value="true"/>
+                                </v:var>
+                                
+                                <v:lst name="OcuHwResourceConfig" type="MAP">
+                                    <a:a name="MIN" type="XPath" expr="num:i(count(ecu:list('Ocu.Ftm_Hw_Channels_List')))"/>  
+                                    <a:a name="MAX" type="XPath" expr="num:i(count(ecu:list('Ocu.Ftm_Hw_Channels_List')))"/>
+                                     
+                                    <v:ctr name="OcuHwResourceConfig" type="IDENTIFIABLE">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                            <html>
+                                            List of HW interrupts available for the entire platform.                                       
+                                            </html> ]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:da name="TAB" value="ISR"/>
+                                        <a:a name="UUID" value="ECUC:de1adbaf-34dd-5f7e-89de-65775795e1b9"/>
+                                 
+                                        <v:var name="OcuHwResourceId" type="ENUMERATION">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                Id of the HW interrupt service routine available platform wide and usable by the Ocu module.                                       
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="LABEL" value="OCU Resource Name"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                            <a:a name="UUID" value="ECUC:42ccb255-1f6b-9d91-acdf-977c9fc0cb23"/>                                       
+                                            <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Ocu.Ftm_Hw_Channels_List'))[position()-1=node:fallback(node:current()/../@index, num:i(0)+1)]">
+                                            </a:da>
+                                            <a:da name="RANGE" type="XPath" expr="ecu:list('Ocu.Ftm_Hw_Channels_List')"/> 
+                                            <a:da name="INVALID" type="XPath">
+                                                <a:tst expr="text:uniq(../../*/OcuHwResourceId, .)"                                                
+                                                    false="Ocu channels should have unique IDs."/>                                            
+                                            </a:da>                                         
+                                        </v:var>
+                                 
+                                        <v:var name="OcuIsrEnable" type="BOOLEAN">
+                                            <a:a name="DESC">
+                                                <a:v><![CDATA[EN:
+                                                <html>
+                                                Status of the HW Interrupt (true - Interrupt shall be enable platform wide; false - Interrupt shall be disabled platform wide.                                       
+                                                </html> ]]>
+                                                </a:v>
+                                            </a:a>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                            </a:a>
+                                            <a:a name="ORIGIN" value="NXP"/>
+                                            <a:a name="SCOPE" value="LOCAL"/>
+                                            <a:da name="DEFAULT" value="false"/>
+                                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                            <a:a name="UUID" value="ECUC:19fbe442-0ed3-474d-8b47-977c9fc0cb23"/>
+                                        </v:var>
+                                        <!--/** OcuChannelIsUsed */-->
+                                        <v:var name="OcuChannelIsUsed" type="BOOLEAN">
+                                        <a:a name="DESC">
+                                            <a:v><![CDATA[EN:
+                                            <html>
+                                            This column configures HW channels which are going to be used.
+                                            </html> ]]>
+                                            </a:v>
+                                        </a:a>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="NXP"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:da name="DEFAULT" value="false"/>
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                        <a:a name="UUID" value="ECUC:04ebf442-ffd3-fd56-8e68-7c9f95c023cb"/>
+                                        </v:var>
+                                    </v:ctr>
+                                </v:lst>
+                                
+                            </v:ctr>           
+            
+            
+                            <!-- @implements CommonPublishedInformation_Object -->
+                            <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                                <a:a name="DESC">
+                                    <a:v><![CDATA[EN: 
+                                    <html>
+                                    Common container, aggregated by all modules. It contains published information about vendor and versions.
+                                    </html>]]>
+                                    </a:v>
+                                </a:a>
+                                <a:a name="UUID" value="ECUC:8c6ecff1-5014-492f-9aa4-4b8d7c4e1391"/>
+                          
+                                <!-- @implements ArReleaseMajorVersion_Object -->
+                                <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN: 
+                                        <html>
+                                        Major version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                        </html>]]>
+                                        </a:v>
+                                    </a:a>              
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:57c070bb-b0ce-4553-8b99-4e0e657e4a86"/>
+                                    <a:da name="DEFAULT" value="4"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=4"/>
+                                        <a:tst expr="&lt;=4"/>
+                                    </a:da>
+                                </v:var>
+                                   
+                                <!-- @implements ArReleaseMinorVersion_Object -->
+                                <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN: 
+                                        <html>
+                                        Minor version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                        </html> ]]>
+                                        </a:v>
+                                    </a:a>              
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:7200a91c-dcb1-4436-b57f-4270b5b48633"/>
+                                    <a:da name="DEFAULT" value="2"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=2"/>
+                                        <a:tst expr="&lt;=2"/>
+                                    </a:da>
+                                </v:var>
+                                   
+                                <!-- @implements ArReleaseRevisionVersion_Object -->
+                                <v:var name="ArReleaseRevisionVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                        <html>
+                                        Revision version number of AUTOSAR specification on which the appropriate implementation is based on.
+                                        </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:2fbf46e8-9542-461d-bef5-493037fbad98"/>
+                                    <a:da name="DEFAULT" value="2"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=2"/>
+                                        <a:tst expr="&lt;=2"/>
+                                    </a:da>
+                                </v:var>
+                                 
+                                <!-- @implements ModuleId_Object -->
+                                <v:var name="ModuleId" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                        <html>
+                                        Module ID of this module from Module List.
+                                        </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:2b4b013b-72d5-4561-a879-49bdc724679b"/>
+                                    <a:da name="DEFAULT" value="121"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=121"/>
+                                        <a:tst expr="&lt;=121"/>
+                                    </a:da>
+                                </v:var>
+                                 
+                                <!-- @implements SwMajorVersion_Object -->
+                                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                        <html>
+                                        Major version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                                        </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:ce5607a9-5604-49e8-9da2-3983516e43b7"/>
+                                    <a:da name="DEFAULT" value="1"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=1"/>
+                                        <a:tst expr="&lt;=1"/>
+                                    </a:da>
+                                </v:var>
+                                 
+                                <!-- @implements SwMinorVersion_Object -->
+                                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                        <html>
+                                        Minor version number of the vendor specific implementation of the module. The numbering is vendor pecific.
+                                        </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:99452c49-2a91-447f-b6e6-7642ff1fdd71"/>
+                                    <a:da name="DEFAULT" value="0"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=0"/>
+                                        <a:tst expr="&lt;=0"/>
+                                    </a:da>
+                                </v:var>
+                                 
+                                <!-- @implements SwPatchVersion_Object -->
+                                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                        <html>
+                                        Patch level version number of the vendor specific implementation of the module. The numbering is endor specific.
+                                        </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:c997a2b2-6e09-45c6-bbf7-f2235519be58"/>
+                                    <a:da name="DEFAULT" value="1"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=1"/>
+                                        <a:tst expr="&lt;=1"/>
+                                    </a:da>
+                                </v:var>
+                                 
+                                <!-- @implements VendorApiInfix_Object -->
+                                <v:var name="VendorApiInfix" type="STRING_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                        <html>
+                                        In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that he name of APIs is extended by the VendorId and a vendor specific name.
+                                        This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+                                        &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+                                        E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write.
+                                        This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.
+                                        </html>]]>
+                                        </a:v>                          
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:4fb54da8-f8f1-4b6d-8256-a9a9cd6f2cba"/>
+                                    <a:da name="DEFAULT" value=""/>
+                                    <a:a name="OPTIONAL" value="true"/>
+                                    <a:da name="EDITABLE" value="false"/>
+                                </v:var>
+                    
+                                 <!-- @implements VendorId_Object -->
+                                <v:var name="VendorId" type="INTEGER_LABEL">
+                                    <a:a name="DESC">
+                                        <a:v><![CDATA[EN:
+                                        <html>
+                                        Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list.
+                                        </html>]]>
+                                        </a:v>
+                                    </a:a>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                                    </a:a> 
+                                    <a:a name="ORIGIN" value="NXP"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:df2fa8f7-4987-499f-b9e9-ebc24c848a2e"/>
+                                    <a:da name="DEFAULT" value="43"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&gt;=43"/>
+                                        <a:tst expr="&lt;=43"/>
+                                    </a:da>
+                                </v:var>
+                            </v:ctr>
+                        </v:ctr>
+                    </d:chc>
+            
+                <d:chc name="Ocu_EcuParameterDefinition" type="AR-ELEMENT" value="ECU_PARAMETER_DEFINITION">                   
+                    <d:ctr type="AR-ELEMENT">
+                        <a:a name="UUID" value="ECUC:781016ba-cac9-4286-95f6-6c2e5f2d5180"/>
+                        <a:a name="DEF"  value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+                        <d:lst name="MODULE_REF">
+                            <d:ref type="MODULE_REF" value="ASPath:/TS_T40D2M10I1R0/Ocu"/>
+                        </d:lst>
+                    </d:ctr>
+                </d:chc>
+                    
+                    
+                <d:chc name="Ocu_ModuleDescription" type="AR-ELEMENT" value="BSW_MODULE_DESCRIPTION">
+                    <d:ctr type="AR-ELEMENT">
+                        <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/BSW_MODULE_DESCRIPTION"/>
+                        <d:var name="MODULE_ID" type="INTEGER" >
+                            <a:a name="EDITABLE" value="false"/>
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:ref type="RECOMMENDED_CONFIGURATION" >
+                            <a:a name="EDITABLE" value="false"/>
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:ref type="PRE_CONFIGURED_CONF" >
+                            <a:a name="EDITABLE" value="false"/>
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:ref type="VENDOR_SPECIFIC_MODULE_DEF" value="ASPath:/TS_T40D2M10I1R0/Ocu"/>
+                    </d:ctr>
+                </d:chc>
+            </d:lst>
+        </d:ctr>
+    </d:lst>
+</d:ctr>
+</datamodel>

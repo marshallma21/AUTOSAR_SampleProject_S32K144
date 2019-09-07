@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Crcu
+Bundle-SymbolicName: Crcu_TS_T40D2M10I1R0; singleton:=true
+Bundle-Version: 3.0.0
+Bundle-Vendor: NXP
+Bundle-Localization: plugin
+Bundle-ClassPath: .
+Require-Bundle: dreisoft.tresos.launcher2.plugin,
+  dreisoft.tresos.datamodel2.plugin,
+  dreisoft.tresos.lib2.plugin,
+  dreisoft.tresos.autosar2.plugin,
+  dreisoft.tresos.generator.ng.api.plugin,
+  dreisoft.tresos.autosar2.api.plugin,
+  dreisoft.tresos.comimporter.api.plugin
+Eclipse-LazyStart: false

@@ -1,0 +1,189 @@
+/*==================================================================================================
+
+   @file        autosar_flash_144.ld
+   @version     1.0.1
+
+   @brief       Linaro Linker Command File
+   @details     Linaro Linker Command File
+                This file contains sample code only. It is not part of the production code deliverables
+====================================================================================================    
+   Project      : AUTOSAR 4.2 MCAL
+   Platform     : ARM
+   Peripheral   : LPit
+   Dependencies : none
+   
+   Autosar Version       : 4.2.2
+   Autosar Revision      : ASR_REL_4_2_REV_0002
+   Autosar Conf. Variant : 
+   Software Version      : 1.0.1
+   Build Version         : S32K14x_MCAL_1_0_1_RTM_ASR_REL_4_2_REV_0002_20170831
+
+   (c) Copyright 2006-2016 Freescale Semiconductor, Inc. 
+*       Copyright 2017-2018 NXP
+   All Rights Reserved.
+
+====================================================================================================
+
+Note: This linker command file to be used with S32K144 device only.
+==================================================================================================*/
+
+MEMORY
+{
+    /* S32K144 - 512 KB Flash in range 0x00000000:0x0007FFFF */
+    flash_rsvd1    : ORIGIN = 0x00, LENGTH = 0x8
+    flash_rsvd2    : ORIGIN = 0x400, LENGTH = 0x10
+    flash_memory   : ORIGIN = 0x00000410, LENGTH = 0x7FBF0
+    
+    /* S32K144- 60 KB RAM in range 0x1FFF8000:0x20006FFF */
+    int_sram (rwx) : ORIGIN = 0x1FFF8000, LENGTH = 0xEE10       /* 60K - 0x60 - 0x90 - 0x100 */
+    res_ram_fls    : ORIGIN = 0x20006E10, LENGTH = 0x60         /* A reserved ram section needed by FLS driver */
+    res_ram_eep    : ORIGIN = 0x20006E70, LENGTH = 0x90         /* A reserved ram section needed by EEP driver */
+    int_results    : ORIGIN = 0x20006F00, LENGTH = 0x100    
+    ram_rsvd2      : ORIGIN = 0x20007000, LENGTH = 0
+}
+
+SECTIONS
+{
+   .ROM.rcw :         {   *(.rcw)
+                        } >  flash_rsvd1
+                        
+   .ROM.flash_config :{   *(.flash_config)
+                        } >  flash_rsvd2                   
+   
+   .ROM.text :          {   *(.startup)
+                            *(.systeminit)    
+                            *(.text.startup)
+                            *(.text)
+                            *(.text.*)
+                            *(.mcal_text)
+                        } > flash_memory
+                        
+   .ROM.acfls_code_rom ALIGN(4) : {   
+                            *(.acfls_code_rom)
+                        } > flash_memory                        
+
+   .ROM.aceep_code_rom ALIGN(4) : {   
+                            *(.aceep_code_rom)
+                        } > flash_memory                        
+
+/* -------------------------------------- Constant Area ------------------------------------ */
+    .ROM.rodata :       {
+                            *(.rodata)
+                            *(.rodata*)
+                            *(.mcal_const_cfg)
+                            *(.mcal_const)  
+                            _load_ram_rom = .;
+                        } > flash_memory
+
+/* -------------------------------------- Relocatable Data and Code Area ------------------------------------ */
+    .intc_vector : AT (_load_ram_rom )
+                        {
+                            intc_vector_start = .;
+                            *(.intc_vector);
+                            intc_vector_stop = .;
+                        } > int_sram
+                        
+    .ramcode :  AT(_load_ram_rom + SIZEOF(.intc_vector))
+                        {
+                            ramcode_start = .;
+                            *(.ramcode)
+                            ramcode_end = .;
+                        } > int_sram
+    .data :     AT(_load_ram_rom + SIZEOF(.intc_vector) + SIZEOF(.ramcode))
+                        {
+                            data_start = .;
+                            *(.data)
+                            *(.mcal_data)
+                            *(.mcal_data_no_cacheable)
+                            data_end = .;
+                        }> int_sram
+    .bss :              { 
+                            bss_start = .;
+                            *(.bss)
+                            *(.mcal_bss)
+                            *(.mcal_bss_no_cacheable)
+                            bss_end = .;
+                        }>int_sram   
+    .stack :            {
+                            _Stack_end  = .;
+                            *(.stack_main)
+                            _Stack_start = .;
+                        }>int_sram   
+                        
+    .acfls_code_ram :  {
+                            acfls_code_ram_start  = .;
+                            *(.acfls_code_ram)
+                            acfls_code_ram_stop   = .;
+                        }>res_ram_fls
+                        
+    .aceep_code_ram :  {
+                            aceep_code_ram_start  = .;
+                            *(.aceep_code_ram)
+                            aceep_code_ram_stop   = .;
+                        }>res_ram_eep
+
+                        INT_SRAM_START      = ORIGIN(int_sram);
+    INT_SRAM_SIZE       = (ORIGIN(ram_rsvd2) - ORIGIN(int_sram)) / 4 ;                     /* Init 64 bytes at a time */
+    INT_SRAM_END        = ORIGIN(ram_rsvd2);
+    
+    /* sbss section is not generated by GCC */
+    SBSS_SRAM_START     = 0;
+    SBSS_SRAM_SIZE      = 0;            /* Init 4 bytes at a time*/
+    
+    BSS_SRAM_START      = ADDR(.bss);
+    BSS_SRAM_SIZE       = (SIZEOF(.bss) + 3) / 4;   /* Init 4 bytes at a time*/
+
+    /* on KFA512 theer are NO BSS NON-CACHABLE sections - all symbols are pleced in the .bss section*/
+    BSS_NO_CACHEABLE_SRAM_START      = BSS_SRAM_START;
+    BSS_NO_CACHEABLE_SRAM_SIZE       = BSS_SRAM_SIZE;
+
+    RC_RAMCODE_SRC =  LOADADDR(.ramcode);
+    RC_RAMCODE_DEST = ADDR(.ramcode);
+    RC_RAMCODE_SIZE = (SIZEOF(.ramcode) + 3) / 4;         /* Copy 4 bytes at a time*/
+    
+    /* generate symbols used in start-up code to init .intc_vector section */
+    RC_INTC_VECTOR_SRC  =  LOADADDR(.intc_vector);
+    RC_INTC_VECTOR_DEST = ADDR(.intc_vector);
+    RC_INTC_VECTOR_SIZE = (SIZEOF(.intc_vector)+ 3 ) / 4;  /* Copy 4 bytes at a time */
+    
+    /* sdata section is not generated by ARM GCC*/
+    RC_SDATA_SRC        = 0;
+    RC_SDATA_DEST       = 0;
+    RC_SDATA_SIZE       = 0;          /* Copy 4 bytes at a time */
+    RC_DATA_SRC         = LOADADDR(.data);
+    RC_DATA_DEST        = ADDR(.data);
+    RC_DATA_SIZE        = (SIZEOF(.data) + 3) / 4;  /* Copy 4 bytes at a time */
+
+    /* generate symbols used in start-up code to init .mcal_data_no_cacheable section */
+    /* on KFA512 theer are NO DATA NON-CACHABLE sections - all symbols are pleced in the .data section*/
+    RC_DATA_NO_CACHEABLE_SRC    = RC_DATA_SRC ;
+    RC_DATA_NO_CACHEABLE_DEST   = RC_DATA_DEST;
+    RC_DATA_NO_CACHEABLE_SIZE   = RC_DATA_SIZE;
+    
+    __SP_END            = ADDR(.stack);
+    __STACK_START       = ADDR(.stack) + SIZEOF(.stack); 
+    
+    __RAM_NO_CACHEABLE_START      = 0;
+    __RAM_NO_CACHEABLE_END        = 0;
+    __RAM_CACHEABLE_START         = 0;
+    __RAM_CACHEABLE_END           = 0;
+
+    /* Fls module access code support */    
+    Fls_ACEraseRomStart         = ADDR(.ROM.acfls_code_rom);
+    Fls_ACEraseRomEnd           = ADDR(.ROM.acfls_code_rom) + SIZEOF(.ROM.acfls_code_rom);
+    Fls_ACEraseSize             = (SIZEOF(.ROM.acfls_code_rom) + 3) / 4; /* Copy 4 bytes at a time*/
+
+    Fls_ACWriteRomStart         = ADDR(.ROM.acfls_code_rom);
+    Fls_ACWriteRomEnd           = ADDR(.ROM.acfls_code_rom) + SIZEOF(.ROM.acfls_code_rom);
+    Fls_ACWriteSize             = (SIZEOF(.ROM.acfls_code_rom) + 3) / 4; /* Copy 4 bytes at a time*/
+    
+    _ERASE_FUNC_ADDRESS_        = ADDR(.acfls_code_ram);
+    _WRITE_FUNC_ADDRESS_        = ADDR(.acfls_code_ram);
+
+    /* Eep module access code support */    
+    Eep_ACWriteRomStart         = ADDR(.ROM.aceep_code_rom);
+    Eep_ACWriteRomEnd           = ADDR(.ROM.aceep_code_rom) + SIZEOF(.ROM.aceep_code_rom);
+    Eep_ACWriteSize             = (SIZEOF(.ROM.aceep_code_rom) + 3) / 4; /* Copy 4 bytes at a time*/
+
+    _WRITE_FUNC_ADDRESS_EEP_    = ADDR(.aceep_code_ram);
+}

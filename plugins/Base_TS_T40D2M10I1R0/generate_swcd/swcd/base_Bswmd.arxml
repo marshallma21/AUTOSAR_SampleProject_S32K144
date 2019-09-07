@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3_STRICT_COMPACT.xsd">
+  
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR_Base</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-MODULE-DESCRIPTION>
+              <SHORT-NAME>Base</SHORT-NAME>
+              <MODULE-ID>0</MODULE-ID>
+              <PROVIDED-ENTRYS>
+              </PROVIDED-ENTRYS>
+              <INTERNAL-BEHAVIORS>
+                <BSW-INTERNAL-BEHAVIOR>
+                  <SHORT-NAME>InternalBehavior_0</SHORT-NAME>
+                  <EXCLUSIVE-AREAS>
+                  </EXCLUSIVE-AREAS>
+                  <ENTITYS>
+                  </ENTITYS>
+                </BSW-INTERNAL-BEHAVIOR>
+              </INTERNAL-BEHAVIORS>
+            </BSW-MODULE-DESCRIPTION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+                      
+        <AR-PACKAGE>
+          <SHORT-NAME>BswModuleEntrys</SHORT-NAME>
+          <ELEMENTS>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Base_T40D2M10I1R0</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+        <SHORT-NAME>Implementations</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-IMPLEMENTATION>
+              <SHORT-NAME>BswImplementation_0</SHORT-NAME>
+
+              <CODE-DESCRIPTORS>
+                <CODE>
+                <SHORT-NAME>Files</SHORT-NAME>
+                <ARTIFACT-DESCRIPTORS>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>config::Base.xdm</SHORT-LABEL>
+                    <CATEGORY>SWCFG</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>doc::AUTOSAR_MCAL_BASE_IM.pdf</SHORT-LABEL>
+                    <CATEGORY>SWDOC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>doc::AUTOSAR_MCAL_BASE_UM.pdf</SHORT-LABEL>
+                    <CATEGORY>SWDOC</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Adc_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Can_GeneralTypes.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Can_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Compiler.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::CompilerDefinition.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Compiler_Cfg.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::ComStack_Cfg.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::ComStack_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Crcu_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Csec_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Dio_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Eep_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Eth_GeneralTypes.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Eth_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Fee_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Fls_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Fr_GeneralTypes.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Fr_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Gpt_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::I2c_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Icu_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Iseled_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Lin_GeneralTypes.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Lin_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcal.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcem_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcl_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Mcu_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Ocu_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Platform_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Port_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Pwm_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::RegLockMacros.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::SilRegMacros.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Soc_Ips.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Spi_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::StdRegMacros.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Std_Types.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                  <AUTOSAR-ENGINEERING-OBJECT>
+                    <SHORT-LABEL>include::Wdg_MemMap.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </AUTOSAR-ENGINEERING-OBJECT>
+                </ARTIFACT-DESCRIPTORS>
+                </CODE>
+              </CODE-DESCRIPTORS>
+
+              <COMPILERS>
+                <COMPILER>
+                  <SHORT-NAME>IAR_Compiler</SHORT-NAME>
+                  <NAME>IAR Compiler</NAME>
+                  <OPTIONS>--cpu=Cortex-M4 --cpu=Cortex-M0+ --cpu_mode=thumb --endian=little -Ohz -c --no_clustering --no_mem_idioms --no_explicit_zero_opt --debug --diag_suppress=Pa050 -DAUTOSAR_OS_NOT_USED -DIAR --require_prototypes --no_wrap_diagnostics --no_system_include -e</OPTIONS>
+                  <VENDOR>IAR Systems</VENDOR>
+                  <VERSION>IAR: V8.11.2</VERSION>
+                </COMPILER>
+                <COMPILER>
+                  <SHORT-NAME>GHS_Compiler</SHORT-NAME>
+                  <NAME>Green Hills</NAME>
+                  <OPTIONS>-cpu=cortexm4 -cpu=cortexm0plus -ansi -Osize -dual_debug -G --no_exceptions -Wundef -Wimplicit-int -Wshadow -Wtrigraphs -Wall --prototype_errors --incorrect_pragma_warnings -noslashcomment -preprocess_assembly_files -nostartfile --short_enum -c --no_commons -keeptempfiles -list -DAUTOSAR_OS_NOT_USED -DDISABLE_MCAL_INTERMODULE_ASR_CHECK -DGHS</OPTIONS>
+                  <VENDOR>Green Hills</VENDOR>
+                  <VERSION>Green Hills Multi 7.1.4 / Compiler 2017.1.4</VERSION>
+                </COMPILER>
+                <COMPILER>
+                  <SHORT-NAME>LINARO_Compiler</SHORT-NAME>
+                  <NAME>Linaro Compiler</NAME>
+                  <OPTIONS>-c -O1 -ggdb3 -mcpu=cortex-m4 -mthumb -mlittle-endian -fomit-frame-pointer -mhard-float -fno-common -Wall -Wextra -Wstrict-prototypes -Wno-sign-compare -DAUTOSAR_OS_NOT_USED -DLINARO -fstack-usage -fdump-ipa-all -Werror=implicit-function-declaration</OPTIONS>
+                  <VENDOR>Linaro</VENDOR>
+                  <VERSION>(Linaro GCC 6.3-2017.06~dev) 6.3.1 20170509 (Thu Dec 7 13:28:42 CST 2017         build.sh rev=g7fea41d s=L631 Earmv7 -V release_g7fea41d_build_Fed_Earmv7) (from S32-DS-ARM_v2018)</VERSION>
+                </COMPILER>
+              </COMPILERS>
+              <GENERATED-ARTIFACTS>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>modules_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate_PC::include::modules.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+                <DEPENDENCY-ON-ARTIFACT>
+                  <SHORT-NAME>Reg_eSys_h</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTOR>
+                    <SHORT-LABEL>generate_PC::include::Reg_eSys.h</SHORT-LABEL>
+                    <CATEGORY>SWHDR</CATEGORY>
+                  </ARTIFACT-DESCRIPTOR>
+                  <USAGES>
+                    <USAGE>COMPILE</USAGE>
+                  </USAGES>
+                </DEPENDENCY-ON-ARTIFACT>
+              </GENERATED-ARTIFACTS>
+
+              <LINKERS>
+                <LINKER>
+                  <SHORT-NAME>IAR_Linker</SHORT-NAME>
+                  <NAME>IAR Compiler</NAME>
+                  <OPTIONS>--map filename --no_library_search --entry _start --enable_stack_usage --skip_dynamic_initialization --no_wrap_diagnostics --config</OPTIONS>
+                  <VENDOR>IAR Systems</VENDOR>
+                  <VERSION>IAR: V8.11.2</VERSION>
+                </LINKER>
+                <LINKER>
+                  <SHORT-NAME>GHS_Linker</SHORT-NAME>
+                  <NAME>Green Hills</NAME>
+                  <OPTIONS>-Mn -delete -v -ignore_debug_references -map -keepmap -lstartup -lsys -larch -lansi -L(/lib/thumb2) -lutf8_s32</OPTIONS>
+                  <VENDOR>Green Hills</VENDOR>
+                  <VERSION>Green Hills Multi 7.1.4 / Compiler 2017.1.4</VERSION>
+                </LINKER>
+                <LINKER>
+                  <SHORT-NAME>LINARO_Linker</SHORT-NAME>
+                  <NAME>Linaro Compiler</NAME>
+                  <OPTIONS>-Map=filename -T scriptfile</OPTIONS>
+                  <VENDOR>Linaro</VENDOR>
+                  <VERSION>(Linaro GCC 6.3-2017.06~dev) 6.3.1 20170509 (Thu Dec 7 13:28:42 CST 2017         build.sh rev=g7fea41d s=L631 Earmv7 -V release_g7fea41d_build_Fed_Earmv7) (from S32-DS-ARM_v2018)</VERSION>
+                </LINKER>
+              </LINKERS> 
+              <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+              <RESOURCE-CONSUMPTION>
+                <SHORT-NAME>ResourceConsumption</SHORT-NAME>
+                <MEMORY-SECTIONS>
+                </MEMORY-SECTIONS>
+              </RESOURCE-CONSUMPTION>
+              <SW-VERSION>4.2.2</SW-VERSION>
+              <VENDOR-ID>43</VENDOR-ID>
+              <AR-RELEASE-VERSION>4.2.2</AR-RELEASE-VERSION>
+              
+              <BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/AUTOSAR_Base/BswModuleDescriptions/Base/InternalBehavior_0</BEHAVIOR-REF>
+              <PRECONFIGURED-CONFIGURATION-REFS>
+              </PRECONFIGURED-CONFIGURATION-REFS>
+              <RECOMMENDED-CONFIGURATION-REFS>
+              </RECOMMENDED-CONFIGURATION-REFS>
+              <VENDOR-SPECIFIC-MODULE-DEF-REFS>
+                <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/TS_T40D2M10I1R0/Base</VENDOR-SPECIFIC-MODULE-DEF-REF>
+              </VENDOR-SPECIFIC-MODULE-DEF-REFS>
+            </BSW-IMPLEMENTATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

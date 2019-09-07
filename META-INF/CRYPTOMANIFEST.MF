@@ -1,0 +1,71 @@
+
+Name: generate_PC/include/SysDal_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773972496295536056520700217355426779830684105671077
+ 705717067618627216281928643163407906164641203753570072
+
+Name: generate_PC/src/IoDal_PbCfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773970636474384033650733494783390665609245378615142
+ 755997544301463966050682500171029129069219731689999491
+
+Name: generate_PC/src/SysDal_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594742325784124089110379554069324977271563367709284745
+ 366778473584078701987808958594968652612948862330885907
+
+Name: generate_PC/include/IoDal_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420203048352655112176840922842432577060083216738819
+ 4641748772581527684454531238010562330703478563408869
+
+Name: generate_PC/include/IoDal_Drv_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594755365575668117801060648674627826696262075569781325
+ 467146488546707461369496634727442490384088645583313700
+
+Name: config/IntegrationFramework.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421687387900914950664081709016008230645953466275423
+ 9166712491667867367364054762838439654641933025504871
+
+Name: generate_PC/specific_config.mak
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423210280842033013413798445663461741613736752294516
+ 9374083072486413826766774426147592907342267674733912
+
+Name: generate_PC/Modules.mak
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423202802324358651243793288503639906599767789593195
+ 3869423191783323722960564291128959012548605912630661
+
+Name: generate_PC/src/SwcRte_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420375220314080363475882966801631701837140461370100
+ 9825025546193469530374782811476467809822722049140612
+
+Name: generate_PC/include/SwcRte_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594750315445290975329530658940831379096527137069250116
+ 270122880633480659205669659044413663175422026636766253
+

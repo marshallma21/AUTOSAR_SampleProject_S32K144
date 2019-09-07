@@ -1,0 +1,8 @@
+
+Name: config/EcuC.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773967838289204001182070845570026422800944294864100
+ 820604204156355629127242513189121897160110000956870652
+

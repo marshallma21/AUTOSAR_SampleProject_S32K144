@@ -1,0 +1,43 @@
+
+Name: generate_PB/src/Eep_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594747555975952819038568449486873979790079782174438256
+ 620747058608376467610572709146258974047321880032041745
+
+Name: config/Eep.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424179954863343195863553315116050345871208311888882
+ 7831608741801273265021058249224652083281613846817392
+
+Name: generate_PB/Eep_VersionCheck.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424146956101539936169920006328788671941676467696966
+ 5341027027921037754921904742245249793985357329632757
+
+Name: generate_PC/Eep_VersionCheck.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421223702814482903399330608009881619388379886639996
+ 8807187936058561370520219387924808666048037502175259
+
+Name: generate_PC/src/Eep_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421540088554164529739315909806147356314859848310597
+ 5656274342933193396810339784092337502442806008274495
+
+Name: generate_PC/include/Eep_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594741211166692284845723458924182220273727954273109615
+ 454090296178616545133633708673875111232924224926573398
+

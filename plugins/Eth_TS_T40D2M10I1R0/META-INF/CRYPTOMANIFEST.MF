@@ -1,0 +1,50 @@
+
+Name: generate/Eth_VersionChecks.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425892991711618754971556342271081331062450988699862
+ 1929610057858376616253244701533604432948650829921398
+
+Name: generate/Eth_GetRegisterValues.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425836143619830610830967347777964061875854719979829
+ 3068066090085090539456857174837003104478327079693639
+
+Name: generate/include/Eth_Cfg.h
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424272651062606439191768724326201230731364075327534
+ 8975933540971363217488402449570385212127669274111432
+
+Name: config/Eth.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426119116216940619873942759495005948906378914535661
+ 8436944566434992461628932693161147073174603469061433
+
+Name: generate/Eth_Checks.m
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422791924030192484998426222307178576596704757563659
+ 5497413300078409867173835000803057347038620615645110
+
+Name: generate/src/Eth_Cfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423734999811365302469884185131452806380694876505257
+ 1333184299859827642309910615996172670926558550532256
+
+Name: generate/src/Eth_PBcfg.c
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594743707511497823226065383091063191598661814473364871
+ 693592990373763177426778681587639486989362921910783684
+

@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>TS_T40D2M10I1R0</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-DEF UUID="ECUC:9859330d-7e56-4b3d-bba9-3d59db515c57">
+          <SHORT-NAME>EcuC</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Virtual module to collect ECU Configuration specific / global configuration information.</L-2>
+          </DESC>
+          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+          <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+          <POST-BUILD-VARIANT-SUPPORT>true</POST-BUILD-VARIANT-SUPPORT>
+          <REFINED-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/AUTOSAR/EcuC</REFINED-MODULE-DEF-REF>
+          <SUPPORTED-CONFIG-VARIANTS>
+            <SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+          </SUPPORTED-CONFIG-VARIANTS>
+          <CONTAINERS>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:46305ba3-b0d8-4652-a73f-3b3e1ccf43fc">
+              <SHORT-NAME>EcucSelectedLoadableVariant</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Container for a reference to a PredefinedVariant that defines the loadable variant which is in the current focus for configuration. The PredefinedVariant that is referenced here shall contain only PostBuildVariantCriterionValueSets.</L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+              <MULTIPLICITY-CONFIG-CLASSES>
+                <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                  <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+              </MULTIPLICITY-CONFIG-CLASSES>
+              <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+              <REFERENCES>
+                <ECUC-FOREIGN-REFERENCE-DEF UUID="ECUC:fbbdef7c-ea8d-4c9a-bba4-c2fe437cbdfe">
+                  <SHORT-NAME>EcucSelectedLoadableRef</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Reference to a PredefinedVariant that defines the loadable variant which is in the current focus for configuration. The PredefinedVariant that is referenced here shall contain only PostBuildVariantCriterionValueSets.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <DESTINATION-TYPE>PREDEFINED-VARIANT</DESTINATION-TYPE>
+                </ECUC-FOREIGN-REFERENCE-DEF>
+              </REFERENCES>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:46305ba3-b0d8-4652-a73f-3b3e1ccc3a91">
+              <SHORT-NAME>EcucPostBuildVariants</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Collection of toplevel PostBuildSelectable variants. The PredefinedVariants linked inside this container will determine how many PostBuildSelectableVariants exist. If this container exist the name pattern for initialization of BSW modules will be &lt;Mip&gt;_Config_. If this container does not exist the name pattern for initialization of BSW modlues will be &lt;Mip&gt;_Config.</L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+              <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+              <REFERENCES>
+                <ECUC-FOREIGN-REFERENCE-DEF UUID="ECUC:fbbdef7c-ea8d-4c9a-bba4-c2fe437cbdfe">
+                  <SHORT-NAME>EcucSelectedPostBuildVariantRef</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Reference to a PredefinedVariant that defines the toplevel postBuild configuration set which is in the current focus for configuration (covering all post-build capable BSW modules). The PredefinedVariant that is referenced here shall contain only PostBuildVariantCriterionValueSets, and must be one of the list (i.e. EcucPostBuildVariantRef).</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <DESTINATION-TYPE>PREDEFINED-VARIANT</DESTINATION-TYPE>
+                </ECUC-FOREIGN-REFERENCE-DEF>
+                <ECUC-FOREIGN-REFERENCE-DEF UUID="ECUC:fbbafd7c-ea8d-4c9a-bba4-c2aebc7cba40">
+                  <SHORT-NAME>EcucPostBuildVariantRef</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Reference to a PredefinedVariant that defines one toplevel postBuild configuration set (covering all post-build capable BSW modules). PredefinedVariants that are referenced here shall contain only PostBuildVariantCriterionValueSets.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY-INFINITE>1</UPPER-MULTIPLICITY-INFINITE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <DESTINATION-TYPE>PREDEFINED-VARIANT</DESTINATION-TYPE>
+                </ECUC-FOREIGN-REFERENCE-DEF>
+              </REFERENCES>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+          </CONTAINERS>
+        </ECUC-MODULE-DEF>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

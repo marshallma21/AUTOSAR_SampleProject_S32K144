@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> <project name="tresos" default="all" basedir=".">
+
+<!--
+*   @file    ant_generator.xml
+*   @version 1.0.1
+*
+*   @brief   AUTOSAR Eep_TS_T40D2M10I1R0 - Tresos Studio plugin documentation configuration file.
+*   @details This file contains the links to the plugin documents for Eep Tresos Studio plugin.
+-->
+<!--
+====================================================================================================
+*   Project              : AUTOSAR 4.2 MCAL
+*   Platform             : ARM
+*   Peripheral           : IPV_FTFE
+*   Dependencies         : 
+*
+*   Autosar Version      : 4.2.2
+*   Autosar Revision     : ASR_REL_4_2_REV_0002
+*   Autosar Conf.Variant :
+*   SW Version           : 1.0.1
+*   Build Version        : S32K14x_MCAL_1_0_1_RTM_ASR_REL_4_2_REV_0002_20180713
+*
+*   Copyright 2006-2016 Freescale Semiconductor, Inc.  Copyright 2017-2018 NXP
+*   All Rights Reserved.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+-->
+
+  <ng.getgeneratorvar name="outputDir" property="outputDirProp" />
+  <ng.getgeneratorvar name="postBuildVariant" property="postBuildVariantProp"/>
+      <target name="test.if.src.files.should.be.renamed">
+      <condition property="shouldSrcFilesBeRenamed" value="true" else="false">
+        <and>
+           <available file="${outputDirProp}\src" type="dir"/>
+           <isset property="postBuildVariantProp"/>
+           <not>
+            <equals arg1="${postBuildVariantProp}" arg2=""/>
+           </not>
+        </and>   
+    </condition>     
+  </target>
+  
+  <target name="test.if.include.files.should.be.renamed">
+    <condition property="shouldIncludeFilesBeRenamed" value="true"  else="false">
+        <and>
+           <available file="${outputDirProp}\include" type="dir"/>
+           <isset property="postBuildVariantProp"/>
+           <not>
+            <equals arg1="${postBuildVariantProp}" arg2=""/>
+           </not>
+        </and>   
+    </condition> 
+  </target>
+  
+  <target name="renameSrcFiles" if="${shouldSrcFilesBeRenamed}" depends="test.if.src.files.should.be.renamed">
+    <move todir="${outputDirProp}\src">
+        <fileset dir="${outputDirProp}\src">
+            <include name="Eep_*PBcfg.c"/>
+            <exclude name="Eep_*_PBcfg.c"/>
+        </fileset>
+        <mapper type="glob" from="*PBcfg.c" to="*${postBuildVariantProp}_PBcfg.c"/>
+    </move>
+    <move todir="${outputDirProp}\src">
+        <fileset dir="${outputDirProp}\src">
+            <include name="Eep_43_*PBcfg.c"/>
+            <exclude name="Eep_43_*_*_PBcfg.c"/>
+        </fileset>
+        <mapper type="glob" from="*PBcfg.c" to="*${postBuildVariantProp}_PBcfg.c"/>
+    </move>
+  </target>
+   <target name="renameIncludeFiles" if="${shouldIncludeFilesBeRenamed}" depends="test.if.include.files.should.be.renamed">
+    <move todir="${outputDirProp}\include">
+        <fileset dir="${outputDirProp}\include">  
+            <include name="Eep_*PBcfg.h"/>
+            <exclude name="Eep_*_PBcfg.h"/>
+        </fileset>
+        <mapper type="glob" from="*PBcfg.h" to="*${postBuildVariantProp}_PBcfg.h"/>
+    </move>
+        <move todir="${outputDirProp}\include">
+        <fileset dir="${outputDirProp}\include">  
+            <include name="Eep_43_*PBcfg.h"/>
+            <exclude name="Eep_43_*_*_PBcfg.h"/>
+        </fileset>
+        <mapper type="glob" from="*PBcfg.h" to="*${postBuildVariantProp}_PBcfg.h"/>
+    </move>
+  </target>
+  <target name="all" depends="renameSrcFiles,renameIncludeFiles ">
+
+  </target>
+</project>
+

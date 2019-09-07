@@ -1,0 +1,342 @@
+;====================================================================================================
+;
+;    @file                launch.bat
+;    @version             1.0.1
+;
+;    @brief               Integration Framework - internal build launcher.
+;    @details             Launches the build of the sample application
+;
+;    Platform      :      ARM
+;    Build Version :      S32K14x_MCAL_1_0_1_RTM_ASR_REL_4_2_REV_0002_20170831
+;
+;   (c) Copyright 2006-2016 Freescale Semiconductor, Inc. 
+;       Copyright 2017 - 2018 NXP
+;       All Rights Reserved.
+;
+;    This file contains sample code only. It is not part of the production code deliverables.
+;
+;====================================================================================================
+;
+&optimizeFLSMODE=0
+&optimizeSECTORS=0
+&optimizeRAM=0
+&optimizePLL=0
+
+;=========================================================================
+; Variables settings  
+;=========================================================================
+
+;=========================================================================
+; System settings  
+;=========================================================================
+
+; Check if the chip is secured(no flash access allowed) and if so, attempt to unsecure it by triggering a mass erase.
+; MDM-AP Status[2] = System security
+WinCLEAR
+area
+SYStem.Down
+ON.ERROR.continue    ;Disable error handler temporarily
+Break.RESet
+SYStem.JtagClock 1Mhz
+SYS.CPU S32K144
+sys.up
+PRINT "MDM-AP Status Register is 0x" Data.Long(EDBG:0x40000100)
+IF ((Data.Long(EDBG:0x40000100)&0x00000004)==0x00000004)
+(
+    ;The chip is secured, attempt to unsecure it.
+    PRINT "The chip is secured, attempting to unsecure it by triggering a mass erase."
+    GOSUB FlashUnsecureErase
+
+    ; Check if the operation has been successful.
+    Break.RESet
+    sys.up
+    PRINT "MDM-AP Status Register is 0x" Data.Long(EDBG:0x40000100)
+    IF ((Data.Long(EDBG:0x40000100)&0x00000004)==0x00000004)
+    (
+        ;Either there was an error during MDM-AP register read or the chip is still secured.
+        PRINT "Either there was an error during MDM-AP register read(ex:target in reset) or the chip is still secured."
+        ;Attempt to Sys.up, to check if target is still in reset.
+        PRINT "Attempt to Sys.up, to check if target is still in reset."
+        system.reset
+        SYStem.Option TRST off
+        SYStem.Option ResBreak on
+        SYStem.Option WaitReset ON
+        SYS.CPU S32K144
+        SYStem.JtagClock 4MHz
+        Break.RESet
+        sys.up
+        ; Check if the operation has been successful.
+        PRINT "MDM-AP Status Register is 0x" Data.Long(EDBG:0x40000100)
+        IF ((Data.Long(EDBG:0x40000100)&0x00000004)==0x00000004)
+        (            
+            ;The chip is still secured, stop execution and wait for debug.
+            ;PRINT "The chip is still secured, stop execution and wait for debug"
+            PRINT %ERROR "The chip is still secured/or unable to get chip status"
+            ENDDO
+        ) 
+        ELSE
+        (
+            PRINT "Chip is now unsecured."
+        )        
+    )
+    ELSE
+    (
+        PRINT "Chip is now unsecured."
+    )
+) 
+on.ERROR.DEFault    ;Enable the error handler 
+
+;cpu settings - cortexm4, S32K144
+system.reset
+SYStem.Option TRST on
+SYStem.Option ResBreak on
+SYStem.Option WaitReset ON
+SYS.CPU S32K144
+SYStem.JtagClock 4MHz
+sys.up
+
+; Disable Bootrom
+GOSUB DisableBootrom
+; Disable watchdog
+GOSUB DisableWatchdog
+
+;FLASH.UNSECUREerase
+;system.reset
+;sys.up
+
+;SYStem.JtagClock 1MHz
+;SYStem.BdmClock 1MHz
+
+; Disable Bootrom
+GOSUB DisableBootrom
+; Disable watchdog
+GOSUB DisableWatchdog
+
+
+;=========================================================================
+; set-up system clock initialization
+;=========================================================================
+if &optimizePLL==1
+(
+   print "Starting PLL:"
+
+;/* FIRC Configuration */
+;SCG.FIRCDIV.R=0x010101u;   /* SCG_FIRCDIV: FIRCDIV3=1, FIRCDIV2=1, FIRCDIV1=1 */
+  per.set ANC:0x40064304 %LONG  0x010101
+;SCG.FIRCCFG.R=0x00;        /* SCG_FIRCCFG: RANGE=0 */
+  per.set ANC:0x40064308 %LONG  0x0
+;while(SCG.FIRCCSR.R & 0x00800000u);
+   wait (Data.Long(ANC:0x40064300)&0x000800000)==0
+;SCG.FIRCCSR.R=0x00000001u;   /* SCG_FIRCCSR: FIRCEN=1 */
+  per.set ANC:0x40064300 %LONG  0x1
+;while(!(SCG.FIRCCSR.R & 0x01000000));
+   wait (Data.Long(ANC:0x40064300)&0x01000000)==0x01000000
+
+;  /* SIRC Configuration */
+;SCG.SIRCDIV.R=0x10101u;   /* SCG_SIRCDIV: SIRCDIV3=1, SIRCDIV2=1, SIRCDIV1=1 */
+   per.set ANC:0x40064204 %LONG  0x010101
+;SCG.SIRCCFG.R=0x01;       /* SCG_SIRCCFG: RANGE=1 */
+   per.set ANC:0x40064208 %LONG  0x1
+;while(SCG.SIRCCSR.R & 0x00800000u);
+   wait (Data.Long(ANC:0x40064200)&0x000800000)==0
+;SCG.SIRCCSR.R=0x1u;       /* SCG_SIRCCSR: SIRCEN=1 */
+   per.set ANC:0x40064200 %LONG  0x1
+;while(!(SCG.SIRCCSR.R & 0x01000000u));
+   wait (Data.Long(ANC:0x40064200)&0x01000000)==0x01000000
+
+;  /* SOSC Configuration */ 
+;SCG.SOSCDIV.R = 0x00010101u;  /* SCG_SOSCDIV: SOSCDIV3=1, SOSCDIV2=1, SOSCDIV1=1 */  
+   per.set ANC:0x40064104 %LONG  0x010101
+;SCG.SOSCCFG.R = 0x00000024u;  /* SCG_SOSCCFG: RANGE=2, EREFS=1 */
+   per.set ANC:0x40064108 %LONG  0x24
+;while(SCG.SOSCCSR.R & 0x00800000u);
+   wait (Data.Long(ANC:0x40064100)&0x00800000)==0
+;SCG.SOSCCSR.R= 0x5u;           /* SCG_SOSCCSR: SOSCLPEN=1, SOSCEN=1 */
+   per.set ANC:0x40064100 %LONG  0x5
+;while(!(SCG.SOSCCSR.R & 0x01000000u));
+  wait (Data.Long(ANC:0x40064100)&0x01000000)==0x01000000
+
+;  /* SPLL Configuration 80MHz */ 
+;SCG.SPLLDIV.R = 0x10101u;    
+   per.set ANC:0x40064604 %LONG  0x010101  
+;SCG.SPLLCFG.R = 0x40000u;     /* SCG_SPLLCFG: MULT=4, PREDIV=0, SOURCE=0 */
+   per.set ANC:0x40064608 %LONG  0x40000
+;while(SCG.SPLLCSR.R & 0x00800000u);
+   wait (Data.Long(ANC:0x40064600)&0x00800000)==0
+;SCG.SPLLCSR.R=0x01;           /* SCG_SPLLCSR: SPLLEN=1 */
+   per.set ANC:0x40064600 %LONG  0x1
+;while(!(SCG.SPLLCSR.R & 0x01000000u));
+  wait (Data.Long(ANC:0x40064600)&0x01000000)==0x01000000
+  
+;SCG.RCCR.R=0x06000013U;  /* RUN Mode Configuration */
+    per.set ANC:0x40064014 %LONG  0x0600001
+;SCG.VCCR.R=0x02000002U;  /* VLPR Mode Configuration */
+    per.set ANC:0x40064018 %LONG  0x02000002
+;SCG.HCCR.R=0x06000013U;  /* HSPR Mode Configuration */
+    per.set ANC:0x4006401C %LONG  0x06000013
+
+    
+; set JTAG clock to 10 MHz
+   SYStem.BdmClock 10MHz
+)
+
+;=========================================================================
+; RAM initialization
+;=========================================================================
+
+    Data.Set A:0X1FFF8000--0X20005FFF  %Quad 0
+
+;=========================================================================
+; Flash declaration 
+;=========================================================================
+print "Starting FLASH sector creation:"
+    FLASH.RESet
+
+  FLASH.Create 1. 0x00000000--0x0007FFFF 0x1000 TARGET Quad
+;  FLASH.Create 2. 0x00040000--0x0007FFFF 0x1000 TARGET Quad
+   
+  ;FLASH.Create 3. 0x10000000--0x1000FFFF 0x800 TARGET Quad
+  
+  FLASH.TARGET 0x1FFFF000 0x20000000 0x1000 ~~/demo/arm/flash/quad/s32k.bin
+  
+
+;========================================================================
+; Flash programming example
+;
+; Flash programming speed is about three times faster when memory class E:
+; is used for data buffer (DUALPORT memory access). For DUALPORT access it
+; is required to setup MemAccess NEXUS for both, NEXUS and JTAG debugger. 
+
+; put the core in RUN mode (if the core is in HSRUN flash commands do not work) 
+data.set 0x4007e00c %long 0x0
+
+; disable CACHES
+data.set 0xE0082000 %Long 0x0
+
+;      FLASH.Reprogram ALL 
+;      Data.Load.Elf ../bin/IntegrationFramework.elf /GLOBTYPES
+;      FLASH.Reprogram OFF
+
+;      FLASH.Program ALL
+;      Data.Load.Elf ../bin/IntegrationFramework.elf /GLOBTYPES
+;      FLASH.Program OFF
+
+;      FLASH.AUTO.ALL /CENSORSHIP
+;      Data.Load.Elf ../bin/IntegrationFramework.elf /GLOBTYPES
+;      FLASH.AUTO.OFF
+
+
+      ; Read the LAST word of FLASH Config area
+      &FLASH_CFG_W4=data.long(ANC:0x40C)
+      &FLASH_CFG_W4_DISABLEROM=(&FLASH_CFG_W4&0x0000FFFF)
+      ;Check if ROM & Secure Boot are disabled
+      
+      IF (&FLASH_CFG_W4_DISABLEROM==0xFFFE)
+      (
+       FLASH.Reprogram ALL
+       Data.Load.Elf ../bin/IntegrationFramework.elf /GLOBTYPES
+       FLASH.Reprogram OFF
+      )
+      ELSE
+      (
+        ; re-write the Flash Config area 0x400 as specified in the elf.
+        FLASH.AUTO.ALL /CENSORSHIP
+        Data.Load.Elf ../bin/IntegrationFramework.elf /GLOBTYPES
+        FLASH.AUTO.OFF
+      )
+TrOnchip.Set CORERESET OFF
+
+
+
+system.reset
+SYStem.Option TRST off
+SYStem.Option ResBreak on
+SYStem.Option WaitReset ON
+SYStem.CPU S32K144
+SYStem.JtagClock 4MHz
+sys.up
+
+
+; Disable watchdog
+GOSUB DisableWatchdog
+
+;load program (if FLASH selected than load only debug symbols)
+
+   Data.Load.Elf ../bin/IntegrationFramework.elf /GLOBTYPES /NOCODE
+
+
+; Force display mode to Thumb. On GHS compiler, because of wrong debug information, some sections are interpreted as ARM mode,
+; thus displaying incorrect compiler options when using ASM mode and sometimes causing Hardfaults because of incorrect branches
+; when Stepping in C mode.
+SYStem.Option DisMode THUMB
+
+WinCLEAR
+WinPOS 84.125 0.0 63. 41. 0. 0. W001
+Per , /SPOTLIGHT 
+
+WinPOS 84.25 45.0 63. 12. 0. 0. W000
+Register /SPOTLIGHT
+
+R.S PC _start 
+Break.SET main
+d.list
+;Go
+
+ENDDO
+
+DisableBootrom:
+  Data.Set SD:0x4007F010 %LE %Long 0x6
+  Data.Set SD:0x4007F014 %LE %Long 0x0
+  RETURN
+  
+DisableWatchdog:
+  LOCAL &tmp1 &tmp2
+  &tmp1=Data.Long(ST:0x20000000)
+  &tmp2=Data.Long(ST:0x20000004)
+
+  ; The watchdog has a restrictive timing. It has to be configured and unlocked within a peripod
+  ; of 128 cycles. Therefor the unlock sequence need to be done by a small target program.
+  
+  Data.Assemble ST:0x20000000  str  r1, [r0]    
+  Data.Assemble ,              str  r3, [r2]    
+  Data.Assemble ,              str  r5, [r4]
+  Data.Assemble ,              bkpt #0
+  
+  Register.Set PC 0x20000000
+  Register.Set SP 0x20001000
+  
+  Register.Set  r0 0x40052004
+  Register.Set  r1 0xD928C520
+  Register.Set  r2 0x40052008
+  Register.Set  r3 0x0000FFFF
+  Register.Set  r4 0x40052000
+  Register.Set  r5 0x00002120
+  
+  Go.direct
+  WAIT !RUN()
+
+
+  RETURN
+
+; Command roughly equivalent with "FLASH.UNSECUREErase"  
+FlashUnsecureErase:    
+    SYStem.Down
+    Break.RESet
+    SYStem.JtagClock 1Mhz
+    SYStem.Mode.Prepare
+    ; Set reset line low, both JTAG lines are connected to the same chip reset line, so toggle them both.
+    JTAG.PIN NRESET 0
+    JTAG.PIN NTRST 0
+    ; Setup mass erase command bit  
+    Data.Set EDBG:0x40000104 %Long 0yXXXXxxxxXXXXxxxxXXXXxxxxXXXXxxx1    
+    ; wait until mass erase has completed
+    WHILE ((Data.Long(EDBG:0x40000100)&0x04)==0x04)||((Data.Long(EDBG:0x40000104)&0x01)==0x01)
+    ( 
+    )
+    WAIT 100ms    
+    JTAG.PIN NRESET 1
+    JTAG.PIN NTRST 1
+    SYStem.Down
+    WAIT 100ms
+
+    RETURN

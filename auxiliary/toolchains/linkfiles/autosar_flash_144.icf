@@ -1,0 +1,130 @@
+/*==================================================================================================
+
+   @file        autosar_flash_144.icf
+   @version     1.0.1
+
+   @brief       GHS Linker Command File
+   @details     GHS Linker Command File
+                This file contains sample code only. It is not part of the production code deliverables
+====================================================================================================    
+   Project      : AUTOSAR 4.2 MCAL
+   Platform     : ARM
+   Peripheral   : LPit
+   Dependencies : none
+   
+   Autosar Version       : 4.2.2
+   Autosar Revision      : ASR_REL_4_2_REV_0002
+   Autosar Conf. Variant : 
+   Software Version      : 1.0.1
+   Build Version         : S32K14x_MCAL_1_0_1_RTM_ASR_REL_4_2_REV_0002_20170831
+
+   (c) Copyright 2006-2016 Freescale Semiconductor, Inc. 
+*       Copyright 2017-2018 NXP
+   All Rights Reserved.
+
+====================================================================================================
+
+Note: This linker command file to be used with S32K144 device only.
+==================================================================================================*/
+
+define memory Mem with size = 4G;
+
+/* S32K144 - 512 KB Flash in range 0x00000000:0x0007FFFF */
+define region flash_rsvd1_region      = Mem:[from 0x0 to 0x07];       /* rcw word */
+define region flash_rsvd2_region      = Mem:[from 0x400 to 0x40F];    /* flash configuration area */
+define region flash_rsvd_fls_region   = Mem:[from 0x410 to 0x46F];    /* a reserved section for FLASH-RAM functions */
+define region flash_rsvd_eep_region   = Mem:[from 0x470 to 0x4FF];    /* a reserved section for EEP-RAM functions */
+define region flash_memory_region     = Mem:[from 0x500 to 0x7FFFF];  /* P-FLASH to be used by APP */
+
+/* S32K144- 60 KB RAM in range 0x1FFF8000:0x20006FFF */
+define region iram_intvec_region      = Mem:[from 0x1FFF8000 to 0x1FFF8388]; 
+define region iram_main_region        = Mem:[from 0x1FFF8390 to 0x20006A0F]; 
+define region iram_stack_region       = Mem:[from 0x20006A10 to 0x20006E0F]; /* a reserved 0x400 bytes ram section needed by stack */
+define region iram_rsvd_fls_region    = Mem:[from 0x20006E10 to 0x20006E6F]; /* a reserved 0x60  bytes ram section needed by FLS driver */
+define region iram_rsvd_eep_region    = Mem:[from 0x20006E70 to 0x20006EFF]; /* a reserved 0x90  bytes ram section needed by EEP driver */
+define region iram_results_region     = Mem:[from 0x20006F00 to 0x20006FFF]; /* a reserved 0x100 bytes ram section needed for test results */
+
+define exported symbol __STACK_SIZE   = (1*1024);
+
+initialize manually { section .intc_vector             };
+initialize manually { section .data                    };
+initialize manually { section .mcal_data };
+initialize manually { section .mcal_data_no_cacheable  };
+initialize manually { section .ramcode                 };
+
+do not initialize { section .bss,  section .mcal_bss, section .mcal_bss_no_cacheable, section .stack_main, section .flash_config, section .rcw};
+
+define block AppIntVec                          { section .intc_vector };
+define block AppIntVec_Init                     { section .intc_vector_init };
+define block AppStartup with fixed order        { section .startup, section .systeminit} ;
+define block AppCode with fixed order           { section .text, section .mcal_text};
+define block AppRAMCode with fixed order        { section .ramcode};
+define block AppRAMCode_Init with fixed order   { section .ramcode_init};
+
+define block AppACFLSCode with fixed order      { section .acfls_code_rom};
+define block AppACEEPCode with fixed order      { section .aceep_code_rom};
+
+define block AppROData with fixed order         { section .rodata,  section .mcal_const_cfg, section .mcal_const};
+define block AppData with fixed order           {section .data, section .mcal_data};
+define block AppData_Init with fixed order      {section .data_init, section .mcal_data_init};
+define block AppBSS with fixed order            { section .noinit, section .bss, section .mcal_bss};
+define block AppBSS_NO_CACHE with fixed order   { section .mcal_bss_no_cacheable};
+define block AppData_NO_CACHE with fixed order  { section .mcal_data_no_cacheable};
+define block AppData_NO_CACHE_Init with fixed order  { section .mcal_data_no_cacheable_init};
+define block AppSTACK with alignment = 16, size = __STACK_SIZE  { section .stack_main};
+define block AppRCW                             { section .rcw};
+define block AppFlashConfig                     { section .flash_config};
+
+
+place in flash_rsvd1_region { block AppRCW};    
+place in flash_rsvd2_region { block AppFlashConfig}; 
+place in flash_rsvd_fls_region { block AppACFLSCode};     
+place in flash_rsvd_eep_region { block AppACEEPCode};     
+
+place in flash_memory_region { block AppIntVec_Init,
+                               block AppStartup,
+                               block AppCode,
+                               block AppRAMCode_Init,
+                               block AppROData,
+                               block AppData_Init,
+                               block AppData_NO_CACHE_Init } ;
+
+place in iram_intvec_region {  block AppIntVec };
+place in iram_main_region   {  block AppRAMCode,
+                               block AppBSS,
+                               block AppData,
+                               block AppBSS_NO_CACHE,
+                               block AppData_NO_CACHE };
+                            
+place in iram_stack_region   { block AppSTACK};
+           
+/* define external symbols */
+           
+define exported symbol _Stack_end    = start(iram_stack_region);
+define exported symbol _Stack_start  = start(iram_stack_region) + size(iram_stack_region); 
+
+define exported symbol INT_SRAM_START  = start(iram_main_region);
+define exported symbol INT_SRAM_SIZE   = (size(iram_main_region) + size(iram_stack_region) + size(iram_results_region) + size(iram_rsvd_fls_region) + size(iram_rsvd_eep_region) + 3) / 4;
+define exported symbol INT_SRAM_END    = start(iram_main_region) + size(iram_main_region) + size(iram_stack_region) + size(iram_results_region) + size(iram_rsvd_fls_region) + size(iram_rsvd_eep_region);
+
+/* Fls module access code support */    
+define exported symbol Fls_ACEraseRomStart  = start(flash_rsvd_fls_region);
+define exported symbol Fls_ACEraseRomEnd    = start(flash_rsvd_fls_region) + size(flash_rsvd_fls_region) ;
+define exported symbol Fls_ACEraseSize      = (size(flash_rsvd_fls_region) + 3) / 4; /* Copy 4 bytes at a time*/ 
+
+define exported symbol Fls_ACWriteRomStart  = start(flash_rsvd_fls_region);
+define exported symbol Fls_ACWriteRomEnd    = start(flash_rsvd_fls_region) + size(flash_rsvd_fls_region) ;
+define exported symbol Fls_ACWriteSize      = (size(flash_rsvd_fls_region) + 3) / 4; /* Copy 4 bytes at a time*/ 
+
+define exported symbol _ERASE_FUNC_ADDRESS_ = start(iram_rsvd_fls_region);
+define exported symbol _WRITE_FUNC_ADDRESS_ = start(iram_rsvd_fls_region);
+
+/* Eep module access code support */    
+define exported symbol Eep_ACWriteRomStart      = start(flash_rsvd_eep_region);
+define exported symbol Eep_ACWriteRomEnd        = start(flash_rsvd_eep_region) + size(flash_rsvd_eep_region) ;
+define exported symbol Eep_ACWriteSize          = (size(flash_rsvd_eep_region) + 3) / 4; /* Copy 4 bytes at a time*/ 
+
+define exported symbol _WRITE_FUNC_ADDRESS_EEP_ = start(iram_rsvd_eep_region);
+
+
+keep { block AppACFLSCode, block AppACEEPCode, block AppRAMCode,  block AppBSS, block AppData, block AppBSS_NO_CACHE,block AppData_NO_CACHE, section .mcal_bss_no_cacheable, section .mcal_data_no_cacheable,  section .mcal_data,  section .mcal_bss,  section .ramcode, section .acfls_code_rom,  section .aceep_code_rom};

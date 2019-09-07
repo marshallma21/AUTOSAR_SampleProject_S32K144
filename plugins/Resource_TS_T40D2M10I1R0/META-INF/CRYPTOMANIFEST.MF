@@ -1,0 +1,106 @@
+
+Name: resource/ARM_S32K14X_s32k146_mapbga100.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594743488801061967080543605463532503750852925144611918
+ 105897274807053390351456537615855515007000942157654005
+
+Name: resource/ARM_S32K14X_s32k146_lqfp100.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425103218323763852801065351950743059868178206004565
+ 7827352462146836406061709493842331054097440547678045
+
+Name: resource/ARM_S32K14X_s32k144_lqfp64.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423085047662684068015366966877368815727233941187492
+ 0892983003065808058149281121597593313586196101912646
+
+Name: resource/ARM_S32K14X_s32k118_lqfp64.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424457554460162387081002704404819315366885816330709
+ 5089169654975826975216564876002171488178580605133511
+
+Name: resource/ARM_S32K14X_s32k148_lqfp176.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420712759673560418274464583627274073316617524648750
+ 6209832200882777088258922490090521697916988559918284
+
+Name: resource/ARM_S32K14X_s32k144_lqfp100.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420435383872582018012184608171359429586269474694672
+ 7480993373997963440066333004366982887258617240328163
+
+Name: resource/ARM_S32K14X_s32k142_lqfp100.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594742084235711190258351594755660634641696534558946094
+ 126866355966512191290694135387300928198739755533254608
+
+Name: resource/ARM_S32K14X_s32k144_mapbga100.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594749182830384630209121968520113329781173527615746938
+ 429392298473798110925092042657859622277887112822105393
+
+Name: resource/ARM_S32K14X_s32k118_lqfp48.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426290523114298197201902254974618933071442672607236
+ 4221373364347222048525851005800644593016164832168629
+
+Name: resource/ARM_S32K14X_s32k146_lqfp64.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425168066365375468573124237307597047121230100759923
+ 8067850248635296057121210501065136934658141320420059
+
+Name: config/Resource.xdm
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773963222001942452012038046238415367024386564576386
+ 367851173185014419680240214693779111111380503330513203
+
+Name: resource/ARM_S32K14X_s32k142_lqfp64.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422515096381639939457710331722280731432396950038513
+ 0738876867431495043895063637531396302035668640065384
+
+Name: resource/ARM_S32K14X_s32k148_lqfp144.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420462285162942844775957281113551695753678252179630
+ 3799848800344073970427263871404094878992860372361579
+
+Name: resource/ARM_S32K14X_s32k146_lqfp144.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420162987569053423235614622676480612942915332927714
+ 4333178136313192909858098680882829205591709531605827
+
+Name: resource/ARM_S32K14X_s32k148_mapbga100.properties
+SignatureKeyID: Freescale
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421787983002594828334406719935686299881853874339628
+ 3691650647785229092910116908274233350915179703726632
+

@@ -1,0 +1,141 @@
+<?xml version='1.0'?>
+<datamodel version="4.0"
+           xmlns="http://www.tresos.de/_projects/DataModel2/10/root.xsd"
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/10/attribute.xsd"
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd"
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+<!--
+*   @file    EcuC.xdm
+*   @version 1.0.1
+*
+*   @brief   AUTOSAR EcuC - Tresos Studio plugin schema file
+*   @details This file contains the schema configuration for and EcuC Tresos Studio plugin.
+*            This file contains sample code only. It is not part of the production code deliverables
+-->
+<!--
+====================================================================================================
+*   Project              : AUTOSAR 4.2 MCAL
+*   Platform             : ARM
+*   Peripheral           : 
+*   Dependencies         : 
+*
+*   Autosar Version      : 4.2.2
+*   Autosar Revision     : ASR_REL_4_2_REV_0002
+*   Autosar Conf.Variant :
+*   SW Version           : 1.0.1
+*   Build Version        : S32K14x_MCAL_1_0_1_RTM_ASR_REL_4_2_REV_0002_20180713
+
+*   (c) Copyright 2006-2016 Freescale Semiconductor, Inc. 
+*       Copyright 2017-2018 NXP
+*   All Rights Reserved.
+====================================================================================================
+====================================================================================================
+====================================================================================================
+--> 
+  <d:ctr type="AUTOSAR" factory="autosar"
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd"
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="TS_T40D2M10I1R0" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="EcuC" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="DESC"
+                   value="EN: Virtual module to collect ECU Configuration specific / global configuration information."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="RELEASE" value="asc:4.2"/>
+              <a:a name="UPPER-MULTIPLICITY" value="1"/>
+              <a:a name="UUID" value="ECUC:9859330d-7e56-4b3d-bba9-3d59db515c57"/>
+			  <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="ECUC:7655b6a7-ab0f-47e6-8058-80d0faa056dc"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                </a:da>
+              </v:var>
+              <v:ctr name="EcucSelectedLoadableVariant" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                     value="EN: Container for a reference to a PredefinedVariant that defines the loadable variant which is in the current focus for configuration. The PredefinedVariant that is referenced here shall contain only PostBuildVariantCriterionValueSets."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                </a:a>
+                <a:a name="OPTIONAL" value="true"/>
+                <a:a name="UUID" value="ECUC:46305ba3-b0d8-4652-a73f-3b3e1ccf43fc"/>
+                <a:da name="ENABLE" value="false"/>
+                <v:ref name="EcucSelectedLoadableRef"
+                       type="FOREIGN-REFERENCE">
+                  <a:a name="DESC"
+                       value="EN: Reference to a PredefinedVariant that defines the loadable variant which is in the current focus for configuration. The PredefinedVariant that is referenced here shall contain only PostBuildVariantCriterionValueSets."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="UUID"
+                       value="ECUC:fbbdef7c-ea8d-4c9a-bba4-c2fe437cbdfe"/>
+                  <a:da name="REF" value="ASTyped:PredefinedVariant"/>
+                  <a:da name="RANGE" type="XPath">
+                    <a:tst expr="as:paths(node:filter(node:refs('ASTyped:PredefinedVariant'), 'starts-with(as:path(.), &quot;/EB/PostBuildLoadable&quot;)'), true())"/>
+                  </a:da>
+                  <a:da name="INVALID" type="XPath"
+                    expr="node:containsValue(as:paths(node:filter(node:refs('ASTyped:PredefinedVariant'), 'starts-with(as:path(.), &quot;/EB/PostBuildLoadable&quot;)'), true()), .)"
+                    false="Reference must point to a PredefinedVariant under the package /EB/PostBuildLoadable.">
+                  </a:da>
+                </v:ref>
+              </v:ctr>
+              <v:ctr name="EcucPostBuildVariants" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                     value="EN: Collection of toplevel PostBuildSelectable variants. The PredefinedVariants linked inside this container will determine how many PostBuildSelectableVariants exist. If this container exist the name pattern for initialization of BSW modules will be &lt;Mip&gt;_Config_&lt;PredefinedVariant.shortName&gt;. If this container does not exist the name pattern for initialization of BSW modlues will be &lt;Mip&gt;_Config."/>
+                <a:a name="OPTIONAL" value="true"/>
+                <a:a name="UUID" value="ECUC:46305ba3-b0d8-4652-a73f-3b3e1ccc3a91"/>
+                <a:da name="ENABLE" value="false"/>
+                <v:ref name="EcucSelectedPostBuildVariantRef"
+                       type="FOREIGN-REFERENCE">
+                  <a:a name="DESC"
+                       value="EN: Reference to a PredefinedVariant that defines the toplevel postBuild configuration set which is in the current focus for configuration (covering all post-build capable BSW modules). The PredefinedVariant that is referenced here shall contain only PostBuildVariantCriterionValueSets, and must be one of the list (i.e. EcucPostBuildVariantRef)."/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="UUID"
+                       value="ECUC:fbbdef7c-ea8d-4c9a-bba4-c2fe437cbdfe"/>
+                  <a:da name="REF" value="ASTyped:PredefinedVariant"/>
+  			      <a:da name="RANGE" type="XPath">
+                    <a:tst expr="as:stod('/TS_T40D2M10I1R0/EcuC/EcucPostBuildVariants/EcucPostBuildVariantRef')"/>
+			      </a:da>
+                  <a:da name="INVALID" type="XPath"
+                    expr="node:containsValue(as:stod('/TS_T40D2M10I1R0/EcuC/EcucPostBuildVariants/EcucPostBuildVariantRef'), .)"
+                    false="Reference must be one of EcucPostBuildVariantRef.">
+                  </a:da>
+                </v:ref>
+                <v:lst name="EcucPostBuildVariantRef">
+                  <a:da name="MIN" value="1"/>
+                  <v:ref name="EcucPostBuildVariantRef"
+                         type="FOREIGN-REFERENCE">
+                    <a:a name="DESC"
+                         value="EN: Reference to a PredefinedVariant that defines one toplevel postBuild configuration set (covering all post-build capable BSW modules). PredefinedVariants that are referenced here shall contain only PostBuildVariantCriterionValueSets."/>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="UUID"
+                         value="ECUC:fbbafd7c-ea8d-4c9a-bba4-c2aebc7cba40"/>
+                    <a:da name="REF" value="ASTyped:PredefinedVariant"/>
+                    <a:da name="RANGE" type="XPath">
+                      <a:tst expr="as:paths(node:filter(node:refs('ASTyped:PredefinedVariant'), 'not(starts-with(as:path(.), &quot;/EB/PostBuildLoadable&quot;))'), true())"/>
+                    </a:da>
+                    <a:da name="INVALID" type="XPath"
+                      expr="node:containsValue(as:paths(node:filter(node:refs('ASTyped:PredefinedVariant'), 'not(starts-with(as:path(.), &quot;/EB/PostBuildLoadable&quot;))'), true()), .)"
+                      false="Reference must not point to a PredefinedVariant under the package /EB/PostBuildLoadable.">
+                    </a:da>
+                  </v:ref>
+                </v:lst>
+              </v:ctr>
+              <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcuC"/>
+            </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>
