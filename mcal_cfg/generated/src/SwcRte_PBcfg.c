@@ -151,7 +151,7 @@ const SwcRte_InputChannelConfigType SwcRte_LightingInputChannelMap_1_PB[3] =
 {
     /*Sensor channel*/
     {
-        IoDAL_DIGITAL_KEY,    /*IO Channel ID*/
+        IoDAL_DIGITAL_KEY2,    /*IO Channel ID*/
         SWCRTE_DIGITAL_SENS        /*IO Channel Type*/
     },
     

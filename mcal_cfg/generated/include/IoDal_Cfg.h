@@ -81,8 +81,8 @@ extern "C"{
 /*==================================================================================================
                                         LOCAL MACROS
 ==================================================================================================*/
-#define    IODAL_MAX_DIO_CHANNELS_HW_VAR_0            3U
-#define    IODAL_MAX_DIO_DESCRIPTORS                3U
+#define    IODAL_MAX_DIO_CHANNELS_HW_VAR_0            4U
+#define    IODAL_MAX_DIO_DESCRIPTORS                4U
     
 #define    IODAL_MAX_PWM_CHANNELS_HW_VAR_0            3U
 #define    IODAL_MAX_PWM_DESCRIPTORS                3U
@@ -96,7 +96,7 @@ extern "C"{
 #define    IODAL_MAX_ICU_CHANNELS_HW_VAR_0            0U
 #define    IODAL_MAX_ICU_DESCRIPTORS                0U
     
-#define    IODAL_MAX_CHANNELS_HW_VAR_0                10U
+#define    IODAL_MAX_CHANNELS_HW_VAR_0                11U
 
 #define    IODAL_MAX_HW_VARIANTS                    1U
 
@@ -117,6 +117,7 @@ extern "C"{
 #define    IoDAL_PMW1        (7U)
 #define    IoDAL_PMW2        (8U)
 #define    IoDAL_PWM0        (9U)
+#define    IoDAL_DIGITAL_KEY2        (10U)
 
 #define IODAL_PWM_EXT_DEV          (STD_OFF)
 #define IODAL_PWM_SYNC             (STD_OFF)      

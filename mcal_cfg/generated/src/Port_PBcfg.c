@@ -191,7 +191,6 @@ static CONST(uint16, PORT_CONST) Port_au16NoUnUsedPadsArrayDefault[PORT_MAX_UNUS
     (uint16)73,
     (uint16)74,
     (uint16)75,
-    (uint16)77,
     (uint16)79,
     (uint16)80,
     (uint16)81,
@@ -267,7 +266,8 @@ static CONST(Port_Port_Ci_PinConfigType, PORT_CONST) Port_aPinConfigDefault[PORT
     {(Port_InternalPinIdType)112, (uint32)0x00000102, (uint8)0, (Port_PinDirectionType)2, (boolean)TRUE, (boolean)FALSE, (boolean)FALSE},
     {(Port_InternalPinIdType)76, (uint32)0x00000100, (uint8)0, (Port_PinDirectionType)1, (boolean)TRUE, (boolean)TRUE, (boolean)FALSE},
     {(Port_InternalPinIdType)106, (uint32)0x00000200, (uint8)0, (Port_PinDirectionType)2, (boolean)FALSE, (boolean)FALSE, (boolean)TRUE},
-    {(Port_InternalPinIdType)36, (uint32)0x00000100, (uint8)0, (Port_PinDirectionType)2, (boolean)TRUE, (boolean)TRUE, (boolean)TRUE}
+    {(Port_InternalPinIdType)36, (uint32)0x00000100, (uint8)0, (Port_PinDirectionType)2, (boolean)TRUE, (boolean)TRUE, (boolean)TRUE},
+    {(Port_InternalPinIdType)77, (uint32)0x00000100, (uint8)0, (Port_PinDirectionType)1, (boolean)TRUE, (boolean)TRUE, (boolean)FALSE}
 
 };
 

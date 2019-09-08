@@ -106,7 +106,7 @@ extern "C"{
                                         LOCAL MACROS
 ==================================================================================================*/
 
-#define    IODAL_MAX_CHANNELS_HW_VAR_0                10U
+#define    IODAL_MAX_CHANNELS_HW_VAR_0                11U
 
 /*==================================================================================================
                                       FILE VERSION CHECKS
@@ -167,6 +167,12 @@ static CONST(IoDal_DigitalDescriptorType, IODAL_CONST) IoDal_DioChannelDescripto
  
     {
         DioConf_DioChannel_DioChannel_2,        /*DIO Channel ID*/
+        STD_LOW,
+        NULL_PTR                /*External Device*/
+    },
+ 
+    {
+        DioConf_DioChannel_Dio_Key2,        /*DIO Channel ID*/
         STD_LOW,
         NULL_PTR                /*External Device*/
     }
@@ -296,6 +302,11 @@ static CONST(IoDal_BswChannelMapType, IODAL_CONST) IoDal_BswChannelMap_HW_VAR_0[
     {
         IODAL_PWM_FIXED_PERIOD_OUTPUT,        /*Datatype of current channel*/
         2        /*Index of current channel in own Datatype Channel Descriptor*/
+    },    
+    /*IoDAL_DIGITAL_KEY2*/
+    {
+        IODAL_DIO_INPUT,        /*Datatype of current channel*/
+        3        /*Index of current channel in own Datatype Channel Descriptor*/
     }    
 };
 /*=====================================================================================================================*/
@@ -322,7 +333,7 @@ CONST(IoDal_BswIoConfigType, IODAL_CONST) IoDal_Config[IODAL_MAX_HW_VARIANTS] =
         3, /*Number of Analog channels*/
         0,    /*Index of Analog SW Trigger descriptor*/
         3, /*Number of Pwm channels*/
-        3, /*Number of Digital channels*/
+        4, /*Number of Digital channels*/
         1, /*Number of Output Compare  channels*/
         0, /*Number of input Capture channels*/
 #if IODAL_MAX_ANALOG_CHANNELS_HW_VAR_0 > 0U
