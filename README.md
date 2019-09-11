@@ -1,7 +1,7 @@
 # AUTOSAR_SampleProject_S32K144
 This is a sample project from NXP's MCAL sample for AUTOSAR 4.2.2. Please refer to [NXP's webpage.](https://www.nxp.com/design/automotive-software-and-tools/autosar-/autosar-4.2.x-classic-platform-software:AUTOSAR-4-2)
 
-The orginal sample code requires additional wiring on S32K144evb, which is my device. So some changes are made to adapt to the device, including:
+The orginal sample code requires additional wiring on [S32K144EVB](https://www.nxp.com/design/development-boards/automotive-development-platforms/s32k-mcu-platforms/s32k144-evaluation-board:S32K144EVB), which is my device. So some changes are made to adapt to the device, including:
 1. Change the LED2 and LED3 to RGB-Blue and RGB-Green
 2. Change the LED toggle button to SW3(PC13)
 3. Change the Dimming button to SW2
