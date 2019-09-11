@@ -18,7 +18,13 @@ To compile the project under windows, you need to config the `auxiliary/build/la
 - `PLUGINS_DIR` is the MCAL plugins DIR. If you have installed the NXP AUTOSAR 4.2 MCAL for S32K144, set to that DIR. Otherwise, you can set to project folder `./plugins`.
 - `TRESOS_WORKSPACE_DIR` is the DIR for MCAL generation code. Set it to your actual EB project generated folder, or set it to `./mcal_cfg`.
 
+If you have installed [S32DS for ARM](https://www.nxp.com/design/software/embedded-software/s32-design-studio-ide/s32-design-studio-ide-for-arm-based-mcus:S32DS-ARM), you should be able to use tools from it
+- `MAKE_DIR` to `{S32DS}/utils/msys32/usr`
+- `LINARO_DIR`to `{S32DS}/Cross_Tools/gcc-6.3-arm32-eabi`
+
 After setting all these, run `build.bat` in cmd. If everything goes right, you should be able to find the compiled app `IntegrationFramework.elf` in `auxiliary/build/bin`.
+
+Once you have the compiled file, you can use S32DS to download and debug.
 
 Leave a message if you have any question.
 
